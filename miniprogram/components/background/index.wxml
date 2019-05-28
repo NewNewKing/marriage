@@ -1,0 +1,14 @@
+<view class="background">
+  <image src="/images/p.gif" mode="aspectFill" class="img"></image>
+  <image src="/images/p.gif" mode="aspectFill" class="img"></image>
+  <image src="/images/p.gif" mode="aspectFill" class="img"></image>
+  <image src="/images/p.gif" mode="aspectFill" class="img"></image>
+  <image src="/images/p.gif" mode="aspectFill" class="img"></image>
+  <image src="/images/p.gif" mode="aspectFill" class="img"></image>
+  <image src="/images/p.gif" mode="aspectFill" class="img"></image>
+  <image src="/images/p.gif" mode="aspectFill" class="img"></image>
+  <image src="/images/p.gif" mode="aspectFill" class="img"></image>
+  <image src="/images/p.gif" mode="aspectFill" class="img"></image>
+  <image src="/images/p.gif" mode="aspectFill" class="img"></image>
+  <image src="/images/p.gif" mode="aspectFill" class="img"></image>
+</view>

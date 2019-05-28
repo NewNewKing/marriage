@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="bg">
+    <background></background>
+  </view>
+    
+  <view class="center name">{{name}}</view>
+
+  <map
+    class="map border shadow"
+    longitude="{{lon}}" 
+    latitude="{{lat}}"
+    markers="{{markers}}"
+    bindmarkertap="markertap"
+    show-location
+    show-compass
+  ></map>
+  <view class="words-container">  
+    <view class="center location">- 分享地址 -</view>
+    <button class="center address color" open-type="share">{{address}}</button>
+  </view>
+  <view class="flex-center-wrap flex-justify-around phone-container">
+    <view class="phone-call" bindtap="makecall" data-sex="male">
+      <image src="/images/bridegroom.svg" class="person-icon" ></image>
+      <view>呼叫新郎</view>
+    </view>
+    <heart count="3" double="{{true}}"></heart>
+    <view class="phone-call" bindtap="makecall" data-sex="female">
+      <image src="/images/bride.svg" class="person-icon" ></image>
+      <view>呼叫新娘</view>
+    </view>
+  </view>
+
+</view>

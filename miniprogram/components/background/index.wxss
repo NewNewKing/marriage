@@ -1,0 +1,17 @@
+.background{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 834rpx;
+}
+.img{
+  width: 278rpx;
+  height: 439rpx;
+}
+.img2{
+  width: 458rpx;
+  height: 722rpx;
+}
+.img:nth-of-type(2n+1){
+  transform: rotate(180deg);
+}

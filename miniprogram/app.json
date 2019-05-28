@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/navigator/index",
+    "pages/comment/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#242424",
+    "navigationBarTitleText": "婚礼邀请函",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom",
+    "backgroundColor": "#242424"
+  },
+  "tabBar": {
+    "backgroundColor": "#242424",
+    "color": "#fff",
+    "selectedColor": "#eccb90",
+    "list": [
+      {
+        "text": "邀请函",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "酒店导航",
+        "pagePath": "pages/navigator/index"
+      },
+      {
+        "text": "留言评论",
+        "pagePath": "pages/comment/index"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

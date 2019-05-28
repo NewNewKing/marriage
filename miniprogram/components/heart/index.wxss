@@ -1,0 +1,20 @@
+@import "/app.wxss";
+.heart-container{
+  position: relative;
+}
+.heart{
+  height: 40rpx;
+  width: 40rpx;
+  margin: 0 10rpx;
+}
+.grow{
+  animation: 1.8s ease 0.1s infinite normal both running grow;  
+}
+.sway{
+  animation: 1.8s ease 0.1s infinite normal both running sway;
+}
+.double{
+  position: absolute;
+  left: 0;
+  top: 0;
+}

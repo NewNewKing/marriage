@@ -1,0 +1,63 @@
+.shadow{
+  box-shadow: 0 0rpx 200rpx 0 #eccb90;
+}
+.container{
+  min-width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background-color: #242424;
+
+}
+.heart-container{
+  margin:40rpx auto;
+}
+.words-container{
+  padding-top: 40rpx;
+  position: relative;
+}
+
+.name{
+  font-size: 36rpx;
+  font-weight: bold;
+  width: 400rpx;
+  margin: 0 auto;
+  padding: 80rpx 0 40rpx 0;
+  /*padding:  30rpx 0;*/
+}
+.location{
+  color: #dfdfdf;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+}
+.address{
+  font-size: 24rpx;
+  width: 400rpx;
+  margin: 0 auto;
+  line-height: 1.5;
+  background: transparent;
+  border-color: transparent;
+  /*padding-bottom: 40rpx;*/
+}
+.address::after{
+  border:none;
+}
+.map{
+  width: 100%;
+  height: 600rpx;
+}
+.phone-container{
+  position: relative;
+  z-index: 500;
+  padding: 40rpx 80rpx;
+}
+.phone-call{
+  text-align: center;
+  font-size: 24rpx;
+}
+.person-icon{
+  height: 100rpx;
+  width: 100rpx;
+}
+
+
