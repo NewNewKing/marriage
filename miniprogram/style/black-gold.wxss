@@ -1,0 +1,21 @@
+.black-gold{
+    color: #eccb90;
+}
+
+.black-gold .color{
+  color: #eccb90;
+}
+.black-gold .border{
+  border: 3rpx solid #eccb90;
+}
+.black-gold .shadow{
+  box-shadow: 0 0rpx 100rpx 0 #eccb90;
+}
+.black-gold.container{
+  background-color: #242424;
+}
+/*首页*/
+.black-gold .cover{
+  background-color: rgba(0,0,0, 0.5)
+}
+

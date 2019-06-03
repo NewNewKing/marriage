@@ -1,4 +1,4 @@
-<view class="background">
+<view class="background {{mixed ? 'mixed': ''}}" wx:if="{{type == 1}}">
   <image src="/images/p.gif" mode="aspectFill" class="img"></image>
   <image src="/images/p.gif" mode="aspectFill" class="img"></image>
   <image src="/images/p.gif" mode="aspectFill" class="img"></image>
@@ -11,4 +11,14 @@
   <image src="/images/p.gif" mode="aspectFill" class="img"></image>
   <image src="/images/p.gif" mode="aspectFill" class="img"></image>
   <image src="/images/p.gif" mode="aspectFill" class="img"></image>
+</view>
+<view class="background2 {{mixed ? 'mixed': ''}}" wx:else>
+  <image src="/images/p+.gif" mode="aspectFill" class="img2"></image>
+  <image src="/images/p+.gif" mode="aspectFill" class="img2"></image>
+  <image src="/images/p+.gif" mode="aspectFill" class="img2"></image>
+  <image src="/images/p+.gif" mode="aspectFill" class="img2"></image>
+  <image src="/images/p+.gif" mode="aspectFill" class="img2"></image>
+  <image src="/images/p+.gif" mode="aspectFill" class="img2"></image>
+  <image src="/images/p+.gif" mode="aspectFill" class="img2"></image>
+  <image src="/images/p+.gif" mode="aspectFill" class="img2"></image>
 </view>

@@ -1,6 +1,8 @@
+@import "/style/black-gold.wxss";
+@import "/style/animate.wxss"
+
 page{
   /*color: #b69058;*/
-  color: #eccb90;
   width: 100vw;
   min-height: 100vh;
   display: -webkit-flex;
@@ -8,7 +10,13 @@ page{
   -webkit-flex-direction: column;
   flex-direction: column;
 }
-.bg{
+.container{
+  min-width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+}
+.fixed{
   position: fixed;
   left: 0;
   top: 0;
@@ -16,11 +24,20 @@ page{
   height: 100vh;
   overflow: hidden;
 }
-.color{
-  color: #eccb90;
+.bg-father{
+  position: relative;
+  overflow: hidden;
 }
-.border{
-  border: 3rpx solid #eccb90;
+.bg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.pad20{
+  padding: 20rpx;
 }
 .center{
   text-align: center;
@@ -42,6 +59,16 @@ page{
   justify-content: space-around;
 }
 
+.grow{
+  animation: 1.8s ease 0.1s infinite normal both running grow;  
+}
+.grow-once{
+  animation: 1.2s ease 0.1s 1 normal both running grow-once;
+}
+
+.sway{
+  animation: 1.8s ease 0.1s infinite normal both running sway;
+}
 @keyframes grow {
   0% {
     opacity: 1;
@@ -53,6 +80,19 @@ page{
     opacity: 0;
     transform-origin: 50% 50%;
     transform: scale(2);
+  }
+}
+@keyframes grow-once{
+  0% {
+    opacity: 0.2;
+    transform-origin: 50% 50%;
+    transform: scale(0.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1);
   }
 }
 

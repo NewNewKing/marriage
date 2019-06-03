@@ -1,3 +1,22 @@
-<view>
-  你好啊
+<view class="container {{style}}">
+  <swiper 
+    class="swiper"
+    current="{{current}}"
+    circular
+    vertical
+    autoplay>
+    <swiper-item style="background-color: red">
+      <view>1</view>
+    </swiper-item>
+    <swiper-item style="background-color: yellow">
+      <view>2</view>
+    </swiper-item>
+    <swiper-item style="background-color: green">
+      <view>3</view>
+    </swiper-item>
+  </swiper>
+  <!-- <view class="fixed flex-center-wrap flex-justify-around"> -->
+    <view class="cover zoomIn animated" bindtouchstart="start" bindtouchmove="move"></view>
+  <!-- </view> -->
+  
 </view>

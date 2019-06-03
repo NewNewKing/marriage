@@ -1,14 +1,3 @@
-.shadow{
-  box-shadow: 0 0rpx 200rpx 0 #eccb90;
-}
-.container{
-  min-width: 100vw;
-  min-height: 100vh;
-  box-sizing: border-box;
-  padding: 20rpx;
-  background-color: #242424;
-
-}
 .heart-container{
   margin:40rpx auto;
 }

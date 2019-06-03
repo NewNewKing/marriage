@@ -1,8 +1,9 @@
-const { lon, lat, name, address, phone1, phone2, bridegroom, bride} = require('../../marriage.info.js')
+const { lon, lat, name, address, phone1, phone2, bridegroom, bride } = require('../../marriage.info.js')
 const app = getApp()
 
 Page({
   data: {
+    style: app.globalData.style,
     lon,
     lat,
     name,
@@ -16,7 +17,10 @@ Page({
       height: 50
     }]  
   },
-
+  onReady(){
+    console.log(this)
+    console.log(app)
+  },
   markertap(){
     wx.openLocation({
       latitude: lat,

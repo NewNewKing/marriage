@@ -1,3 +1,4 @@
+const { style } = require('./marriage.info.js')
 //app.js
 App({
   onLaunch: function () {
@@ -10,6 +11,8 @@ App({
       })
     }
 
-    this.globalData = {}
+  },
+  globalData: {
+    style
   }
 })

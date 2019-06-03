@@ -1,9 +1,9 @@
-<view class="container">
-  <view class="bg">
-    <background></background>
+<view class="container {{style}} pad20">
+  <view class="fixed">
+    <background type="2" mixed="{{false}}"></background>
   </view>
     
-  <view class="center name">{{name}}</view>
+  <view class="center name animated bounceInDown">{{name}}</view>
 
   <map
     class="map border shadow"
@@ -15,16 +15,17 @@
     show-compass
   ></map>
   <view class="words-container">  
+      
     <view class="center location">- 分享地址 -</view>
-    <button class="center address color" open-type="share">{{address}}</button>
+    <button class="center address color rollIn animated slow" open-type="share">{{address}}</button>
   </view>
   <view class="flex-center-wrap flex-justify-around phone-container">
-    <view class="phone-call" bindtap="makecall" data-sex="male">
+    <view class="phone-call bounceIn delay-2s animated slow" bindtap="makecall" data-sex="male">
       <image src="/images/bridegroom.svg" class="person-icon" ></image>
       <view>呼叫新郎</view>
     </view>
     <heart count="3" double="{{true}}"></heart>
-    <view class="phone-call" bindtap="makecall" data-sex="female">
+    <view class="phone-call bounceIn delay-2s animated slow" bindtap="makecall" data-sex="female">
       <image src="/images/bride.svg" class="person-icon" ></image>
       <view>呼叫新娘</view>
     </view>

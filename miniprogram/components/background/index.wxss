@@ -8,10 +8,19 @@
   width: 278rpx;
   height: 439rpx;
 }
+.mixed .img:nth-of-type(2n+1){
+  transform: rotate(180deg);
+}
+.background2{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 916rpx;
+}
 .img2{
   width: 458rpx;
   height: 722rpx;
 }
-.img:nth-of-type(2n+1){
+.mixed .img2:nth-of-type(2n+1){
   transform: rotate(180deg);
 }
