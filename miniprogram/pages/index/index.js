@@ -1,4 +1,4 @@
-const { indexBanners } = require('../../marriage.info.js')
+const { indexBanners, bridegroom, bride, time, hotel, address} = require('../../marriage.info.js')
 const { ready } = require('../../utils/index.js')
 const app = getApp()
 
@@ -12,7 +12,14 @@ Page({
     current: 0,
     isMoving: false,
     y: 0,
-    animated: true
+    animated: true,
+
+    // 展示信息
+    bridegroom,
+    bride,
+    time,
+    hotel,
+    address
   },
   onReady(){
     ready(this)
@@ -53,6 +60,11 @@ Page({
         current: current - 1 <= -1 ? len - 1 : current - 1,
         isMoving: false
       })
+    }
+  },
+  onShareAppMessage(){
+    return {
+      title: `快来参加${bridegroom}和${bride}的婚礼吧！`
     }
   }
 })

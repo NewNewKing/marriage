@@ -3,7 +3,7 @@
      <view class="fixed">
       <background type="2" mixed="{{false}}"></background>
     </view>
-    <view class="name animated bounceInDown slow">{{name}}</view>
+    <view class="name animated bounceInDown delay-1s">{{hotel}}</view>
     <map
       class="map border shadow"
       longitude="{{lon}}" 
@@ -15,7 +15,7 @@
     ></map>
     <view class="words-container">  
       <view class="center location">- 分享地址 -</view>
-      <button class="center address color rotateIn animated delay-2s" open-type="share">{{address}}</button>
+      <button class="center address color rotateIn animated delay-2s fast" open-type="share">{{address}}</button>
     </view>
     <view class="flex-center-wrap flex-justify-around phone-container">
       <view class="phone-call bounceIn delay-3s animated" bindtap="makecall" data-sex="male">

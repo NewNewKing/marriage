@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "background": "/components/background/index"
+    "background": "/components/background/index",
+    "heart": "/components/heart/index"
   },
   "disableScroll": true
 }

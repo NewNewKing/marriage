@@ -16,19 +16,45 @@
         <view>3</view>
       </swiper-item>
     </swiper>
-    <!-- <view class="fixed flex-center-wrap flex-justify-around"> -->
-      <view class="cover animated {{animated ? 'zoomIn' : ''}} slow" bindtouchstart="start" bindtouchmove="move" >
+    <view class="cover-container" bindtouchstart="start" bindtouchmove="move">
+      <view class="max ele-box overflow">
         <background type="1" mixed="{{false}}"></background>
+      </view>
+      <view class="cover animated zoomIn slow" >
+        
         <view class="max">
-          <view class="border max ele-box animated {{animated ? 'zoomIn' : ''}} delay-1s"></view>
-          <view class="border max ele-box animated {{animated ? 'zoomIn' : ''}} delay-1-1s"></view>
-          <view class="border max ele-box animated {{animated ? 'zoomIn' : ''}} delay-1-2s"></view>
-          <view class="border max ele-box animated {{animated ? 'zoomIn' : ''}} delay-1-3s"></view>
-          <view class="border max ele-box animated {{animated ? 'zoomIn' : ''}} delay-1-4s"></view>
+          <view class="border max ele-box animated zoomIn delay-1s"></view>
+          <view class="border max ele-box animated zoomIn delay-1-1s"></view>
+          <view class="border max ele-box animated zoomIn delay-1-2s"></view>
+          <view class="border max ele-box animated zoomIn delay-1-3s"></view>
+          <view class="border max ele-box animated zoomIn delay-1-4s"></view>
+          <view class="max pad40">
+            <view  class="letter">
+              <image class="letter-img swing animated infinite slow" src="/images/letter.svg" mode="aspectFit"></image>
+            </view>
+            
+            <view class="name-box flex-center-wrap flex-justify-around">
+              <view class="animated fadeInRightBig delay-2s bride">{{bridegroom}}</view>
+              <view class="animated bounceInDown delay-2-5s">
+                <heart double></heart>
+              </view>
+              <view class="animated fadeInLeftBig delay-2s bride">{{bride}}</view>
+            </view>
+            <view class="info-box font28 center">
+              <view class="mar-b8 bold animated delay-2-5s fadeInUpBig">【 时间 · Time 】</view>
+              <view class="animated zoomIn delay-3-5s">{{time}}</view>
+            </view>
+
+            <view class="info-box font28 center">
+              <view class="mar-b8 bold animated delay-2-5s fadeInUpBig">【 地址 · Address 】</view>
+              <view class="mar-b8 animated zoomIn delay-3-5s">{{hotel}}</view>
+              <view class="animated zoomIn delay-3-5s">{{address}}</view>
+            </view>
+          </view>
         </view>
         
       </view>
-    <!-- </view> -->
+    </view>
   </view>
   
   

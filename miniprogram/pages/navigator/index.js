@@ -1,4 +1,4 @@
-const { lon, lat, name, address, phone1, phone2, bridegroom, bride } = require('../../marriage.info.js')
+const { lon, lat, hotel, address, phone1, phone2, bridegroom, bride } = require('../../marriage.info.js')
 const { ready } = require('../../utils/index.js')
 const app = getApp()
 
@@ -7,7 +7,7 @@ Page({
     style: app.globalData.style,
     lon,
     lat,
-    name,
+    hotel,
     address,
     markers: [{
       id: 1,
@@ -26,7 +26,7 @@ Page({
     wx.openLocation({
       latitude: lat,
       longitude: lon,
-      name,
+      hotel,
       address
     })
   },
@@ -42,7 +42,6 @@ Page({
         name = '新娘'
       break
     }
-    console.log(number)
     if (number) {
       wx.makePhoneCall({
         phoneNumber: number + ''

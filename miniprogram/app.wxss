@@ -37,13 +37,32 @@ page{
   height: 100vh;
   overflow: hidden;
 }
+.overflow{
+  overflow: hidden;
+}
+.mar-b8{
+  margin-bottom: 8rpx;
+}
 .pad20{
   padding: 20rpx;
+}
+.pad40{
+  padding: 40rpx;
+}
+.font24{
+  font-size: 24rpx;
+}
+.font28{
+  font-size: 28rpx;
+}
+.bold{
+  font-weight: bold;
 }
 .max{
   height: 100%;
   width: 100%;
   position: relative;
+  box-sizing: border-box;
 }
 .center{
   text-align: center;

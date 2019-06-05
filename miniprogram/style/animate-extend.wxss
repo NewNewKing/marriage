@@ -85,5 +85,38 @@
   animation-delay: 2.4s;
 }
 .animated.delay-2-5s {
-  animation-delay: 1.5s;
+  animation-delay: 2.5s;
+}
+.animated.delay-2-6s {
+  animation-delay: 2.6s;
+}
+.animated.delay-2-7s {
+  animation-delay: 2.7s;
+}
+.animated.delay-2-8s {
+  animation-delay: 2.8s;
+}
+.animated.delay-2-9s {
+  animation-delay: 2.9s;
+}
+.animated.delay-3-1s {
+  animation-delay: 3.1s;
+}
+.animated.delay-3-2s {
+  animation-delay: 3.2s;
+}
+.animated.delay-3-3s {
+  animation-delay: 3.3s;
+}
+.animated.delay-3-4s {
+  animation-delay: 3.4s;
+}
+.animated.delay-3-5s {
+  animation-delay: 3.5s;
+}
+.animated.delay-3-6s {
+  animation-delay: 3.6s;
+}
+.animated.delay-3-7s {
+  animation-delay: 3.7s;
 }

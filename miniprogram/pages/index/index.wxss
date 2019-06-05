@@ -2,21 +2,39 @@
   height: 100vh;
   width: 100vw;
 }
-.cover{
+.cover-container{
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  height: 500rpx;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.cover{
   width: 90vw;
-  overflow: hidden;
-  box-sizing: border-box;
   padding: 20rpx;
 }
 .ele-box{
   position: absolute;
   left: 0;
   top: 0;
+  box-sizing: border-box;
+  padding: 40rpx;
+}
+.name-box{
+  padding: 0 40rpx;
+  margin-bottom: 40rpx;
+}
+.info-box{
+  margin-bottom: 40rpx;
+}
+.letter{
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: -80rpx;
+}
+.letter-img{
+  height: 100%;
+  width: 100%;
 }
