@@ -5,13 +5,12 @@
   padding-top: 40rpx;
   position: relative;
 }
-
 .name{
   font-size: 36rpx;
   font-weight: bold;
-  width: 400rpx;
+  width: 390rpx;
   margin: 0 auto;
-  padding: 80rpx 0 40rpx 0;
+  padding: 80rpx 0 60rpx 0;
   /*padding:  30rpx 0;*/
 }
 .location{
@@ -19,16 +18,15 @@
   font-size: 24rpx;
   margin-bottom: 20rpx;
 }
-.address{
-  font-size: 24rpx;
+.address{ 
   width: 400rpx;
   margin: 0 auto;
+  font-size: 24rpx;
   line-height: 1.5;
   background: transparent;
   border-color: transparent;
-  /*padding-bottom: 40rpx;*/
 }
-.address::after{
+.address-btn::after{
   border:none;
 }
 .map{
@@ -39,6 +37,7 @@
   position: relative;
   z-index: 500;
   padding: 40rpx 80rpx;
+  box-sizing: border-box;
 }
 .phone-call{
   text-align: center;

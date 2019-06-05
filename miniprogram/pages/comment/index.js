@@ -1,4 +1,8 @@
-//index.js
+const { ready } = require('../../utils/index.js')
 const app = getApp()
 
-Page({})
+Page({
+  data: {
+    style: app.globalData.style,
+  }
+})

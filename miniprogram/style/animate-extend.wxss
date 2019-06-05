@@ -1,0 +1,89 @@
+
+.grow{
+  animation: 1.8s ease 0.1s infinite normal both running grow;  
+}
+.grow-once{
+  animation: 1.2s ease 0.1s 1 normal both running grow-once;
+}
+
+.sway{
+  animation: 1.8s ease 0.1s infinite normal both running sway;
+}
+
+@keyframes grow {
+  0% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(2);
+  }
+}
+@keyframes grow-once{
+  0% {
+    opacity: 0.2;
+    transform-origin: 50% 50%;
+    transform: scale(0.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1);
+  }
+}
+
+@keyframes sway{
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.animated.delay-0-5s {
+  animation-delay: 0.5s;
+}
+.animated.delay-1-1s {
+  animation-delay: 1.1s;
+}
+.animated.delay-1-2s {
+  animation-delay: 1.2s;
+}
+.animated.delay-1-3s {
+  animation-delay: 1.3s;
+}
+.animated.delay-1-4s {
+  animation-delay: 1.4s;
+}
+.animated.delay-1-5s {
+  animation-delay: 1.5s;
+}
+.animated.delay-2-1s {
+  animation-delay: 2.1s;
+}
+.animated.delay-2-2s {
+  animation-delay: 2.2s;
+}
+.animated.delay-2-3s {
+  animation-delay: 2.3s;
+}
+.animated.delay-2-4s {
+  animation-delay: 2.4s;
+}
+.animated.delay-2-5s {
+  animation-delay: 1.5s;
+}

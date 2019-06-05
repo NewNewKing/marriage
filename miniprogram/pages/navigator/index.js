@@ -1,4 +1,5 @@
 const { lon, lat, name, address, phone1, phone2, bridegroom, bride } = require('../../marriage.info.js')
+const { ready } = require('../../utils/index.js')
 const app = getApp()
 
 Page({
@@ -15,11 +16,11 @@ Page({
       iconPath: '/images/nav.png',
       width: 50,
       height: 50
-    }]  
+    }],
+    ready: false
   },
   onReady(){
-    console.log(this)
-    console.log(app)
+    ready(this)
   },
   markertap(){
     wx.openLocation({

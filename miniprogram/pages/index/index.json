@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "background": "/components/background/index"
+  },
   "disableScroll": true
 }

@@ -1,34 +1,34 @@
-<view class="container {{style}} pad20">
-  <view class="fixed">
-    <background type="2" mixed="{{false}}"></background>
-  </view>
-    
-  <view class="center name animated bounceInDown">{{name}}</view>
-
-  <map
-    class="map border shadow"
-    longitude="{{lon}}" 
-    latitude="{{lat}}"
-    markers="{{markers}}"
-    bindmarkertap="markertap"
-    show-location
-    show-compass
-  ></map>
-  <view class="words-container">  
-      
-    <view class="center location">- 分享地址 -</view>
-    <button class="center address color rollIn animated slow" open-type="share">{{address}}</button>
-  </view>
-  <view class="flex-center-wrap flex-justify-around phone-container">
-    <view class="phone-call bounceIn delay-2s animated slow" bindtap="makecall" data-sex="male">
-      <image src="/images/bridegroom.svg" class="person-icon" ></image>
-      <view>呼叫新郎</view>
+<view class="container {{style}}">
+  <view class="container pad20" wx:if="{{ready}}">
+     <view class="fixed">
+      <background type="2" mixed="{{false}}"></background>
     </view>
-    <heart count="3" double="{{true}}"></heart>
-    <view class="phone-call bounceIn delay-2s animated slow" bindtap="makecall" data-sex="female">
-      <image src="/images/bride.svg" class="person-icon" ></image>
-      <view>呼叫新娘</view>
+    <view class="name animated bounceInDown slow">{{name}}</view>
+    <map
+      class="map border shadow"
+      longitude="{{lon}}" 
+      latitude="{{lat}}"
+      markers="{{markers}}"
+      bindmarkertap="markertap"
+      show-location
+      show-compass
+    ></map>
+    <view class="words-container">  
+      <view class="center location">- 分享地址 -</view>
+      <button class="center address color rotateIn animated delay-2s" open-type="share">{{address}}</button>
+    </view>
+    <view class="flex-center-wrap flex-justify-around phone-container">
+      <view class="phone-call bounceIn delay-3s animated" bindtap="makecall" data-sex="male">
+        <image src="/images/bridegroom.svg" class="person-icon" ></image>
+        <view>呼叫新郎</view>
+      </view>
+      <view class="zoomIn delay-3s animated"> 
+        <heart count="3" double="{{true}}"></heart>
+      </view>
+      <view class="phone-call bounceIn delay-3s animated" bindtap="makecall" data-sex="female">
+        <image src="/images/bride.svg" class="person-icon" ></image>
+        <view>呼叫新娘</view>
+      </view>
     </view>
   </view>
-
 </view>

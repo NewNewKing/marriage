@@ -1,5 +1,6 @@
 @import "/style/black-gold.wxss";
 @import "/style/animate.wxss"
+@import "/style/animate-extend.wxss"
 
 page{
   /*color: #b69058;*/
@@ -39,6 +40,11 @@ page{
 .pad20{
   padding: 20rpx;
 }
+.max{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
 .center{
   text-align: center;
 }
@@ -57,59 +63,4 @@ page{
 .flex-justify-around {
   -webkit-justify-content: space-around;
   justify-content: space-around;
-}
-
-.grow{
-  animation: 1.8s ease 0.1s infinite normal both running grow;  
-}
-.grow-once{
-  animation: 1.2s ease 0.1s 1 normal both running grow-once;
-}
-
-.sway{
-  animation: 1.8s ease 0.1s infinite normal both running sway;
-}
-@keyframes grow {
-  0% {
-    opacity: 1;
-    transform-origin: 50% 50%;
-    transform: scale(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform-origin: 50% 50%;
-    transform: scale(2);
-  }
-}
-@keyframes grow-once{
-  0% {
-    opacity: 0.2;
-    transform-origin: 50% 50%;
-    transform: scale(0.2);
-  }
-
-  100% {
-    opacity: 1;
-    transform-origin: 50% 50%;
-    transform: scale(1);
-  }
-}
-
-@keyframes sway{
-  20% {
-    transform: rotate(15deg);
-  }
-  40% {
-    transform: rotate(-10deg);
-  }
-  60% {
-    transform: rotate(5deg);
-  }
-  80% {
-    transform: rotate(-5deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
 }

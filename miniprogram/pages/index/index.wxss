@@ -11,4 +11,12 @@
   margin: auto;
   height: 500rpx;
   width: 90vw;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.ele-box{
+  position: absolute;
+  left: 0;
+  top: 0;
 }

@@ -1,22 +1,35 @@
 <view class="container {{style}}">
-  <swiper 
-    class="swiper"
-    current="{{current}}"
-    circular
-    vertical
-    autoplay>
-    <swiper-item style="background-color: red">
-      <view>1</view>
-    </swiper-item>
-    <swiper-item style="background-color: yellow">
-      <view>2</view>
-    </swiper-item>
-    <swiper-item style="background-color: green">
-      <view>3</view>
-    </swiper-item>
-  </swiper>
-  <!-- <view class="fixed flex-center-wrap flex-justify-around"> -->
-    <view class="cover zoomIn animated" bindtouchstart="start" bindtouchmove="move"></view>
-  <!-- </view> -->
+  <view class="container" wx:if="{{ready}}">
+    <swiper 
+      class="swiper"
+      current="{{current}}"
+      circular
+      vertical
+      autoplay>
+      <swiper-item style="background-color: red">
+        <image src="http://pskdju3d4.bkt.clouddn.com/heart_2.png"></image>
+      </swiper-item>
+      <swiper-item style="background-color: yellow">
+        <view>2</view>
+      </swiper-item>
+      <swiper-item style="background-color: green">
+        <view>3</view>
+      </swiper-item>
+    </swiper>
+    <!-- <view class="fixed flex-center-wrap flex-justify-around"> -->
+      <view class="cover animated {{animated ? 'zoomIn' : ''}} slow" bindtouchstart="start" bindtouchmove="move" >
+        <background type="1" mixed="{{false}}"></background>
+        <view class="max">
+          <view class="border max ele-box animated {{animated ? 'zoomIn' : ''}} delay-1s"></view>
+          <view class="border max ele-box animated {{animated ? 'zoomIn' : ''}} delay-1-1s"></view>
+          <view class="border max ele-box animated {{animated ? 'zoomIn' : ''}} delay-1-2s"></view>
+          <view class="border max ele-box animated {{animated ? 'zoomIn' : ''}} delay-1-3s"></view>
+          <view class="border max ele-box animated {{animated ? 'zoomIn' : ''}} delay-1-4s"></view>
+        </view>
+        
+      </view>
+    <!-- </view> -->
+  </view>
+  
   
 </view>
