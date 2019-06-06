@@ -14,6 +14,7 @@ Page({
     y: 0,
     animated: true,
 
+    bgList: indexBanners,
     // 展示信息
     bridegroom,
     bride,
@@ -35,6 +36,7 @@ Page({
     })
   },
   start({ changedTouches }){
+    if (!changedTouches[0]) return 
     const { clientY } = changedTouches[0]
     this.setData({
       isMoving: true,
@@ -42,6 +44,7 @@ Page({
     })
   },
   move({ changedTouches }){
+    if (!changedTouches[0]) return 
     const { clientY } = changedTouches[0]
     const { y , isMoving, current } = this.data
     const len = indexBanners.length

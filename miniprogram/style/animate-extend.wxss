@@ -120,3 +120,24 @@
 .animated.delay-3-7s {
   animation-delay: 3.7s;
 }
+.animated.delay-4-5s {
+  animation-delay: 4.5s;
+}
+.animated.delay-5-5s {
+  animation-delay: 5.5s;
+}
+.animated.delay-6s {
+  animation-delay: 6s;
+}
+.animated.delay-6-2s {
+  animation-delay: 6.2s;
+}
+.animated.delay-6-5s {
+  animation-delay: 6.5s;
+}
+.animated.delay-7s {
+  animation-delay: 7s;
+}
+.animated.delay-8s {
+  animation-delay: 8s;
+}

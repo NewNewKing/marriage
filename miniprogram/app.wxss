@@ -55,6 +55,12 @@ page{
 .font28{
   font-size: 28rpx;
 }
+.font32{
+  font-size: 32rpx;
+}
+.font36{
+  font-size: 36rpx;
+}
 .bold{
   font-weight: bold;
 }

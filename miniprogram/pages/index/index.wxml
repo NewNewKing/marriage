@@ -6,49 +6,59 @@
       circular
       vertical
       autoplay>
-      <swiper-item style="background-color: red">
-        <image src="http://pskdju3d4.bkt.clouddn.com/heart_2.png"></image>
-      </swiper-item>
-      <swiper-item style="background-color: yellow">
-        <view>2</view>
-      </swiper-item>
-      <swiper-item style="background-color: green">
-        <view>3</view>
+      <swiper-item wx:for="{{bgList}}" wx:key="{{item}}">
+        <image src="{{item}}" class="bg-img" mode="aspectFill"></image>
       </swiper-item>
     </swiper>
     <view class="cover-container" bindtouchstart="start" bindtouchmove="move">
-      <view class="max ele-box overflow">
-        <background type="1" mixed="{{false}}"></background>
-      </view>
-      <view class="cover animated zoomIn slow" >
-        
+      <view class="cover animated zoomIn slow delay-0-5s" >
+        <view class="max ele-box overflow">
+          <background type="1" mixed="{{false}}"></background>
+        </view>
         <view class="max">
           <view class="border max ele-box animated zoomIn delay-1s"></view>
           <view class="border max ele-box animated zoomIn delay-1-1s"></view>
           <view class="border max ele-box animated zoomIn delay-1-2s"></view>
           <view class="border max ele-box animated zoomIn delay-1-3s"></view>
           <view class="border max ele-box animated zoomIn delay-1-4s"></view>
-          <view class="max pad40">
-            <view  class="letter">
-              <image class="letter-img swing animated infinite slow" src="/images/letter.svg" mode="aspectFit"></image>
+
+          <view class="max pad40 center font28">
+            <view  class="letter animated rollIn delay-2s">
+              <image class="letter-img swing animated infinite slow delay-3s" src="/images/letter.svg" mode="aspectFit"></image>
             </view>
-            
+            <view class="info-box title-box flex-center-wrap flex-justify-around animated fadeInDown delay-2-5s">
+              <image src="/images/hun.png" mode="aspectFit" class="hanzi"></image>
+              <image src="/images/li.png" mode="aspectFit" class="hanzi"></image>
+              <image src="/images/yao.png" mode="aspectFit" class="hanzi"></image>
+              <image src="/images/qing.png" mode="aspectFit" class="hanzi"></image>
+              <image src="/images/han.png" mode="aspectFit" class="hanzi"></image>
+            </view>
             <view class="name-box flex-center-wrap flex-justify-around">
-              <view class="animated fadeInRightBig delay-2s bride">{{bridegroom}}</view>
-              <view class="animated bounceInDown delay-2-5s">
+              <view class="animated fadeInRightBig delay-2-5s bride">{{bridegroom}}</view>
+              <view class="animated bounceInDown delay-3s">
                 <heart double></heart>
               </view>
-              <view class="animated fadeInLeftBig delay-2s bride">{{bride}}</view>
-            </view>
-            <view class="info-box font28 center">
-              <view class="mar-b8 bold animated delay-2-5s fadeInUpBig">【 时间 · Time 】</view>
-              <view class="animated zoomIn delay-3-5s">{{time}}</view>
+              <view class="animated fadeInLeftBig delay-2-5s bride">{{bride}}</view>
             </view>
 
-            <view class="info-box font28 center">
-              <view class="mar-b8 bold animated delay-2-5s fadeInUpBig">【 地址 · Address 】</view>
-              <view class="mar-b8 animated zoomIn delay-3-5s">{{hotel}}</view>
-              <view class="animated zoomIn delay-3-5s">{{address}}</view>
+            <view class="info-box animated zoomIn delay-4s">
+              <view class="mar-b8">沉浸在幸福中的我们</view>
+              <view>诚邀您来参加我们的婚礼</view>
+            </view>
+            
+            <view class="info-box">
+              <view class="mar-b8 bold animated delay-4s fadeInUpBig">【 时间 · Time 】</view>
+              <view class="animated zoomIn delay-5s">{{time}}</view>
+            </view>
+
+            <view class="info-box">
+              <view class="mar-b8 bold animated delay-5s fadeInUpBig">【 地址 · Address 】</view>
+              <view class="mar-b8 animated zoomIn delay-6s">{{hotel}}</view>
+              <view class="animated zoomIn delay-6-2s">{{address}}</view>
+            </view>
+
+            <view class="bold font32 animated fadeInUp delay-7s">
+              <view class="animated heartBeat infinite delay-8s slow">敬备喜酌 · 恭请光临</view>
             </view>
           </view>
         </view>

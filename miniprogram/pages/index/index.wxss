@@ -2,6 +2,10 @@
   height: 100vh;
   width: 100vw;
 }
+.bg-img{
+  height: 100%;
+  width: 100%;
+}
 .cover-container{
   position: absolute;
   left: 50%;
@@ -20,18 +24,26 @@
   padding: 40rpx;
 }
 .name-box{
-  padding: 0 40rpx;
+  padding: 0 60rpx;
   margin-bottom: 40rpx;
+  font-size: 50rpx;
 }
 .info-box{
   margin-bottom: 40rpx;
+}
+.title-box{
+  padding: 20rpx 0 40rpx 0;
+}
+.hanzi{
+  width: 90rpx;
+  height: 90rpx;
 }
 .letter{
   width: 120rpx;
   height: 120rpx;
   position: absolute;
   left: 50%;
-  transform: translate(-50%);
+  margin-left: -60rpx;
   top: -80rpx;
 }
 .letter-img{
