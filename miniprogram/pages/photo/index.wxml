@@ -10,7 +10,7 @@
     </swiper-item>
   </swiper>
   <view wx:if="{{mode === 'scale'}}">
-    <header />
+    <ui-header />
     <view class="fixed">
       <ui-background type="{{2}}" mixed />
     </view>
