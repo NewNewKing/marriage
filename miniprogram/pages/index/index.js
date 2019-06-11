@@ -1,5 +1,12 @@
-const { indexBanners, bridegroom, bride, time, hotel, address} = require('../../marriage.info.js')
-const { ready } = require('../../utils/index.js')
+const {
+  indexBanners,
+  groom,
+  bride,
+  time,
+  hotel,
+  address
+} = require("../../marriage.info.js")
+const { ready, showHeart } = require("../../utils/index.js")
 const app = getApp()
 
 Page({
@@ -10,47 +17,55 @@ Page({
     style: app.globalData.style,
     isShowCover: true,
     isFirst: true,
-    
+
     current: 0,
     isMoving: false,
     y: 0,
 
     bgList: indexBanners,
     // 展示信息
-    bridegroom,
+    groom,
     bride,
     time,
     hotel,
     address
   },
-  onReady(){
+  showHeart(e) {
+    showHeart(this, e)
+  },
+  onReady() {
     ready(this)
   },
-  toggleCover(){
-
+  toggleCover({
+    currentTarget: {
+      dataset: { type }
+    }
+  }) {
     const { isShowCover } = this.data
-    console.log(isShowCover)
+    if (type === "swiper" && !isShowCover) {
+      return
+    }
     this.setData({
       isFirst: false,
       isShowCover: !isShowCover
     })
   },
-  start({ changedTouches }){
-    if (!changedTouches[0]) return 
+  start({ changedTouches }) {
+    if (!changedTouches[0]) return
     const { clientY } = changedTouches[0]
     this.setData({
       isMoving: true,
       y: clientY
     })
   },
-  move({ changedTouches }){
-    if (!changedTouches[0]) return 
+  move({ changedTouches }) {
+    if (!changedTouches[0]) return
     const { clientY } = changedTouches[0]
-    const { y , isMoving, current } = this.data
+    const { y, isMoving, current } = this.data
     const len = indexBanners.length
 
     if (!isMoving) {
-      return 
+      return
     }
     if (y - clientY >= 30) {
       this.setData({
@@ -65,9 +80,9 @@ Page({
       })
     }
   },
-  onShareAppMessage(){
+  onShareAppMessage() {
     return {
-      title: `快来参加${bridegroom}和${bride}的婚礼吧！`
+      title: `快来参加${groom}和${bride}的婚礼吧！`
     }
   }
 })

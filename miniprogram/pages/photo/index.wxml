@@ -1,4 +1,5 @@
-<view class="container {{style}}">
+<view class="container {{style}}" bindtap="showHeart">
+  <ui-tap-shape id="tap"/>
   <swiper 
     class="container"
     circular
@@ -11,7 +12,7 @@
   <view wx:if="{{mode === 'scale'}}">
     <header />
     <view class="fixed">
-      <background type="{{2}}" mixed />
+      <ui-background type="{{2}}" mixed />
     </view>
     <view class="photo-wrap flex-center-wrap flex-multi-row flex-justify-between">
       <view class="photo-item border shadow animated pulse infinite slower" wx:for="{{photos}}" wx:key="*this" bindtap="showPhoto" data-index="{{index}}">

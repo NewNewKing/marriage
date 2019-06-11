@@ -1,0 +1,47 @@
+.heart {
+  width: 20rpx;
+  height: 20rpx;
+  position: fixed;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+.heart-warp{
+  position: fixed;
+  z-index: 9999;
+}
+.none{
+  display: none;
+}
+.animated.heart-warp{
+  animation-name: heart;
+  animation-fill-mode: both;
+  animation-duration: 2s;
+}
+.heart:after,
+.heart:before {
+  content: "";
+  width: inherit;
+  height: inherit;
+  background: inherit;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  position: fixed;
+}
+.heart:after {
+  top: -10rpx;
+}
+.heart:before {
+  left: -10rpx;
+}
+@keyframes heart {
+  0% {
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale3d(1.48, 1.48, 1.48) translate3d(0, -180rpx, 0);
+    opacity: 0;
+  }
+}

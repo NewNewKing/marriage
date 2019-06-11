@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "ui-tap-shape": "/components/tap-shape/index"
+  },
   "navigationBarTitleText": "留言评论"
 }

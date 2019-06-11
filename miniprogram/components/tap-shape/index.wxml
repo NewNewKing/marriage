@@ -1,0 +1,5 @@
+<view>
+  <view class="heart-warp {{item.isUsing ? 'animated' : 'none'}}"  wx:for="{{list}}" wx:key="id" style="left: {{item.left}}px;top:{{item.top}}px;">
+    <view class="heart" style="background-color: {{item.color}}"></view>
+  </view>
+</view>

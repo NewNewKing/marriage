@@ -1,9 +1,10 @@
-<view class="container {{style}}">
+<view class="container {{style}}" bindtap="showHeart">
+  <ui-tap-shape id="tap"/>
   <view class="container pad20" wx:if="{{ready}}">
      <view class="fixed">
-      <background type="2" mixed></background>
+      <ui-background type="2" mixed></ui-background>
     </view>
-    <view class="name animated bounceInDown delay-1s">{{hotel}}</view>
+    <view class="name animated bounceInDown delay-0-5s">{{hotel}}</view>
     <map
       class="map border shadow100"
       longitude="{{lon}}" 
@@ -14,18 +15,18 @@
       show-compass
     ></map>
     <view class="words-container">  
-      <view class="center location animated delay-1-6s rotateIn fast">- 分享地址 -</view>
-      <button class="center address color rotateIn animated delay-2s fast" open-type="share">{{address}}</button>
+      <view class="center location animated delay-1s rotateIn fast">- 分享地址 -</view>
+      <button class="center address color rotateIn animated delay-1-6s fast" open-type="share">{{address}}</button>
     </view>
     <view class="flex-center-wrap flex-justify-around phone-container">
-      <view class="phone-call bounceIn delay-3s animated" bindtap="makecall" data-sex="male">
-        <image src="/images/bridegroom.svg" class="person-icon" ></image>
+      <view class="phone-call bounceIn delay-2-8s animated slow" bindtap="makecall" data-sex="male">
+        <image src="/images/groom.svg" class="person-icon" ></image>
         <view>呼叫新郎</view>
       </view>
-      <view class="zoomIn delay-3s animated"> 
-        <heart count="3" double="{{true}}"></heart>
+      <view class="zoomIn delay-4s slow animated"> 
+        <ui-heart count="3" double="{{true}}"></ui-heart>
       </view>
-      <view class="phone-call bounceIn delay-3s animated" bindtap="makecall" data-sex="female">
+      <view class="phone-call bounceIn delay-2-8s animated slow" bindtap="makecall" data-sex="female">
         <image src="/images/bride.svg" class="person-icon" ></image>
         <view>呼叫新娘</view>
       </view>

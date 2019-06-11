@@ -1,4 +1,5 @@
-<view class="container {{style}}">
+<view class="container {{style}}" bindtap="showHeart">
+  <ui-tap-shape id="tap"/>
   <view class="container" wx:if="{{ready}}">
     <swiper 
       class="swiper"
@@ -7,7 +8,7 @@
       vertical
       autoplay>
       <swiper-item wx:for="{{bgList}}" wx:key="{{item}}">
-        <image src="{{item}}" class="bg-img" mode="aspectFill" bindtap="toggleCover"></image>
+        <image src="{{item}}" class="bg-img" mode="aspectFill" bindtap="toggleCover" data-type="swiper"></image>
       </swiper-item>
     </swiper>
     <view class="cover-container center" bindtouchstart="start" bindtouchmove="move">
@@ -18,7 +19,7 @@
       </view>
       <view class="cover animated slow {{isShowCover ? 'zoomInDown2' : 'zoomOutUp2'}} {{isFirst ? 'delay-0-7s' : ''}}" >
         <view class="max ele-box overflow">
-          <background type="1" mixed="{{false}}"></background>
+          <ui-background type="1" mixed="{{false}}"></ui-background>
         </view>
         <view class="max">
           <view class="border max ele-box animated zoomIn delay-1-7s"></view>
@@ -36,9 +37,9 @@
               <image src="/images/han.png" mode="aspectFit" class="hanzi"></image>
             </view>
             <view class="name-box flex-center-wrap flex-justify-around">
-              <view class="animated fadeInRightBig delay-2-5s bride">{{bridegroom}}</view>
+              <view class="animated fadeInRightBig delay-2-5s bride">{{groom}}</view>
               <view class="animated bounceInDown delay-3s">
-                <heart double></heart>
+                <ui-heart double ></ui-heart>
               </view>
               <view class="animated fadeInLeftBig delay-2-5s bride">{{bride}}</view>
             </view>

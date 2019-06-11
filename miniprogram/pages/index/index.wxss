@@ -46,7 +46,7 @@
   position: absolute;
   left: 0%;
   /*margin-left: -60rpx;*/
-  top: -80rpx;
+  top: -60rpx;
   z-index: 999;
 }
 .letter-box{

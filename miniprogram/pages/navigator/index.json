@@ -1,8 +1,8 @@
 {
   "navigationBarTitleText": "酒店导航",
   "usingComponents": {
-    "heart": "/components/heart/index",
-    "background": "/components/background/index",
-    "header": "/components/header/index"
+    "ui-heart": "/components/heart/index",
+    "ui-background": "/components/background/index",
+    "ui-tap-shape": "/components/tap-shape/index"
   }
 }

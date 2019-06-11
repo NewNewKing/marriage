@@ -1,8 +1,7 @@
 {
   "navigationBarTitleText": "相册",
   "usingComponents": {
-    "heart": "/components/heart/index",
-    "background": "/components/background/index",
-    "header": "/components/header/index"
+    "ui-background": "/components/background/index",
+    "ui-tap-shape": "/components/tap-shape/index"
   }
 }

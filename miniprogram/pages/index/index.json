@@ -1,7 +1,8 @@
 {
   "usingComponents": {
-    "background": "/components/background/index",
-    "heart": "/components/heart/index"
+    "ui-background": "/components/background/index",
+    "ui-heart": "/components/heart/index",
+    "ui-tap-shape": "/components/tap-shape/index"
   },
   "disableScroll": true
 }
