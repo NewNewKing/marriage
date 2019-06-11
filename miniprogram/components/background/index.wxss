@@ -2,7 +2,8 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 834rpx;
+  font-size: 0;
+  line-height: 0;
 }
 .img{
   width: 278rpx;
@@ -11,10 +12,10 @@
 .mixed .img:nth-of-type(2n+1){
   transform: rotate(180deg);
 }
+.background1{
+  width: 834rpx;
+}
 .background2{
-  position: absolute;
-  left: 0;
-  top: 0;
   width: 916rpx;
 }
 .img2{
