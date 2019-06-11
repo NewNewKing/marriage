@@ -5,6 +5,7 @@ const app = getApp()
 Page({
   data: {
     style: app.globalData.style,
+    ready: false,
     lon,
     lat,
     hotel,
@@ -17,7 +18,6 @@ Page({
       width: 50,
       height: 50
     }],
-    ready: false
   },
   onReady(){
     ready(this)

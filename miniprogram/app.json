@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/navigator/index",
-    "pages/comment/index"
+    "pages/comment/index",
+    "pages/photo/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#242424",
@@ -19,6 +20,10 @@
       {
         "text": "邀请函",
         "pagePath": "pages/index/index"
+      },
+      {
+        "text": "相册",
+        "pagePath": "pages/photo/index"
       },
       {
         "text": "酒店导航",

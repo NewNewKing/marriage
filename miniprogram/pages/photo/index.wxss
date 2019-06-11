@@ -1,0 +1,28 @@
+.photo-bg{
+  z-index: 0;
+}
+.photo-wrap{
+  padding: 40rpx;
+  position: relative;
+  z-index: 1;
+}
+.photo-item{
+  height: 120rpx;
+  width: 120rpx;
+  margin: 20rpx;
+  box-sizing: border-box;
+}
+.photo-img{
+  height: 100%;
+  width: 100%;
+}
+.toggle{
+  position: fixed;
+  left: 20rpx;
+  bottom: 40rpx;
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  border-radius:40rpx;
+  z-index: 999;
+}

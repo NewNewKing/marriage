@@ -1,0 +1,26 @@
+<view class="container {{style}}">
+  <swiper 
+    class="container"
+    circular
+    autoplay
+    wx:if="{{mode === 'swiper'}}">
+    <swiper-item wx:for="{{photos}}" wx:key="{{item}}">
+      <image src="{{item}}" class="photo-img" mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+  <view wx:if="{{mode === 'scale'}}">
+    <header />
+    <view class="fixed">
+      <background type="{{2}}" mixed />
+    </view>
+    <view class="photo-wrap flex-center-wrap flex-multi-row flex-justify-between">
+      <view class="photo-item border shadow animated pulse infinite slower" wx:for="{{photos}}" wx:key="*this" bindtap="showPhoto" data-index="{{index}}">
+        <image class="photo-img animated jackInTheBox" src="{{item}}" mode="aspectFill"></image>
+      </view>
+      <view class="photo-item" wx:for="{{[1,2,3,4,5]}}" wx:key="*this"></view>
+    </view>
+  </view>
+  <view class="toggle border shadow animated infinite heartBeat slow" bindtap="toggleView">
+    查看{{mode === 'swiper' ? '缩略图' : '轮播图'}}
+  </view>
+</view>

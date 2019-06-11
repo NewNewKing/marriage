@@ -1,3 +1,4 @@
+//<background type="{{2}}" mixed>
 Component({
   properties:{
     type: {

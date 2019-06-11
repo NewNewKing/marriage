@@ -1,11 +1,11 @@
 <view class="container {{style}}">
   <view class="container pad20" wx:if="{{ready}}">
      <view class="fixed">
-      <background type="2" mixed="{{false}}"></background>
+      <background type="2" mixed></background>
     </view>
     <view class="name animated bounceInDown delay-1s">{{hotel}}</view>
     <map
-      class="map border shadow"
+      class="map border shadow100"
       longitude="{{lon}}" 
       latitude="{{lat}}"
       markers="{{markers}}"
@@ -14,7 +14,7 @@
       show-compass
     ></map>
     <view class="words-container">  
-      <view class="center location">- 分享地址 -</view>
+      <view class="center location animated delay-1-6s rotateIn fast">- 分享地址 -</view>
       <button class="center address color rotateIn animated delay-2s fast" open-type="share">{{address}}</button>
     </view>
     <view class="flex-center-wrap flex-justify-around phone-container">

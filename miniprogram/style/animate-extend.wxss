@@ -72,6 +72,18 @@
 .animated.delay-1-5s {
   animation-delay: 1.5s;
 }
+.animated.delay-1-6s {
+  animation-delay: 1.6s;
+}
+.animated.delay-1-7s {
+  animation-delay: 1.7s;
+}
+.animated.delay-1-8s {
+  animation-delay: 1.8s;
+}
+.animated.delay-1-9s {
+  animation-delay: 1.9s;
+}
 .animated.delay-2-1s {
   animation-delay: 2.1s;
 }

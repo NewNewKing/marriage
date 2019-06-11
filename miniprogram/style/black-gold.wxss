@@ -8,8 +8,11 @@
 .black-gold .border{
   border: 2rpx solid #eccb90;
 }
-.black-gold .shadow{
+.black-gold .shadow100{
   box-shadow: 0 0rpx 100rpx 0 #eccb90;
+}
+.black-gold .shadow{
+  box-shadow: 0 0rpx 20rpx 0 #eccb90;
 }
 .black-gold.container{
   background-color: #242424;

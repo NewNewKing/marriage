@@ -25,17 +25,11 @@ page{
   height: 100vh;
   overflow: hidden;
 }
-.bg-father{
+.max{
+  height: 100%;
+  width: 100%;
   position: relative;
-  overflow: hidden;
-}
-.bg{
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 .overflow{
   overflow: hidden;
@@ -64,28 +58,23 @@ page{
 .bold{
   font-weight: bold;
 }
-.max{
-  height: 100%;
-  width: 100%;
-  position: relative;
-  box-sizing: border-box;
-}
 .center{
   text-align: center;
 }
 .flex-wrap,
-.flex-center-wrap{
+.flex-center-wrap,
+.flex-multi-row{
   display: flex;
 }
 .flex-center-wrap {
-  -webkit-align-items: center;
   align-items: center;
 }
 .flex-justify-between {
-  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 .flex-justify-around {
-  -webkit-justify-content: space-around;
   justify-content: space-around;
+}
+.flex-multi-row {
+  flex-wrap: wrap;
 }
