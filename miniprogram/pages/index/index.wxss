@@ -15,6 +15,7 @@
 .cover{
   width: 90vw;
   padding: 20rpx;
+  transform-origin: center top;
 }
 .ele-box{
   position: absolute;
@@ -39,14 +40,21 @@
   height: 90rpx;
 }
 .letter{
-  width: 120rpx;
+  width: 100%;
+  text-align: center;
   height: 120rpx;
   position: absolute;
-  left: 50%;
-  margin-left: -60rpx;
+  left: 0%;
+  /*margin-left: -60rpx;*/
   top: -80rpx;
+  z-index: 999;
+}
+.letter-box{
+  height: 120rpx;
+  width: 120rpx;
+  display: inline-block;
 }
 .letter-img{
-  height: 100%;
   width: 100%;
+  height: 100%;
 }

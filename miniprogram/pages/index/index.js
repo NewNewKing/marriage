@@ -8,11 +8,12 @@ Page({
     ready: false,
     // 页面风格
     style: app.globalData.style,
+    isShowCover: true,
+    isFirst: true,
     
     current: 0,
     isMoving: false,
     y: 0,
-    animated: true,
 
     bgList: indexBanners,
     // 展示信息
@@ -25,14 +26,13 @@ Page({
   onReady(){
     ready(this)
   },
-  onHide(){
+  toggleCover(){
+
+    const { isShowCover } = this.data
+    console.log(isShowCover)
     this.setData({
-      animated: false
-    })
-  },
-  onShow(){
-    this.setData({
-      animated: true
+      isFirst: false,
+      isShowCover: !isShowCover
     })
   },
   start({ changedTouches }){
