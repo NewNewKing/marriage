@@ -1,7 +1,6 @@
 .heart {
   width: 20rpx;
   height: 20rpx;
-  position: fixed;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);

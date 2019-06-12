@@ -16,7 +16,7 @@
     ></map>
     <view class="words-container">  
       <view class="center location animated delay-1s rotateIn fast">- 分享地址 -</view>
-      <button class="center address color rotateIn animated delay-1-6s fast" open-type="share">{{address}}</button>
+      <button class="center address rotateIn animated delay-1-6s fast" open-type="share">{{address}}</button>
     </view>
     <view class="flex-center-wrap flex-justify-around phone-container">
       <view class="phone-call bounceIn delay-2-8s animated slow" bindtap="makecall" data-sex="male">

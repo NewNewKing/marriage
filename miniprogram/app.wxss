@@ -61,6 +61,16 @@ page{
 .center{
   text-align: center;
 }
+button{
+  background-color: transparent;
+  margin: 0;
+}
+button::after{
+  border: none;
+}
+.flex{
+  flex: 1;
+}
 .flex-wrap,
 .flex-center-wrap,
 .flex-multi-row{

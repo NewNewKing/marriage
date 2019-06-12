@@ -18,7 +18,7 @@
 }
 .toggle{
   position: fixed;
-  left: 20rpx;
+  right: 20rpx;
   bottom: 40rpx;
   padding: 0 20rpx;
   font-size: 24rpx;

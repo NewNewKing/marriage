@@ -1,9 +1,11 @@
 .black-gold{
-    color: #eccb90;
-}
-
-.black-gold .color{
   color: #eccb90;
+}
+.black-gold button{
+  color: #eccb90;
+}
+.bcolor{
+  background-color: #242424;
 }
 .black-gold .border{
   border: 2rpx solid #eccb90;
@@ -20,5 +22,9 @@
 /*首页*/
 .black-gold .cover{
   background-color: rgba(0,0,0, 0.5)
+}
+.black-gold .layer-bg{
+  /*background-color: rgba(255, 255, 255, 0.5)*/
+  background-color: rgba(0,0,0, 0.7)
 }
 

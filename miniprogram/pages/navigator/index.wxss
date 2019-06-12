@@ -26,9 +26,6 @@
   background: transparent;
   border-color: transparent;
 }
-.address::after{
-  border:none;
-}
 .map{
   width: 100%;
   height: 600rpx;
