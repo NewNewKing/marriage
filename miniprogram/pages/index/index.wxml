@@ -1,13 +1,12 @@
-<view class="container {{style}}" bindtap="showHeart">
-  <ui-tap-shape id="tap"/>
-  <view class="container" wx:if="{{ready}}">
+<view class="container {{$style}}" bindtap="$showHeart">
+  <view class="container" wx:if="{{$ready}}">
     <swiper 
       class="swiper"
       current="{{current}}"
       circular
       vertical
       autoplay>
-      <swiper-item wx:for="{{bgList}}" wx:key="{{item}}">
+      <swiper-item wx:for="{{$indexBanners}}" wx:key="{{item}}">
         <image src="{{item}}" class="bg-img" mode="aspectFill" bindtap="toggleCover" data-type="swiper"></image>
       </swiper-item>
     </swiper>
@@ -37,11 +36,11 @@
               <image src="/images/han.png" mode="aspectFit" class="hanzi"></image>
             </view>
             <view class="name-box flex-center-wrap flex-justify-around">
-              <view class="animated fadeInRightBig delay-2-5s bride">{{groom}}</view>
+              <view class="animated fadeInRightBig delay-2-5s bride">{{$groom}}</view>
               <view class="animated bounceInDown delay-3s">
                 <ui-heart double ></ui-heart>
               </view>
-              <view class="animated fadeInLeftBig delay-2-5s bride">{{bride}}</view>
+              <view class="animated fadeInLeftBig delay-2-5s bride">{{$bride}}</view>
             </view>
 
             <view class="info-box animated zoomIn delay-4s">
@@ -51,13 +50,13 @@
             
             <view class="info-box">
               <view class="mar-b8 bold animated delay-4s fadeInUpBig">【 时间 · Time 】</view>
-              <view class="animated zoomIn delay-5s">{{time}}</view>
+              <view class="animated zoomIn delay-5s">{{$time}}</view>
             </view>
 
             <view class="info-box">
               <view class="mar-b8 bold animated delay-5s fadeInUpBig">【 地址 · Address 】</view>
               <view class="mar-b8 animated zoomIn delay-6s">{{hotel}}</view>
-              <view class="animated zoomIn delay-6-2s">{{address}}</view>
+              <view class="animated zoomIn delay-6-2s">{{$address}}</view>
             </view>
 
             <view class="bold font32 animated fadeInUp delay-7s">
@@ -70,5 +69,5 @@
     </view>
   </view>
   
-  
+  <include src="/template/system.wxml"/>
 </view>

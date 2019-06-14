@@ -1,0 +1,2 @@
+<ui-tap-shape id="tap"/>
+<ui-loading wx:if="{{!$ready}}"/>

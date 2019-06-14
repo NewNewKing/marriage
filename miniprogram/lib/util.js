@@ -3,21 +3,6 @@ function sleep(ms) {
     setTimeout(resolve, ms)
   })
 }
-function ready(page) {
-  sleep(300).then(() => {
-    page.setData({
-      ready: true
-    })
-  })
-}
-
-function showHeart(page, e) {
-  const {
-    detail: { x, y }
-  } = e
-  const component = page.selectComponent("#tap")
-  component.showHeart(x, y)
-}
 
 function dateFormat(value, format) {
   const dateFlag = {
@@ -70,7 +55,5 @@ function dateFormat(value, format) {
 
 module.exports = {
   sleep,
-  ready,
-  showHeart,
   dateFormat
 }

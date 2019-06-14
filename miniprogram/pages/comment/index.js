@@ -1,20 +1,16 @@
-const { ready, showHeart, dateFormat } = require("../../utils/index.js")
+const { dateFormat } = require("../../lib/util.js")
+const page = require("../../lib/page.js")
 const comment = require("../../services/index.js")
 const app = getApp()
 
-Page({
+page({
   data: {
-    style: app.globalData.style,
     height: 0,
     list: [],
     userInfo: null,
     isLayerShow: false,
     value: ""
   },
-  showHeart(e) {
-    showHeart(this, e)
-  },
-
   onLoad() {
     wx.getSystemInfo({
       success: ({ windowHeight }) => {
@@ -43,7 +39,7 @@ Page({
         y: offsetTop
       }
     }
-    showHeart(this, e)
+    this.$showHeart(e)
   },
   commentLineChange(e) {
     console.log(e)
@@ -51,6 +47,9 @@ Page({
   submit() {
     const { userInfo, value, list } = this.data
     if (!this.validate()) return
+    wx.showLoading({
+      title: "评论提交中..."
+    })
     const data = {
       name: userInfo.nickName,
       avatarUrl: userInfo.avatarUrl,
@@ -86,11 +85,11 @@ Page({
       })
       return
     }
+    console.log(userInfo)
     this.setData({
       userInfo
     })
     this.showLayer()
-    // Object.assign(app.globalData, { userInfo })
   },
   // layer的开关
   showLayer() {

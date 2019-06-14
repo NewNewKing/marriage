@@ -2,7 +2,8 @@
   "usingComponents": {
     "ui-tap-shape": "/components/tap-shape/index",
     "ui-background": "/components/background/index",
-    "ui-header": "/components/header/index"
+    "ui-header": "/components/header/index",
+    "ui-loading": "/components/loading/index"
   },
   "navigationBarTitleText": "留言评论"
 }

@@ -1,4 +1,3 @@
-const { style } = require("./marriage.info.js")
 //app.js
 App({
   onLaunch: function() {
@@ -10,8 +9,5 @@ App({
         traceUser: true
       })
     }
-  },
-  globalData: {
-    style
   }
 })

@@ -3,6 +3,7 @@
   "usingComponents": {
     "ui-background": "/components/background/index",
     "ui-tap-shape": "/components/tap-shape/index",
-    "ui-header": "/components/header/index"
+    "ui-header": "/components/header/index",
+    "ui-loading": "/components/loading/index"
   }
 }

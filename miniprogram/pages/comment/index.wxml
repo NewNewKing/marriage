@@ -1,46 +1,48 @@
-<view class="container {{style}}" bindtap="showHeart">
-  <ui-tap-shape id="tap"/>
-  <scroll-view class="list-wrap" scroll-y style="height:{{height}}px">
-    <ui-header />
-    <ui-header />
-    <view class="item-wrap" wx:for="{{list}}" wx:key="index">
-      <view class="list-item border shadow flex-wrap" >
-        <ui-background />
-        <image src="{{item.avatarUrl}}" class="avatar"></image>
-        <view class="flex">
-          <view class="flex-center-wrap name">
-            <view class="flex bold font28">{{item.name}}</view>
-            <view class="font24">{{item.time}}</view>
-          </view>
-          <view class="font24">
-            {{item.comment}}
+<view class="container {{$style}}" bindtap="$showHeart">
+  <view class="container" wx:if="{{$ready}}">
+    <scroll-view class="list-wrap" scroll-y style="height:{{height}}px">
+      <ui-header />
+      <ui-header />
+      <view class="item-wrap" wx:for="{{list}}" wx:key="index">
+        <view class="list-item border shadow flex-wrap" >
+          <ui-background />
+          <image src="{{item.avatarUrl}}" class="avatar"></image>
+          <view class="flex">
+            <view class="flex-center-wrap name">
+              <view class="flex bold font28">{{item.name}}</view>
+              <view class="font24">{{item.time}}</view>
+            </view>
+            <view class="font24">
+              {{item.comment}}
+            </view>
           </view>
         </view>
       </view>
+      <view class="empty"></view>
+    </scroll-view>
+    
+    <view class="btn-box flex-center-wrap flex-justify-around">
+      <view class="btn border shadow" wx:if="{{userInfo}}" bindtap="showLayer">说点啥吧</view>
+      <button open-type="getUserInfo" wx:else hover-class="none" class="btn border shadow" bindgetuserinfo="getUserInfo" lang="zh_CN">说点啥吧</button>
+      <view class="btn border shadow" bindtap="attend">我要出席</view>
     </view>
-    <view class="empty"></view>
-  </scroll-view>
-  
-  <view class="btn-box flex-center-wrap flex-justify-around">
-    <view class="btn border shadow" wx:if="{{userInfo}}" bindtap="showLayer">说点啥吧</view>
-    <button open-type="getUserInfo" wx:else hover-class="none" class="btn border shadow" bindgetuserinfo="getUserInfo" lang="zh_CN">说点啥吧</button>
-    <view class="btn border shadow" bindtap="attend">我要出席</view>
-  </view>
-  <view class="fixed layer-bg flex-center-wrap flex-justify-around" wx:if="{{isLayerShow}}" bindtap="hideLayer">
-    <view class="layer-wrap" catchtap="showHeart">
-      <textarea 
-        class="input border shadow" 
-        fixed 
-        auto-focus 
-        value="{{value}}" 
-        bindinput="commentChange"
-        cursor-spacing="{{200}}"
-        bindlinechange="commentLineChange"></textarea>
-        
-      <view class="flex-center-wrap flex-justify-around">
-        <view class="small-btn border shadow" bindtap="submit">发送留言</view>
-        <view class="small-btn border shadow" bindtap="hideLayer">取消</view>
+    <view class="fixed layer-bg flex-center-wrap flex-justify-around" wx:if="{{isLayerShow}}" bindtap="hideLayer">
+      <view class="layer-wrap" catchtap="showHeart">
+        <textarea 
+          class="input border shadow" 
+          fixed 
+          auto-focus 
+          value="{{value}}" 
+          bindinput="commentChange"
+          cursor-spacing="{{200}}"
+          bindlinechange="commentLineChange"></textarea>
+          
+        <view class="flex-center-wrap flex-justify-around">
+          <view class="small-btn border shadow" bindtap="submit">发送留言</view>
+          <view class="small-btn border shadow" bindtap="hideLayer">取消</view>
+        </view>
       </view>
     </view>
   </view>
+  <include src="/template/system.wxml"/>
 </view>

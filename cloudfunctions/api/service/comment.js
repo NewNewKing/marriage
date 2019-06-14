@@ -1,4 +1,4 @@
-const dao = require("./dao.js")
+const dao = require("../dao/comment.js")
 const add = async data => {
   return dao.add(data)
 }

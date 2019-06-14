@@ -1,14 +1,19 @@
-const { comment } = require("./request.js")
+const { api } = require("./request.js")
 
 const add = data => {
-  return comment("add", data)
+  return api("comment.add", data)
 }
 
 const getAllList = () => {
-  return comment("getAllList")
+  return api("comment.getAllList")
+}
+
+const getList = data => {
+  return api("comment.getList", data)
 }
 
 module.exports = {
   add,
-  getAllList
+  getAllList,
+  getList
 }

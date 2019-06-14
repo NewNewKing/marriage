@@ -1,4 +1,4 @@
-const { sleep } = require("../../utils/index.js")
+const { sleep } = require("../../lib/util.js")
 let id = 0
 class Heart {
   constructor() {

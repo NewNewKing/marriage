@@ -1,0 +1,20 @@
+[
+  {
+    "name": "新增评论",
+    "value": {
+      "url": "comment.add",
+      "data": {
+        "avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/295czzN8HT3MU8rZdAuwn8wU35ArrKz33uFJteicp6BCcgZ755oOaHetczlTjOIRS18x04RZkkLvYmM7picC08Mw/132",
+        "comment": "习近平",
+        "name": "王兴欣",
+        "time": "2019.06.14 16:37:42"
+      }
+    }
+  },
+  {
+    "name": "获取所有评论",
+    "value": {
+      "url": "comment.getAllList"
+    }
+  }
+]
