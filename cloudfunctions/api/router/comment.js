@@ -26,6 +26,9 @@ const getList = async data => {
     pageSize,
     pageNum
   })
+  if (!result.length) {
+    return { data: result, code: 2, msg: "没有更多啦~~😝" }
+  }
   return { data: result }
 }
 const getAllList = async () => {

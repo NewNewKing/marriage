@@ -1,3 +1,4 @@
+const { showToast } = require("../lib/util.js")
 const map = {}
 const api = (url, data = {}) => {
   if (map[url]) {
@@ -21,10 +22,8 @@ const api = (url, data = {}) => {
       const { code, data, msg } = result
       // 0、成功 1、失败 2、成功但是要显示msg
       if (code !== 0) {
-        wx.showToast({
-          title: msg,
-          icon: "none",
-          duration: 3000
+        showToast({
+          title: msg
         })
       }
       if (code === 1) {

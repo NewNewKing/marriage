@@ -1,19 +1,40 @@
 const app = getApp()
-const { showHeart, sleep } = require("./util.js")
-const info = require("../marriage.info.js")
+const { showHeart, sleep, showToast } = require("./util.js")
+const Event = require("./event.js")
+
+function getMarker({ $lat, $lon }) {
+  return [
+    {
+      id: 1,
+      latitude: $lat,
+      longitude: $lon,
+      iconPath: "/images/nav.png",
+      width: 50,
+      height: 50
+    }
+  ]
+}
+
 const mixin = {
   data: {
-    $ready: false,
-    $markers: [
-      {
-        id: 1,
-        latitude: info.$lat,
-        longitude: info.$lon,
-        iconPath: "/images/nav.png",
-        width: 50,
-        height: 50
-      }
-    ]
+    $ready: false
+  },
+  onLoad() {
+    if (app.globalData && app.globalData.info) {
+      const { info } = app.globalData
+      this.setData({
+        $ready: true,
+        ...info,
+        $markers: getMarker(info)
+      })
+    }
+    Event.on("infoChange", info => {
+      this.setData({
+        $ready: true,
+        ...info,
+        $markers: getMarker(info)
+      })
+    })
   },
   methods: {
     // 全屏点击出现心
@@ -37,18 +58,10 @@ const mixin = {
         return
       }
 
-      wx.showToast({
-        title: `这个人太忙啦，暂时没有录入手机号`,
-        icon: "none"
+      showToast({
+        title: `这个人太忙啦，暂时没有录入手机号`
       })
     }
-  },
-  onLoad() {
-    sleep(300).then(() => {
-      this.setData({
-        $ready: true
-      })
-    })
   },
   onShareAppMessage() {
     return {
@@ -56,7 +69,5 @@ const mixin = {
     }
   }
 }
-
-Object.assign(mixin.data, info)
 
 module.exports = mixin

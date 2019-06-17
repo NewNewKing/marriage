@@ -1,6 +1,6 @@
 <view class="container {{$style}}" bindtap="$showHeart">
   <view class="container" wx:if="{{$ready}}">
-    <scroll-view class="list-wrap" scroll-y style="height:{{height}}px">
+    <scroll-view class="list-wrap" scroll-y style="height:{{height}}px" bindscrolltolower="scrollToLower">
       <ui-header />
       <ui-header />
       <view class="item-wrap" wx:for="{{list}}" wx:key="index">
@@ -23,7 +23,7 @@
     
     <view class="btn-box flex-center-wrap flex-justify-around">
       <view class="btn border shadow" wx:if="{{userInfo}}" bindtap="showLayer">说点啥吧</view>
-      <button open-type="getUserInfo" wx:else hover-class="none" class="btn border shadow" bindgetuserinfo="getUserInfo" lang="zh_CN">说点啥吧</button>
+      <button open-type="getUserInfo" wx:else hover-class="none" class="btn border shadow" bindgetuserinfo="getUserInfo" withCredentials="{{true}}" lang="zh_CN">说点啥吧</button>
       <view class="btn border shadow" bindtap="attend">我要出席</view>
     </view>
     <view class="fixed layer-bg flex-center-wrap flex-justify-around" wx:if="{{isLayerShow}}" bindtap="hideLayer">
@@ -34,8 +34,7 @@
           auto-focus 
           value="{{value}}" 
           bindinput="commentChange"
-          cursor-spacing="{{200}}"
-          bindlinechange="commentLineChange"></textarea>
+          cursor-spacing="{{200}}"></textarea>
           
         <view class="flex-center-wrap flex-justify-around">
           <view class="small-btn border shadow" bindtap="submit">发送留言</view>

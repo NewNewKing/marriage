@@ -35,8 +35,8 @@ page({
   move({ changedTouches }) {
     if (!changedTouches[0]) return
     const { clientY } = changedTouches[0]
-    const { y, isMoving, current } = this.data
-    const len = indexBanners.length
+    const { y, isMoving, current, $indexBanners } = this.data
+    const len = $indexBanners.length
 
     if (!isMoving) {
       return

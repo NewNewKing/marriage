@@ -53,7 +53,19 @@ function dateFormat(value, format) {
   })
 }
 
+function showToast(data) {
+  const options = Object.assign(
+    {
+      icon: "none",
+      duration: 3000
+    },
+    data
+  )
+  wx.showToast(options)
+}
+
 module.exports = {
   sleep,
-  dateFormat
+  dateFormat,
+  showToast
 }

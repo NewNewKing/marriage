@@ -3,7 +3,7 @@ const add = async data => {
   return dao.add(data)
 }
 const getList = async data => {
-  return dao.getList(data)
+  return dao.getList(data).then(res => res.data)
 }
 
 const getAllList = async data => {

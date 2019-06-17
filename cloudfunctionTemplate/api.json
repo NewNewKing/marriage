@@ -16,5 +16,20 @@
     "value": {
       "url": "comment.getAllList"
     }
+  },
+  {
+    "name": "获取配置信息",
+    "value": {
+      "url": "info.get"
+    }
+  },
+  {
+    "name": "获取分页评论",
+    "value": {
+      "url": "comment.getList",
+      "data": {
+        "pageNum": 1
+      }
+    }
   }
 ]

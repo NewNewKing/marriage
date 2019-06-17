@@ -1,9 +1,12 @@
 const cloud = require("wx-server-sdk")
 cloud.init()
 
-const COMMENT = cloud.database().collection("comment")
+const db = cloud.database()
+const COMMENT = db.collection("comment")
 
 const add = async data => {
+  const { OPENID } = cloud.getWXContext()
+  data._openid = OPENID
   return COMMENT.add({
     data
   })

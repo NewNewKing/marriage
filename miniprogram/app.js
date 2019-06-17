@@ -1,3 +1,5 @@
+const info = require("./services/info.js")
+const Event = require("./lib/event.js")
 //app.js
 App({
   onLaunch: function() {
@@ -9,5 +11,20 @@ App({
         traceUser: true
       })
     }
+    // 获取全局配置信息
+    info
+      .get()
+      .then(res => {
+        this.globalData = {
+          info: res
+        }
+        Event.emit("infoChange", res)
+      })
+      .catch(err => {
+        wx.showToast({
+          title: err,
+          duration: 3000
+        })
+      })
   }
 })

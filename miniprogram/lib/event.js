@@ -1,19 +1,19 @@
 const events = {}
 const Event = {
-  on(name, fn){
-    if (events[name]){
+  on(name, fn) {
+    if (events[name]) {
       events[name].push(fn)
-    }else {
+    } else {
       events[name] = [fn]
     }
   },
-  off (name) {
+  off(name) {
     events[name] = []
   },
-  emit(name){
+  emit(name, params) {
     const list = events[name]
     if (list) {
-      list.map(fn => fn())
+      list.map(fn => fn(params))
     }
   }
 }
