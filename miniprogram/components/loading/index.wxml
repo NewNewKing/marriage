@@ -1,3 +1,6 @@
-<viwe>
-  加载中...
+<viwe class="flex-center-wrap flex-justify-around fixed {{$style}}">
+  <view>
+    <image src="/images/loading.png" class="loading-icon animated infinite swiming"></image>
+    <view class="center">加载中{{sign}}</view>
+  </view>
 </viwe>

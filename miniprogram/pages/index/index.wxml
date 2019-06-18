@@ -13,7 +13,7 @@
     <view class="cover-container center" bindtouchstart="start" bindtouchmove="move">
       <view  class="letter">
         <view class="letter-box animated rollIn" bindtap="toggleCover">
-          <image class="letter-img swing animated infinite slow delay-1s" src="/images/letter.svg" mode="aspectFit"></image>
+          <image class="letter-img swing animated infinite slow delay-1s" src="/images{{$style ? '/' + $style : '' }}/letter.svg" mode="aspectFit"></image>
         </view>
       </view>
       <view class="cover animated slow {{isShowCover ? 'zoomInDown2' : 'zoomOutUp2'}} {{isFirst ? 'delay-0-7s' : ''}}" >
@@ -29,11 +29,11 @@
 
           <view class="max pad40 center font28">
             <view class="info-box title-box flex-center-wrap flex-justify-around animated fadeInDown delay-2-5s">
-              <image src="/images/hun.png" mode="aspectFit" class="hanzi"></image>
-              <image src="/images/li.png" mode="aspectFit" class="hanzi"></image>
-              <image src="/images/yao.png" mode="aspectFit" class="hanzi"></image>
-              <image src="/images/qing.png" mode="aspectFit" class="hanzi"></image>
-              <image src="/images/han.png" mode="aspectFit" class="hanzi"></image>
+              <image src="/images{{$style ? '/' + $style : ''}}/hun.png" mode="aspectFit" class="hanzi"></image>
+              <image src="/images{{$style ? '/' + $style : ''}}/li.png" mode="aspectFit" class="hanzi"></image>
+              <image src="/images{{$style ? '/' + $style : ''}}/yao.png" mode="aspectFit" class="hanzi"></image>
+              <image src="/images{{$style ? '/' + $style : ''}}/qing.png" mode="aspectFit" class="hanzi"></image>
+              <image src="/images{{$style ? '/' + $style : ''}}/han.png" mode="aspectFit" class="hanzi"></image>
             </view>
             <view class="name-box flex-center-wrap flex-justify-around">
               <view class="animated fadeInRightBig delay-2-5s bride">{{$groom}}</view>

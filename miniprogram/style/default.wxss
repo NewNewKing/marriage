@@ -1,0 +1,8 @@
+/*.bcolor{
+  transition-duration: 0.5s;
+  transition-property: background-color;
+}
+.container{
+  transition-duration: 0.5s;
+  transition-property: background-color,color;
+}*/

@@ -14,16 +14,8 @@ page({
     pageNum: 1
   },
   onLoad() {
-    wx.requestPayment({
-      timeStamp: "",
-      nonceStr: "",
-      package: "",
-      signType: "MD5",
-      paySign: "",
-      success(res) {},
-      fail(res) {
-        console.log(res)
-      }
+    this.setData({
+      $ready: false
     })
     wx.getSystemInfo({
       success: ({ windowHeight }) => {
@@ -32,7 +24,12 @@ page({
         })
       }
     })
-    this.getComment(1)
+    // 获取评论
+    this.getComment(1).then(() => {
+      this.setData({
+        $ready: true
+      })
+    })
   },
   // 获取评论信息
   getComment(pageNum) {
@@ -79,14 +76,7 @@ page({
     wx.showLoading({
       title: "评论提交中..."
     })
-
-    const data = {
-      name: userInfo.nickName,
-      avatarUrl: userInfo.avatarUrl,
-      comment: value,
-      time: dateFormat(Date.now(), "yyyy.mm.dd HH:MM:ss")
-    }
-    comment.add(userInfo).then(() => {
+    comment.add(Object.assign({}, userInfo, { comment: value })).then(data => {
       list.unshift(data)
       this.setData({
         list,

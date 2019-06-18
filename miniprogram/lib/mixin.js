@@ -17,23 +17,25 @@ function getMarker({ $lat, $lon }) {
 
 const mixin = {
   data: {
-    $ready: false
+    $ready: false,
+    $style: "black-gold"
   },
   onLoad() {
     if (app.globalData && app.globalData.info) {
       const { info } = app.globalData
       this.setData({
-        $ready: true,
         ...info,
         $markers: getMarker(info)
       })
     }
     Event.on("infoChange", info => {
-      this.setData({
-        $ready: true,
-        ...info,
-        $markers: getMarker(info)
-      })
+      const { $markers } = this.data
+      if (!$markers) {
+        Object.assign(info, {
+          $markers: getMarker(info)
+        })
+      }
+      this.setData(info)
     })
   },
   methods: {

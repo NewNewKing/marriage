@@ -10,6 +10,31 @@
   animation: 1.8s ease 0.1s infinite normal both running sway;
 }
 
+.swiming{
+  animation-name: swiming;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+}
+@keyframes swiming {
+  0% {
+    transform: translate3d(0,0,0);
+  }
+  10%{
+    transform: translate3d(-5%,-10%,0);
+  }
+  25% {
+    transform: translate3d(-10%,-25%,0);
+  }
+  50% {
+    transform: translate3d(0%,-50%,0);
+  }
+  80% {
+    transform: translate3d(20%,-20%,0);
+  }
+  100% {
+    transform: translate3d(0,0,0);
+  }
+}
 @keyframes grow {
   0% {
     opacity: 1;

@@ -1,9 +1,9 @@
-@import "/style/black-gold.wxss";
+@import "/style/default.wxss";
+@import "/style/black-gold.wxss"
 @import "/style/animate.wxss"
 @import "/style/animate-extend.wxss"
 
 page{
-  /*color: #b69058;*/
   width: 100vw;
   min-height: 100vh;
   display: -webkit-flex;

@@ -1,0 +1,6 @@
+@import "/app.wxss"
+
+.loading-icon{
+  height: 486rpx;
+  width: 484rpx;
+}

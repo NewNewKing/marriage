@@ -64,8 +64,16 @@ function showToast(data) {
   wx.showToast(options)
 }
 
+function unique(...arg) {
+  const list = arg.reduce((list, current) => {
+    return list.concat(current)
+  }, [])
+  return [...new Set(list)]
+}
+
 module.exports = {
   sleep,
   dateFormat,
-  showToast
+  showToast,
+  unique
 }

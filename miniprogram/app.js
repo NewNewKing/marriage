@@ -1,5 +1,7 @@
 const info = require("./services/info.js")
 const Event = require("./lib/event.js")
+const { unique } = require("./lib/util.js")
+const ImgLoader = require("./lib/imgLoader.js")
 //app.js
 App({
   onLaunch: function() {
@@ -18,9 +20,20 @@ App({
         this.globalData = {
           info: res
         }
-        Event.emit("infoChange", res)
+        const { $style, $indexBanners, $photos } = res
+        Event.emit("infoChange", { $style })
+        const list = unique($indexBanners, $photos)
+        // 预加载图片
+        ImgLoader.limitMany({
+          imgList: list,
+          limit: 5
+        }).then(() => {
+          res.$ready = true
+          Event.emit("infoChange", res)
+        })
       })
       .catch(err => {
+        console.log(err)
         wx.showToast({
           title: err,
           duration: 3000
