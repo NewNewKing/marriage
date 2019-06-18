@@ -1,4 +1,4 @@
-<viwe class="flex-center-wrap flex-justify-around fixed {{$style}}">
+<viwe class="flex-center-wrap flex-justify-around fixed {{$style}}" bindtap="test">
   <view>
     <image src="/images/loading.png" class="loading-icon animated infinite swiming"></image>
     <view class="center">加载中{{sign}}</view>

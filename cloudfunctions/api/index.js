@@ -1,7 +1,7 @@
 const cloud = require("wx-server-sdk")
 const router = require("./router/index.js")
 
-cloud.init()
+// cloud.init()
 /*
 *
 * @reutrn {}

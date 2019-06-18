@@ -12,11 +12,19 @@ const options = {
         $style
       })
     }
-    Event.on("infoChange", info => {
-      this.setData({
-        $style: info.$style
-      })
-    })
+    // 因为每次
+    Event.on(
+      "infoChange",
+      info => {
+        this.setData({
+          $style: info.$style
+        })
+      },
+      this.__wxExparserNodeId__
+    )
+  },
+  detached() {
+    Event.off("infoChange", this.__wxExparserNodeId__)
   }
 }
 

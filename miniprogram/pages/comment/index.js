@@ -26,6 +26,9 @@ page({
     })
     // 获取评论
     this.getComment(1).then(() => {
+      // 如果直接进入评论页 评论加载完成 但是信息还未加载完成
+      const { $ready } = app.globalData.info
+      if (!$ready) return
       this.setData({
         $ready: true
       })
