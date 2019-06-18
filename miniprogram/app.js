@@ -2,6 +2,19 @@ const info = require("./services/info.js")
 const Event = require("./lib/event.js")
 const { unique } = require("./lib/util.js")
 const ImgLoader = require("./lib/imgLoader.js")
+// 获取地图坐标点
+function getMarker({ $lat, $lon }) {
+  return [
+    {
+      id: 1,
+      latitude: $lat,
+      longitude: $lon,
+      iconPath: "/images/nav.png",
+      width: 50,
+      height: 50
+    }
+  ]
+}
 //app.js
 App({
   onLaunch: function() {
@@ -28,6 +41,7 @@ App({
           imgList: list,
           limit: 5
         }).then(() => {
+          res.$markers = getMarker(res)
           res.$ready = true
           Event.emit("infoChange", res)
         })

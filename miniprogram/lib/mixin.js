@@ -2,19 +2,6 @@ const app = getApp()
 const { showHeart, sleep, showToast } = require("./util.js")
 const Event = require("./event.js")
 
-function getMarker({ $lat, $lon }) {
-  return [
-    {
-      id: 1,
-      latitude: $lat,
-      longitude: $lon,
-      iconPath: "/images/nav.png",
-      width: 50,
-      height: 50
-    }
-  ]
-}
-
 const mixin = {
   data: {
     $ready: false,
@@ -23,18 +10,10 @@ const mixin = {
   onLoad() {
     if (app.globalData && app.globalData.info) {
       const { info } = app.globalData
-      this.setData({
-        ...info,
-        $markers: getMarker(info)
-      })
+      this.setData(info)
     }
+
     Event.on("infoChange", info => {
-      const { $markers } = this.data
-      if (!$markers) {
-        Object.assign(info, {
-          $markers: getMarker(info)
-        })
-      }
       this.setData(info)
     })
   },

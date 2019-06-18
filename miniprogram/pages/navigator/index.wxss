@@ -16,12 +16,11 @@
 .location{
   color: #dfdfdf;
   font-size: 24rpx;
-  margin-bottom: 20rpx;
 }
 .address{ 
   width: 400rpx;
-  margin: 0 auto;
-  font-size: 24rpx;
+  margin: 20rpx auto;
+  font-size: 28rpx;
   line-height: 1.5;
   background: transparent;
   border-color: transparent;

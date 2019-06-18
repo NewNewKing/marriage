@@ -35,6 +35,9 @@ const api = (url, data = {}) => {
     .catch(err => {
       map[url] = false
       wx.hideLoading()
+      showToast({
+        title: "网络错误啦 QoQ!"
+      })
       return Promise.reject(err)
     })
 }
