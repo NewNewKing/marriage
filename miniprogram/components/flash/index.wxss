@@ -1,0 +1,12 @@
+@import '/app.wxss'
+.text{
+  word-spacing: 50rpx;
+  text-align: center;
+  line-height: 1.2;
+  font-weight: bold;
+}
+.double{
+  position: absolute;
+  left: 0;
+  top: 0;
+}

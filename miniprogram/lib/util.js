@@ -1,6 +1,9 @@
-function sleep(ms) {
+const infoKeys = require("./needInfoKeys.js")
+function sleep(ms, params) {
   return new Promise(resolve => {
-    setTimeout(resolve, ms)
+    setTimeout(() => {
+      resolve(params)
+    }, ms)
   })
 }
 
@@ -71,9 +74,90 @@ function unique(...arg) {
   return [...new Set(list)]
 }
 
+function stage(data, page) {
+  console.log(data)
+  if (typeof data === "number") {
+    return sleep(data * 1000)
+  } else {
+    const { inTime, outTime, duration } = data
+    page.setData({
+      $flashStatus: "in"
+    })
+    return sleep(inTime * 1000)
+      .then(() => {
+        page.setData({
+          $flashStatus: "duration"
+        })
+        return sleep(duration * 1000)
+      })
+      .then(() => {
+        page.setData({
+          $flashStatus: "out"
+        })
+        return sleep(outTime * 1000)
+      })
+  }
+}
+
+// [{in: 0, out: 0, duration: 1}] || [4, 5]
+function flow(list, page) {
+  let fps = 0
+  page.setData({ stage: fps })
+  const len = list.length
+  let resolve = Promise.resolve()
+  for (let i = 0; i < len; i++) {
+    resolve = resolve.then(() => {
+      console.log("开始stage-" + fps)
+      return stage(list[i], page).then(() => {
+        ++fps
+        page.setData({ stage: fps })
+        if (len === i + 1) {
+          console.log("最后一幕开始stage-" + fps)
+        }
+      })
+    })
+  }
+  return resolve
+}
+
+function pick(obj, keys) {
+  const data = {}
+  keys.map(item => {
+    if (obj[item] !== undefined) {
+      data[item] = obj[item]
+    }
+  })
+
+  return data
+}
+
+function getNeedInfo(info, page) {
+  const { common } = infoKeys
+  const list = infoKeys[page.route]
+  return pick(info, [...list, ...common])
+}
+
+function getFlashTime(list, flag) {
+  let time = 0
+  const times = list.map(item => {
+    const { inTime, outTime, duration } = item
+    time += item.duration + inTime + outTime
+    return {
+      duration,
+      inTime,
+      outTime
+    }
+  })
+  if (flag) return time
+  return times
+}
 module.exports = {
   sleep,
   dateFormat,
   showToast,
-  unique
+  unique,
+  flow,
+  pick,
+  getNeedInfo,
+  getFlashTime
 }

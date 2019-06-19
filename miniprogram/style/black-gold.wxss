@@ -4,7 +4,7 @@
 .black-gold button{
   color: #eccb90;
 }
-.black-gold .bcolor{
+.black-gold .bg-color{
   background-color: #242424;
 }
 .black-gold .border{

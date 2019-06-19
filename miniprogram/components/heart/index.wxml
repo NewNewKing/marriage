@@ -1,8 +1,8 @@
 <view class="heart-container">
   <view class="flex-center-wrap flex-justify-between ">
-    <image src="/images{{$style ? '/' + $style : ''}}/heart_1.svg" wx:for="{{countArray}}" class="heart grow" wx:key="index"></image>
+    <image src="/images{{$style ? '/' + $style : ''}}/heart_1.svg" wx:for="{{countArray}}" class="heart growOut infinite animated slow" wx:key="index"></image>
   </view>
   <view class="flex-center-wrap flex-justify-between double" wx:if="{{double}}">
-    <image src="/images{{$style ? '/' + $style : ''}}/heart_1.svg" wx:for="{{countArray}}" class="heart sway" wx:key="index"></image>
+    <image src="/images{{$style ? '/' + $style : ''}}/heart_1.svg" wx:for="{{countArray}}" class="heart sway infinite animated slow" wx:key="index"></image>
   </view>
 </view>

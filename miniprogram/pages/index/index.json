@@ -3,7 +3,8 @@
     "ui-background": "/components/background/index",
     "ui-heart": "/components/heart/index",
     "ui-tap-shape": "/components/tap-shape/index",
-    "ui-loading": "/components/loading/index"
+    "ui-loading": "/components/loading/index",
+    "ui-flash": "/components/flash/index"
   },
   "disableScroll": true
 }

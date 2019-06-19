@@ -1,4 +1,6 @@
 const info = require("../static/marriage.info.js")
+const flashTexts = require("../static/flash.text.js")
+
 const cloud = require("wx-server-sdk")
 // 云文件 ID 换取真实链接
 async function replaceUrl(list) {
@@ -23,7 +25,7 @@ const get = async () => {
   ])
   info.$indexBanners = data[0]
   info.$photos = data[1]
-
+  info.$indexFlashTexts = flashTexts
   return { data: info }
 }
 module.exports = {

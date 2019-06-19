@@ -1,5 +1,5 @@
 const app = getApp()
-const { showHeart, sleep, showToast } = require("./util.js")
+const { showHeart, sleep, showToast, getNeedInfo } = require("./util.js")
 const Event = require("./event.js")
 
 const mixin = {
@@ -8,13 +8,14 @@ const mixin = {
     $style: "black-gold"
   },
   onLoad() {
+    console.log(this)
     if (app.globalData && app.globalData.info) {
       const { info } = app.globalData
-      this.setData(info)
+      this.setData(getNeedInfo(info, this))
     }
 
     Event.on("infoChange", info => {
-      this.setData(info)
+      this.setData(getNeedInfo(info, this))
     })
   },
   methods: {
@@ -45,6 +46,7 @@ const mixin = {
     }
   },
   onShareAppMessage() {
+    const { $groom, $bride } = app.globalData.info
     return {
       title: `快来参加${$groom}和${$bride}的婚礼吧！`
     }

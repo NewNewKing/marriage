@@ -1,14 +1,35 @@
 const page = require("../../lib/page.js")
+const { flow, getFlashTime } = require("../../lib/util.js")
+const Event = require("../../lib/event.js")
 const app = getApp()
 
 page({
   data: {
+    // 当前第几幕
+    stage: 0,
     // 页面风格
     isShowCover: true,
     isFirst: true,
     current: 0,
     isMoving: false,
     y: 0
+  },
+  onLoad() {
+    const { $ready } = this.data
+
+    if (!$ready) {
+      Event.on("infoChange", ({ $ready }) => {
+        if (!$ready) return
+        this.startStage()
+      })
+    } else {
+      this.startStage()
+    }
+  },
+  startStage() {
+    const { $indexFlashTexts } = this.data
+    const times = [4, getFlashTime($indexFlashTexts, true)]
+    flow(times, this)
   },
   toggleCover({
     currentTarget: {
