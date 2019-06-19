@@ -33,7 +33,7 @@
   margin-bottom: 40rpx;
 }
 .title-box{
-  padding: 20rpx 0 40rpx 0;
+  padding: 60rpx 0 20rpx 0;
 }
 .hanzi{
   width: 90rpx;

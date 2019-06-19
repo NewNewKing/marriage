@@ -38,11 +38,11 @@
 
             <view class="max pad40 center font28">
               <view class="info-box title-box flex-center-wrap flex-justify-around animated fadeInDown delay-2-5s">
-                <image src="/images{{$style ? '/' + $style : ''}}/hun.png" mode="aspectFit" class="hanzi"></image>
-                <image src="/images{{$style ? '/' + $style : ''}}/li.png" mode="aspectFit" class="hanzi"></image>
-                <image src="/images{{$style ? '/' + $style : ''}}/yao.png" mode="aspectFit" class="hanzi"></image>
-                <image src="/images{{$style ? '/' + $style : ''}}/qing.png" mode="aspectFit" class="hanzi"></image>
-                <image src="/images{{$style ? '/' + $style : ''}}/han.png" mode="aspectFit" class="hanzi"></image>
+                <image src="/images{{$style ? '/' + $style : ''}}/hun.png" mode="aspectFit" class="hanzi animated infinite bounce slow delay-3-5s"></image>
+                <image src="/images{{$style ? '/' + $style : ''}}/li.png" mode="aspectFit" class="hanzi animated infinite bounce slow delay-3-6s"></image>
+                <image src="/images{{$style ? '/' + $style : ''}}/yao.png" mode="aspectFit" class="hanzi animated infinite bounce slow delay-3-7s"></image>
+                <image src="/images{{$style ? '/' + $style : ''}}/qing.png" mode="aspectFit" class="hanzi animated infinite bounce slow delay-3-8s"></image>
+                <image src="/images{{$style ? '/' + $style : ''}}/han.png" mode="aspectFit" class="hanzi animated infinite bounce slow delay-3-9s"></image>
               </view>
               <view class="name-box flex-center-wrap flex-justify-around">
                 <view class="animated fadeInRightBig delay-2-5s bride">{{$groom}}</view>

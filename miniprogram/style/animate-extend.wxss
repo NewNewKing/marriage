@@ -239,6 +239,12 @@
 .animated.delay-3-7s {
   animation-delay: 3.7s;
 }
+.animated.delay-3-8s {
+  animation-delay: 3.8s;
+}
+.animated.delay-3-9s {
+  animation-delay: 3.9s;
+}
 .animated.delay-4-5s {
   animation-delay: 4.5s;
 }

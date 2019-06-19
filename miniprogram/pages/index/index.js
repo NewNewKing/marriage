@@ -6,7 +6,7 @@ const app = getApp()
 page({
   data: {
     // 当前第几幕
-    stage: 0,
+    stage: 2,
     // 页面风格
     isShowCover: true,
     isFirst: true,
@@ -20,10 +20,10 @@ page({
     if (!$ready) {
       Event.on("infoChange", ({ $ready }) => {
         if (!$ready) return
-        this.startStage()
+        // this.startStage()
       })
     } else {
-      this.startStage()
+      // this.startStage()
     }
   },
   // 开始图片播放
