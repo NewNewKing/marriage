@@ -67,9 +67,10 @@ const texts = [
     fontSize: 80
   },
   {
-    text: "we’re\ngetting\nmarried",
+    text: "要结婚啦",
     double: true,
     outName: "growOut",
+    fontSize: 80,
     inName: "puffIn",
     duration: 0.05
   },
@@ -93,7 +94,7 @@ const texts = [
     text: "一起见证"
   },
   {
-    text: "幸 福",
+    text: "幸福",
     fontSize: 80,
     inName: "zoomIn",
     outName: "growOut",

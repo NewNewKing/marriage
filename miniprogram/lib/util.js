@@ -1,5 +1,6 @@
 const infoKeys = require("./needInfoKeys.js")
 function sleep(ms, params) {
+  ms = ms | 0
   return new Promise(resolve => {
     setTimeout(() => {
       resolve(params)
@@ -148,7 +149,8 @@ function getFlashTime(list, flag) {
       outTime
     }
   })
-  if (flag) return time
+  // 真机可能有误差 + 1s
+  if (flag) return time + 1
   return times
 }
 module.exports = {

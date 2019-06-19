@@ -4,6 +4,12 @@
   text-align: center;
   line-height: 1.2;
   font-weight: bold;
+  letter-spacing: 20rpx;
+  text-indent: 20rpx;
+}
+.vertical{
+  text-indent: 0rpx;
+  letter-spacing: 0rpx;
 }
 .double{
   position: absolute;

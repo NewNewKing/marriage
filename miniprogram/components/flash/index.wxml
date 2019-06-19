@@ -9,7 +9,7 @@
         class="{{$flashStatus === 'in' ? item.inName : ''}} {{$flashStatus === 'out' ? item.outName : ''}} animated" 
         style="animation-duration:{{$flashStatus === 'in' ? item.inTime : ''}}{{$flashStatus === 'out' ? item.outTime : ''}}s ">
         <view 
-          class="text" 
+          class="text {{item.direction === 'vertical' ? 'vertical' : ''}}" 
           style="font-size: {{item.fontSize}}px; width: {{item.direction === 'vertical' ? item.fontSize + 'px' : '100%'}};">
           {{item.text}}
         </view>
@@ -19,7 +19,7 @@
         style="animation-duration:{{$flashStatus === 'in' ? item.inTime : ''}}s "
         wx:if="{{item.double}}">
         <view 
-          class="text" 
+          class="text {{item.direction === 'vertical' ? 'vertical' : ''}}" 
           style="font-size: {{item.fontSize}}px; width: {{item.direction === 'vertical' ? item.fontSize + 'px' : '100%'}};">
           {{item.text}}
         </view>

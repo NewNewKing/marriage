@@ -26,6 +26,7 @@ page({
       this.startStage()
     }
   },
+  // 开始图片播放
   startStage() {
     const { $indexFlashTexts } = this.data
     const times = [4, getFlashTime($indexFlashTexts, true)]
