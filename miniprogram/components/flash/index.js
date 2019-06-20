@@ -1,5 +1,5 @@
-const behavior = require("../../lib/behavior.js")
-const { getFlashTime, flow } = require("../../lib/util.js")
+const behavior = require('../../lib/behavior.js')
+const { getFlashTime, flow } = require('../../lib/util.js')
 Component({
   behaviors: [behavior],
   properties: {
@@ -10,7 +10,7 @@ Component({
   },
   data: {
     // 每一帧flash的状态  'in', 'duration', 'out'
-    $flashStatus: "",
+    $flashStatus: 'in',
     stage: 0
   },
   attached() {},

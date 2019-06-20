@@ -79,7 +79,6 @@ function unique(...arg) {
 }
 
 function stage(data, page) {
-  // console.log(data)
   if (typeof data === 'number') {
     return sleep(data * 1000)
   } else {
@@ -100,6 +99,37 @@ function stage(data, page) {
         })
         return sleep(outTime * 1000)
       })
+  }
+}
+function stage2(data, page) {
+  if (typeof data === 'number') {
+    return sleep(data * 1000)
+  } else {
+    const { inTime, outTime, duration } = data
+    let task = Promise.resolve()
+    page.setData({
+      $flashStatus: 'in'
+    })
+    if (inTime) {
+      task = task.then(() => {
+        return sleep(inTime * 1000)
+      })
+    }
+    task = task.then(() => {
+      page.setData({
+        $flashStatus: 'duration'
+      })
+      return sleep(duration * 1000)
+    })
+    if (outTime) {
+      task = task.then(() => {
+        page.setData({
+          $flashStatus: 'out'
+        })
+        return sleep(outTime * 1000)
+      })
+    }
+    return task
   }
 }
 
@@ -142,9 +172,14 @@ function getNeedInfo(info, page) {
 }
 
 function getFlashTime(list, flag) {
+  // s是方便调试
+  const s = 1
   let time = 0
   const times = list.map(item => {
-    const { inTime, outTime, duration } = item
+    let { inTime, outTime, duration } = item
+    inTime *= s
+    outTime *= s
+    duration *= s
     time += item.duration * 1000 + inTime * 1000 + outTime * 1000
     return {
       duration,

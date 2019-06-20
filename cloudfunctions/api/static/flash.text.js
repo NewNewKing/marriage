@@ -86,6 +86,11 @@ const texts = [
     text: '诚邀您'
   },
   {
+    text: '您',
+    fontSize: 80,
+    outName: 'growOut'
+  },
+  {
     text: '携家人'
   },
   {
