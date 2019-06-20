@@ -21,7 +21,7 @@
         <view class="photo-item" wx:for="{{[1,2,3,4,5]}}" wx:key="*this"></view>
       </view>
     </view>
-    <view class="toggle border shadow animated infinite heartBeat slow" bindtap="toggleView">
+    <view class="toggle-box border shadow animated infinite heartBeat slow" bindtap="toggleView">
       查看{{mode === 'swiper' ? '缩略图' : '轮播图'}}
     </view>
   </view>

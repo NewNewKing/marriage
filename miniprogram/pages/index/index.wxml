@@ -9,6 +9,9 @@
     </view>
     
     <view class="container" wx:if="{{stage === 2}}">
+      <view class="toggle-box border shadow animated infinite bounce slow" bindtap="startStage">
+        再次播放
+      </view>
       <swiper 
         class="swiper"
         current="{{current}}"

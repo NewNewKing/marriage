@@ -83,22 +83,27 @@ function stage(data, page) {
     return sleep(data * 1000)
   } else {
     const { inTime, outTime, duration } = data
-    page.setData({
-      $flashStatus: 'in'
-    })
-    return sleep(inTime * 1000)
-      .then(() => {
-        page.setData({
-          $flashStatus: 'duration'
+    return (
+      sleep(inTime * 1000)
+        .then(() => {
+          page.setData({
+            $flashStatus: 'duration'
+          })
+          return sleep(duration * 1000)
         })
-        return sleep(duration * 1000)
-      })
-      .then(() => {
-        page.setData({
-          $flashStatus: 'out'
+        .then(() => {
+          page.setData({
+            $flashStatus: 'out'
+          })
+          return sleep(outTime * 1000)
         })
-        return sleep(outTime * 1000)
-      })
+        // 每次结束时 先重置为in
+        .then(() => {
+          page.setData({
+            $flashStatus: 'in'
+          })
+        })
+    )
   }
 }
 function stage2(data, page) {
@@ -188,7 +193,7 @@ function getFlashTime(list, flag) {
     }
   })
   // 真机可能有误差 + 1s
-  if (flag) return time / 1000 + 1
+  if (flag) return time / 1000 + 1.5
   return times
 }
 module.exports = {
