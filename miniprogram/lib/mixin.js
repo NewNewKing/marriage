@@ -1,20 +1,19 @@
 const app = getApp()
-const { showHeart, sleep, showToast, getNeedInfo } = require("./util.js")
-const Event = require("./event.js")
+const { showHeart, sleep, showToast, getNeedInfo } = require('./util.js')
+const Event = require('./event.js')
 
 const mixin = {
   data: {
     $ready: false,
-    $style: "black-gold"
+    $style: 'black-gold'
   },
   onLoad() {
-    console.log(this)
     if (app.globalData && app.globalData.info) {
       const { info } = app.globalData
       this.setData(getNeedInfo(info, this))
     }
 
-    Event.on("infoChange", info => {
+    Event.on('infoChange', info => {
       this.setData(getNeedInfo(info, this))
     })
   },
@@ -24,7 +23,7 @@ const mixin = {
       const {
         detail: { x, y }
       } = e
-      const component = this.selectComponent("#tap")
+      const component = this.selectComponent('#tap')
       component.showHeart(x, y)
     },
     // 打电话
@@ -35,7 +34,7 @@ const mixin = {
     }) {
       if (num) {
         wx.makePhoneCall({
-          phoneNumber: num + ""
+          phoneNumber: num + ''
         })
         return
       }

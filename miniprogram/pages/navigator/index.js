@@ -1,10 +1,9 @@
-const page = require("../../lib/page.js")
-const { showToast } = require("../../lib/util.js")
+const page = require('../../lib/page.js')
+const { showToast } = require('../../lib/util.js')
 page({
   data: {},
   markertap() {
     const { $lat, $lon, $hotel, $address } = this.data
-    console.log()
     wx.openLocation({
       latitude: $lat,
       longitude: $lon,
@@ -18,7 +17,7 @@ page({
       data: $address,
       success() {
         showToast({
-          title: "详细地址已经复制"
+          title: '详细地址已经复制'
         })
       }
     })

@@ -1,19 +1,19 @@
-const behavior = require("../../lib/behavior.js")
+const behavior = require('../../lib/behavior.js')
 Component({
   data: {
-    sign: "",
+    sign: '',
     timer: null
   },
   behaviors: [behavior],
   attached() {
     let count = 0
     const timer = setInterval(() => {
-      console.log("loading定时器执行")
+      // console.log("loading定时器执行")
       count = count + 1 > 3 ? 0 : count + 1
       let num = count + 1,
-        str = ""
+        str = ''
       while (--num) {
-        str += "·"
+        str += '·'
       }
       this.setData({
         sign: str

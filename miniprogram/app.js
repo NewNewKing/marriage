@@ -1,7 +1,7 @@
-const info = require("./services/info.js")
-const Event = require("./lib/event.js")
-const { unique } = require("./lib/util.js")
-const ImgLoader = require("./lib/imgLoader.js")
+const info = require('./services/info.js')
+const Event = require('./lib/event.js')
+const { unique } = require('./lib/util.js')
+const ImgLoader = require('./lib/imgLoader.js')
 // 获取地图坐标点
 function getMarker({ $lat, $lon }) {
   return [
@@ -9,7 +9,7 @@ function getMarker({ $lat, $lon }) {
       id: 1,
       latitude: $lat,
       longitude: $lon,
-      iconPath: "/images/nav.png",
+      iconPath: '/images/nav.png',
       width: 50,
       height: 50
     }
@@ -19,10 +19,10 @@ function getMarker({ $lat, $lon }) {
 App({
   onLaunch: function() {
     if (!wx.cloud) {
-      console.error("请使用 2.2.3 或以上的基础库以使用云能力")
+      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
       wx.cloud.init({
-        env: "test-nnhi8",
+        env: 'test-nnhi8',
         traceUser: true
       })
     }
@@ -33,18 +33,22 @@ App({
         this.globalData = {
           info: res
         }
-        const { $style, $indexBanners, $photos } = res
-        Event.emit("infoChange", { $style })
-        const list = unique($indexBanners, $photos)
+        const { $style, $indexImgs } = res
+        // Event.emit('infoChange', { $style })
+        res.$markers = getMarker(res)
+        res.$ready = true
+        res.$indexBanners = $indexImgs
+        Event.emit('infoChange', res)
+        return
         // 预加载图片
-        ImgLoader.limitMany({
-          imgList: list,
-          limit: 5
-        }).then(() => {
-          res.$markers = getMarker(res)
-          res.$ready = true
-          Event.emit("infoChange", res)
-        })
+        // ImgLoader.limitMany({
+        //   imgList: $indexBanners,
+        //   limit: 5
+        // }).then(() => {
+        //   res.$markers = getMarker(res)
+        //   res.$ready = true
+        //   Event.emit('infoChange', res)
+        // })
       })
       .catch(err => {
         console.log(err)

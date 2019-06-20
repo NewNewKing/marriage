@@ -1,32 +1,26 @@
-const info = require("../static/marriage.info.js")
-const flashTexts = require("../static/flash.text.js")
+const info = require('../static/marriage.info.js')
+const flashTexts = require('../static/flash.text.js')
 
-const cloud = require("wx-server-sdk")
+const cloud = require('wx-server-sdk')
 // 云文件 ID 换取真实链接
 async function replaceUrl(list) {
-  const urls = [...new Set(list.filter(url => /^cloud:\/\//.test(url)))]
-  if (!urls.length) return list
   const { fileList } = await cloud.getTempFileURL({
-    fileList: urls
+    fileList: list
   })
-  fileList.map(({ fileID, tempFileURL }) => {
-    const index = list.findIndex(item => item === fileID)
-    list[index] = tempFileURL
-  })
-  return list
+  return fileList.map(({ tempFileURL }) => tempFileURL)
 }
 
 // 获取设置信息 并且把所有云ID转化为真实链接
 const get = async () => {
-  const { $indexBanners, $photos } = info
-  const data = await Promise.all([
-    replaceUrl($indexBanners),
-    replaceUrl($photos)
-  ])
-  info.$indexBanners = data[0]
-  info.$photos = data[1]
-  info.$indexFlashTexts = flashTexts
-  return { data: info }
+  const { $photos, $indexUseImgNumber } = info
+  const options = Object.assign({}, info)
+  const data = await replaceUrl($photos)
+
+  options.$photos = data
+  options.$indexFlashTexts = flashTexts
+  options.$indexImgs = data.slice(0, $indexUseImgNumber)
+  delete options.$indexUseImgNumber
+  return { data: options }
 }
 module.exports = {
   get

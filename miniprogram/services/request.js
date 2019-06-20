@@ -1,15 +1,15 @@
-const { showToast } = require("../lib/util.js")
+const { showToast } = require('../lib/util.js')
 const map = {}
 const api = (url, data = {}) => {
   if (map[url]) {
     wx.showLoading({
-      title: "不要着急嘛..."
+      title: '不要着急嘛...'
     })
   }
   map[url] = true
   return wx.cloud
     .callFunction({
-      name: "api",
+      name: 'api',
       data: {
         url,
         data
@@ -36,7 +36,7 @@ const api = (url, data = {}) => {
       map[url] = false
       wx.hideLoading()
       showToast({
-        title: "网络错误啦 QoQ!"
+        title: '网络错误啦 QoQ!'
       })
       return Promise.reject(err)
     })

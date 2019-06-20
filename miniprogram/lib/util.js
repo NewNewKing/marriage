@@ -1,10 +1,13 @@
-const infoKeys = require("./needInfoKeys.js")
-function sleep(ms, params) {
+const infoKeys = require('./needInfoKeys.js')
+function sleep(ms) {
+  let timer
   ms = ms | 0
   return new Promise(resolve => {
-    setTimeout(() => {
-      resolve(params)
+    timer = setTimeout(() => {
+      resolve()
     }, ms)
+  }).then(() => {
+    clearTimeout(timer)
   })
 }
 
@@ -29,17 +32,17 @@ function dateFormat(value, format) {
       return pad(date.getSeconds())
     },
     C: function(date) {
-      return ["日", "一", "二", "三", "四", "五", "六", "日"][date.getDay()]
+      return ['日', '一', '二', '三', '四', '五', '六', '日'][date.getDay()]
     }
   }
 
   const dateToken = /d{1,4}|m{1,4}|yy(?:yy)?|HH|MM|ss|C/g
 
   function pad(val, len) {
-    val = val + ""
+    val = val + ''
     len = len || 2
     while (val.length < len) {
-      val = "0" + val
+      val = '0' + val
     }
     return val
   }
@@ -60,7 +63,7 @@ function dateFormat(value, format) {
 function showToast(data) {
   const options = Object.assign(
     {
-      icon: "none",
+      icon: 'none',
       duration: 3000
     },
     data
@@ -76,24 +79,24 @@ function unique(...arg) {
 }
 
 function stage(data, page) {
-  console.log(data)
-  if (typeof data === "number") {
+  // console.log(data)
+  if (typeof data === 'number') {
     return sleep(data * 1000)
   } else {
     const { inTime, outTime, duration } = data
     page.setData({
-      $flashStatus: "in"
+      $flashStatus: 'in'
     })
     return sleep(inTime * 1000)
       .then(() => {
         page.setData({
-          $flashStatus: "duration"
+          $flashStatus: 'duration'
         })
         return sleep(duration * 1000)
       })
       .then(() => {
         page.setData({
-          $flashStatus: "out"
+          $flashStatus: 'out'
         })
         return sleep(outTime * 1000)
       })
@@ -108,12 +111,12 @@ function flow(list, page) {
   let resolve = Promise.resolve()
   for (let i = 0; i < len; i++) {
     resolve = resolve.then(() => {
-      console.log("开始stage-" + fps)
+      // console.log('开始stage-' + fps)
       return stage(list[i], page).then(() => {
         ++fps
         page.setData({ stage: fps })
         if (len === i + 1) {
-          console.log("最后一幕开始stage-" + fps)
+          // console.log('最后一幕开始stage-' + fps)
         }
       })
     })
@@ -142,7 +145,7 @@ function getFlashTime(list, flag) {
   let time = 0
   const times = list.map(item => {
     const { inTime, outTime, duration } = item
-    time += item.duration + inTime + outTime
+    time += item.duration * 1000 + inTime * 1000 + outTime * 1000
     return {
       duration,
       inTime,
@@ -150,7 +153,7 @@ function getFlashTime(list, flag) {
     }
   })
   // 真机可能有误差 + 1s
-  if (flag) return time + 1
+  if (flag) return time / 1000 + 1
   return times
 }
 module.exports = {

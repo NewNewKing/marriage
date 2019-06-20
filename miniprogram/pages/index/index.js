@@ -1,12 +1,12 @@
-const page = require("../../lib/page.js")
-const { flow, getFlashTime } = require("../../lib/util.js")
-const Event = require("../../lib/event.js")
+const page = require('../../lib/page.js')
+const { flow, getFlashTime } = require('../../lib/util.js')
+const Event = require('../../lib/event.js')
 const app = getApp()
 
 page({
   data: {
     // 当前第几幕
-    stage: 2,
+    stage: 0,
     // 页面风格
     isShowCover: true,
     isFirst: true,
@@ -18,17 +18,18 @@ page({
     const { $ready } = this.data
 
     if (!$ready) {
-      Event.on("infoChange", ({ $ready }) => {
+      Event.on('infoChange', ({ $ready }) => {
         if (!$ready) return
-        // this.startStage()
+        this.startStage()
       })
     } else {
-      // this.startStage()
+      this.startStage()
     }
   },
   // 开始图片播放
   startStage() {
     const { $indexFlashTexts } = this.data
+    console.log(getFlashTime($indexFlashTexts, true))
     const times = [4, getFlashTime($indexFlashTexts, true)]
     flow(times, this)
   },
@@ -38,7 +39,7 @@ page({
     }
   }) {
     const { isShowCover } = this.data
-    if (type === "swiper" && !isShowCover) {
+    if (type === 'swiper' && !isShowCover) {
       return
     }
     this.setData({

@@ -1,5 +1,5 @@
-const cloud = require("wx-server-sdk")
-const router = require("./router/index.js")
+const cloud = require('wx-server-sdk')
+const router = require('./router/index.js')
 
 // cloud.init()
 /*
@@ -14,10 +14,17 @@ const router = require("./router/index.js")
 exports.main = async (event, context, a) => {
   console.log(event)
   const { url, data } = event
-  const path = url.split(".")
-  const result = await router[path[0]][path[1]](data)
+  const path = url.split('.')
+  const result = await router[path[0]][path[1]](data).catch(err => {
+    const msg = err.errMsg || '网络错误'
+    return {
+      code: 1,
+      msg,
+      data: null
+    }
+  })
   if (!result.msg) {
-    result.msg = "suceess!"
+    result.msg = 'suceess!'
   }
   if (!result.code) {
     result.code = 0
@@ -25,5 +32,6 @@ exports.main = async (event, context, a) => {
   if (!result.data) {
     result.data = null
   }
+  console.log(result)
   return result
 }

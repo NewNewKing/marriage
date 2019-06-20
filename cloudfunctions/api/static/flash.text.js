@@ -18,87 +18,125 @@
 */
 const texts = [
   {
-    text: "各位",
-    inName: "zoomIn",
+    text: '各位',
+    inName: 'zoomIn',
     inTime: 0.2,
-    outName: "growOut",
+    outName: 'growOut',
     outTime: 0.2
   },
   {
-    text: "长辈们"
+    text: '长辈们'
   },
   {
-    text: "小哥哥"
+    text: '小哥哥'
   },
   {
-    text: "小姐姐"
+    text: '小姐姐'
   },
   {
-    text: "告诉你们"
+    text: '告诉你们'
   },
   {
-    text: "一个"
+    text: '一个'
   },
   {
-    text: "好消息"
+    inTime: 0.5,
+    inName: 'jackInTheBox',
+    text: '好消息',
+    duration: 0.1,
+    fontSize: 80
   },
   {
-    text: "我们"
+    text: '我们'
   },
   {
-    text: "要结婚啦",
+    text: '要结婚啦',
     fontSize: 40
   },
   {
-    text: "要结婚啦",
+    text: '要结婚啦',
     fontSize: 60
   },
   {
-    text: "要结婚啦",
+    text: '要结婚啦',
     fontSize: 80
   },
   {
-    text: "要结婚啦",
-    direction: "vertical",
+    text: '要结婚啦',
+    direction: 'vertical',
     fontSize: 80
   },
   {
-    text: "要结婚啦",
+    text: '要结婚啦',
     fontSize: 80
   },
   {
-    text: "要结婚啦",
+    text: '要结婚啦',
     double: true,
-    outName: "growOut",
+    outName: 'growOut',
     fontSize: 80,
-    inName: "puffIn",
+    inName: 'puffIn',
     duration: 0.05
   },
   {
-    text: "诚邀",
-    inName: "flash"
+    text: '诚邀',
+    inName: 'flash'
   },
   {
-    text: "诚邀您"
+    text: '诚邀您'
   },
   {
-    text: "携家人"
+    text: '携家人'
   },
   {
-    text: "出席"
+    text: '出席'
   },
   {
-    text: "婚礼"
+    text: '我们的婚礼',
+    outName: 'growOut'
   },
   {
-    text: "一起见证"
-  },
-  {
-    text: "幸福",
-    fontSize: 80,
-    inName: "zoomIn",
-    outName: "growOut",
+    inName: 'puffIn',
+    text: '一起见证',
     duration: 0.1
+  },
+  {
+    inName: 'zoomIn',
+    text: '我们的',
+    duration: 0.1,
+    outName: 'growOut'
+  },
+  {
+    inName: 'rotateIn',
+    // inTime: 0.5,
+    outName: 'rotateOut',
+    text: '幸福',
+    duration: 0.1
+  },
+  // {
+  //   inName: 'rotateIn',
+  //   inTime: 0.5,
+  //   outName: 'rotateOut',
+  //   text: '幸福',
+  //   duration: 0.1
+  // },
+  // {
+  //   inName: 'rotateInDownLeft',
+  //   text: '幸福',
+  //   duration: 0.1
+  // },
+  // {
+  //   inName: 'rotateInDownLeft',
+  //   text: '幸福',
+  //   duration: 0.1
+  // },
+  {
+    text: '幸福',
+    fontSize: 80,
+    inName: 'zoomIn',
+    outName: 'growOut',
+    duration: 0.1,
+    double: true
   }
 ]
 
@@ -106,7 +144,7 @@ function fillFlashOptions(list) {
   const ANIMATETIME = 0.3
   const DURATIONTIME = 0.3
   const FONTSIZE = 60
-  const DIRECTION = "horizontal"
+  const DIRECTION = 'horizontal'
   return list.map(item => {
     let {
       text,
@@ -138,9 +176,9 @@ function fillFlashOptions(list) {
       text,
       direction: direction || DIRECTION,
       fontSize: fontSize || FONTSIZE,
-      animate: animate || "",
-      inName: inName || "",
-      outName: outName || "",
+      animate: animate || '',
+      inName: inName || '',
+      outName: outName || '',
       inTime: inTime,
       outTime: outTime,
       duration: duration || DURATIONTIME,

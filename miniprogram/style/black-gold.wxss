@@ -16,6 +16,9 @@
 .black-gold .shadow{
   box-shadow: 0 0rpx 20rpx 0 #eccb90;
 }
+.black-gold .text-shadow{
+  text-shadow: 0 0rpx 40rpx #eccb90;
+}
 .black-gold.container{
   color: #eccb90;
   background-color: #242424;
