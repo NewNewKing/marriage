@@ -113,35 +113,16 @@ const texts = [
   },
   {
     inName: 'rotateIn',
-    // inTime: 0.5,
     outName: 'rotateOut',
     text: '幸福',
     duration: 0.1
   },
-  // {
-  //   inName: 'rotateIn',
-  //   inTime: 0.5,
-  //   outName: 'rotateOut',
-  //   text: '幸福',
-  //   duration: 0.1
-  // },
-  // {
-  //   inName: 'rotateInDownLeft',
-  //   text: '幸福',
-  //   duration: 0.1
-  // },
-  // {
-  //   inName: 'rotateInDownLeft',
-  //   text: '幸福',
-  //   duration: 0.1
-  // },
   {
     text: '幸福',
     fontSize: 80,
     inName: 'zoomIn',
     outName: 'growOut',
-    duration: 0.1,
-    double: true
+    duration: 0.1
   }
 ]
 

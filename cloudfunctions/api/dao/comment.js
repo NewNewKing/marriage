@@ -1,8 +1,6 @@
-const cloud = require("wx-server-sdk")
-cloud.init()
-
+const cloud = require('wx-server-sdk')
 const db = cloud.database()
-const COMMENT = db.collection("comment")
+const COMMENT = db.collection('comment')
 
 const add = async data => {
   return COMMENT.add({
@@ -14,7 +12,7 @@ const getList = async data => {
   const { pageSize, pageNum } = data
   return COMMENT.skip(pageSize * pageNum - pageSize)
     .limit(pageSize)
-    .orderBy("time", "desc")
+    .orderBy('time', 'desc')
     .get()
 }
 
