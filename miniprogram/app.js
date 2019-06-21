@@ -27,35 +27,14 @@ App({
       })
     }
     // 获取全局配置信息
-    info
-      .get()
-      .then(res => {
-        this.globalData = {
-          info: res
-        }
-        const { $style, $indexImgs } = res
-        // Event.emit('infoChange', { $style })
-        res.$markers = getMarker(res)
-        res.$ready = true
-        res.$indexBanners = $indexImgs
-        Event.emit('infoChange', res)
-        return
-        // 预加载图片
-        // ImgLoader.limitMany({
-        //   imgList: $indexBanners,
-        //   limit: 5
-        // }).then(() => {
-        //   res.$markers = getMarker(res)
-        //   res.$ready = true
-        //   Event.emit('infoChange', res)
-        // })
-      })
-      .catch(err => {
-        console.log(err)
-        wx.showToast({
-          title: err,
-          duration: 3000
-        })
-      })
+    info.get().then(res => {
+      this.globalData = {
+        info: res
+      }
+      res.$ready = true
+      res.$markers = getMarker(res)
+      res.$indexBanners = res.$indexImgs.slice(2)
+      Event.emit('infoChange', res)
+    })
   }
 })

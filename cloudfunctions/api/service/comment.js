@@ -1,4 +1,4 @@
-const dao = require("../dao/comment.js")
+const dao = require('../dao/comment.js')
 const add = async data => {
   return dao.add(data)
 }
@@ -23,7 +23,7 @@ const getAllList = async data => {
     list.push(task)
     --time
   }
-  // return Promise.all(list.reverse()).then(res => res)
+
   return Promise.all(list.reverse()).then(res =>
     res.reduce((list, item) => {
       return [...list, ...item.data]

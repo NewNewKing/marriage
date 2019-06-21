@@ -29,10 +29,10 @@ page({
   // 开始图片播放
   startStage() {
     const { $indexFlashTexts } = this.data
-    console.log(getFlashTime($indexFlashTexts, true))
     const times = [4, getFlashTime($indexFlashTexts, true)]
     flow(times, this)
   },
+  // 切换 封面是否显示
   toggleCover({
     currentTarget: {
       dataset: { type }
@@ -47,6 +47,7 @@ page({
       isShowCover: !isShowCover
     })
   },
+  // 补充滑动切换背景图事件
   start({ changedTouches }) {
     if (!changedTouches[0]) return
     const { clientY } = changedTouches[0]

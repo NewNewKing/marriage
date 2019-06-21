@@ -5,6 +5,7 @@ const api = (url, data = {}) => {
     wx.showLoading({
       title: '不要着急嘛...'
     })
+    return Promise.reject()
   }
   map[url] = true
   return wx.cloud
@@ -14,6 +15,14 @@ const api = (url, data = {}) => {
         url,
         data
       }
+    })
+    .catch(err => {
+      map[url] = false
+      wx.hideLoading()
+      showToast({
+        title: (err && err.errorMessage) || '网络错误啦 QoQ!'
+      })
+      return Promise.reject(err)
     })
     .then(({ result }) => {
       map[url] = false
@@ -31,14 +40,6 @@ const api = (url, data = {}) => {
       } else {
         return data
       }
-    })
-    .catch(err => {
-      map[url] = false
-      wx.hideLoading()
-      showToast({
-        title: '网络错误啦 QoQ!'
-      })
-      return Promise.reject(err)
     })
 }
 

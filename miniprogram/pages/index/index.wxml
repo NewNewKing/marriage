@@ -1,15 +1,15 @@
 <view class="container {{$style}}" bindtap="$showHeart">
   <view wx:if="{{$ready}}">
     <view wx:if="{{stage === 0}}">
-      <image class="flash-view animated halfFadeInDown" src="{{$indexBanners[0]}}" mode="aspectFill"></image>
-      <image class="flash-view animated slower puffIn slow delay-1s" src="{{$indexBanners[1]}}" mode="aspectFill"></image>
+      <image class="flash-view animated halfFadeInDown" src="{{$indexImgs[0]}}" mode="aspectFill"></image>
+      <image class="flash-view animated slower puffIn slow delay-1s" src="{{$indexImgs[1]}}" mode="aspectFill"></image>
     </view>
     <view wx:if="{{stage === 1}}">
       <ui-flash texts="{{$indexFlashTexts}}"></ui-flash>
     </view>
     
     <view class="container" wx:if="{{stage === 2}}">
-      <view class="toggle-box border shadow animated infinite bounce slow" bindtap="startStage">
+      <view class="toggle-box border shadow animated infinite bounce slow" catchtap="startStage">
         再次播放
       </view>
       <swiper 
