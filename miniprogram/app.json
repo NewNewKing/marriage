@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/navigator/index",
     "pages/comment/index",
-    "pages/photo/index"
+    "pages/photo/index",
+    "pages/egg/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#242424",

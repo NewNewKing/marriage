@@ -1,4 +1,4 @@
-const page = require('../../lib/page.js')
+const page = require('../../framework/page.js')
 const { showToast } = require('../../lib/util.js')
 page({
   data: {},

@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -53,6 +53,13 @@
 					"id": -1,
 					"name": "相册",
 					"pathName": "pages/photo/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "彩蛋页",
+					"pathName": "pages/egg/index",
 					"scene": null
 				}
 			]

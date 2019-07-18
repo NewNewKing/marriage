@@ -1,4 +1,4 @@
-const behavior = require('../../lib/behavior.js')
+const behavior = require('../../framework/behavior.js')
 Component({
   data: {
     sign: '',

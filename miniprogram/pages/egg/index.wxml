@@ -1,0 +1,12 @@
+<view class="container {{$style}}" bindtap="$showHeart">
+  <view class="container flex-center-wrap flex-justify-center" wx:if="{{$ready}}">
+    <view class="center egg-box">
+      <view class="empty"></view>
+      <canvas canvas-id="export" class="canvas" wx:if="{{!tempFilePath}}"></canvas>
+      <image src="{{tempFilePath}}" wx:else class="canvas"></image>
+      <view class="save-btn border shadow" bindtap="save">保存图片</view>
+    </view>
+  </view>
+
+  <include src="/template/system.wxml"/>
+</view>

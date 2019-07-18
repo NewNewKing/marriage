@@ -1,6 +1,6 @@
 const app = getApp()
-const { showHeart, sleep, showToast, getNeedInfo } = require('./util.js')
-const Event = require('./event.js')
+const { showHeart, sleep, showToast, getNeedInfo } = require('../lib/util.js')
+const Event = require('../lib/event.js')
 
 const mixin = {
   data: {
@@ -19,12 +19,21 @@ const mixin = {
   },
   methods: {
     // 全屏点击出现心
-    $showHeart(e) {
-      const {
-        detail: { x, y }
-      } = e
+    $showHeart(e, y) {
       const component = this.selectComponent('#tap')
-      component.showHeart(x, y)
+      // 主动调用
+      if (y) {
+        component.showHeart(e, y)
+        return
+      }
+      // 点击调用
+      const { touches } = e
+      if (touches && touches.length) {
+        touches.forEach(item => {
+          const { clientX, clientY } = item
+          component.showHeart(clientX, clientY)
+        })
+      }
     },
     // 打电话
     $phoneCall({

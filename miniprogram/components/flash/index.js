@@ -1,4 +1,4 @@
-const behavior = require('../../lib/behavior.js')
+const behavior = require('../../framework/behavior.js')
 const { getFlashTime, flow } = require('../../lib/util.js')
 Component({
   behaviors: [behavior],

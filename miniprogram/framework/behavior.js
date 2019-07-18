@@ -1,9 +1,9 @@
 const app = getApp()
-const Event = require("./event.js")
+const Event = require('../lib/event.js')
 
 const options = {
   data: {
-    $style: "black-gold"
+    $style: 'black-gold'
   },
   attached() {
     if (app.globalData && app.globalData.info) {
@@ -14,7 +14,7 @@ const options = {
     }
     // 因为每次
     Event.on(
-      "infoChange",
+      'infoChange',
       info => {
         this.setData({
           $style: info.$style
@@ -24,7 +24,7 @@ const options = {
     )
   },
   detached() {
-    Event.off("infoChange", this.__wxExparserNodeId__)
+    Event.off('infoChange', this.__wxExparserNodeId__)
   }
 }
 

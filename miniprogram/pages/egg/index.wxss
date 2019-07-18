@@ -1,0 +1,40 @@
+.person{
+  margin-bottom: 20rpx;
+}
+.biaoqing{
+  width: 300rpx;
+  height: 300rpx;
+  margin-bottom: 80rpx;
+}
+.egg-box{
+  padding: 0 40rpx 0;
+}
+.empty{
+  height: 100rpx;
+}
+.title{
+  font-size: 40rpx;
+  line-height: 60rpx;
+}
+.avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 40rpx;
+}
+.name{
+  font-size: 40rpx;
+}
+.person-wrap{
+  margin: 40rpx 0;
+}
+.save-btn{
+  width: 400rpx;
+  line-height: 80rpx;
+  margin: 100rpx auto;
+  border-radius: 80rpx;
+}
+.canvas{
+  width: 600rpx;
+  height: 820rpx;
+}

@@ -23,7 +23,8 @@ const obj = {
     '$lat'
   ],
   // 评论
-  ['pages/comment/index']: []
+  ['pages/comment/index']: [],
+  ['pages/egg/index']: []
 }
 
 module.exports = obj

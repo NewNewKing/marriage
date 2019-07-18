@@ -1,4 +1,4 @@
-const page = require('../../lib/page.js')
+const page = require('../../framework/page.js')
 const { flow, getFlashTime } = require('../../lib/util.js')
 const Event = require('../../lib/event.js')
 const app = getApp()

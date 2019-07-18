@@ -1,6 +1,6 @@
-const { dateFormat, showToast } = require("../../lib/util.js")
-const page = require("../../lib/page.js")
-const comment = require("../../services/comment.js")
+const { dateFormat, showToast } = require('../../lib/util.js')
+const page = require('../../framework/page.js')
+const comment = require('../../services/comment.js')
 const app = getApp()
 
 page({
@@ -9,7 +9,7 @@ page({
     list: [],
     userInfo: null,
     isLayerShow: false,
-    value: "",
+    value: '',
 
     pageNum: 1
   },
@@ -49,7 +49,7 @@ page({
   // 滚动到底时
   scrollToLower() {
     wx.showLoading({
-      title: "评论加载中..."
+      title: '评论加载中...'
     })
     const { pageNum, list } = this.data
 
@@ -64,26 +64,20 @@ page({
     this.setData({
       value
     })
-    const e = {
-      detail: {
-        x: offsetLeft,
-        y: offsetTop
-      }
-    }
-    this.$showHeart(e)
+    this.$showHeart(offsetLeft, offsetTop)
   },
   // 提交评论
   submit() {
     const { userInfo, value, list } = this.data
     if (!this.validate()) return
     wx.showLoading({
-      title: "评论提交中..."
+      title: '评论提交中...'
     })
     comment.add(Object.assign({}, userInfo, { comment: value })).then(data => {
       list.unshift(data)
       this.setData({
         list,
-        value: "",
+        value: '',
         isLayerShow: false
       })
     })
@@ -91,9 +85,9 @@ page({
   // 校验评论内容
   validate() {
     const { value } = this.data
-    if (!value.replace(/\s/g, "")) {
+    if (!value.replace(/\s/g, '')) {
       showToast({
-        title: "难道你就没有话对我们说吗~"
+        title: '难道你就没有话对我们说吗~'
       })
       return false
     }
@@ -104,7 +98,7 @@ page({
     if (!userInfo) {
       // 没有授权
       showToast({
-        title: "咋滴，还想匿名发言呐？"
+        title: '咋滴，还想匿名发言呐？'
       })
       return
     }
@@ -112,6 +106,7 @@ page({
     this.setData({
       userInfo
     })
+    this.globalData.userInfo = userInfo
     this.showLayer()
   },
   // layer的开关

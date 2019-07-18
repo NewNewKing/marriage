@@ -172,7 +172,7 @@ function pick(obj, keys) {
 
 function getNeedInfo(info, page) {
   const { common } = infoKeys
-  const list = infoKeys[page.route]
+  const list = infoKeys[page.route] || infoKeys.common
   return pick(info, [...list, ...common])
 }
 
