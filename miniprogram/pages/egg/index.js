@@ -7,20 +7,23 @@ const app = getApp()
 page({
   data: {
     userInfo: '',
-    tempFilePath: ''
+    tempFilePath: '',
+
+    // 是否拒绝保存到相册
+    isRefuse: false
   },
   onLoad() {
-    // const { userInfo } = app.globalData
-    const userInfo = {
-      avatarUrl:
-        'https://wx.qlogo.cn/mmopen/vi_32/295czzN8HT3MU8rZdAuwn8wU35ArrKz33uFJteicp6BCcgZ755oOaHetczlTjOIRS18x04RZkkLvYmM7picC08Mw/132',
-      city: '成都',
-      country: '中国',
-      gender: 1,
-      language: 'zh_CN',
-      nickName: '王兴欣',
-      province: '四川'
-    }
+    const { userInfo } = app.globalData
+    // const userInfo = {
+    //   avatarUrl:
+    //     'https://wx.qlogo.cn/mmopen/vi_32/295czzN8HT3MU8rZdAuwn8wU35ArrKz33uFJteicp6BCcgZ755oOaHetczlTjOIRS18x04RZkkLvYmM7picC08Mw/132',
+    //   city: '成都',
+    //   country: '中国',
+    //   gender: 1,
+    //   language: 'zh_CN',
+    //   nickName: '王兴欣',
+    //   province: '四川'
+    // }
     console.log(userInfo)
     this.setData({
       userInfo
@@ -28,26 +31,38 @@ page({
   },
   onReady() {
     const ctx = wx.createCanvasContext('export')
-    wx.getSystemInfo({
-      success: ({ screenWidth }) => {
-        this.draw(ctx, screenWidth / 375)
+    wx.downloadFile({
+      url: this.data.userInfo.avatarUrl,
+      success: ({ tempFilePath }) => {
+        wx.getSystemInfo({
+          success: ({ screenWidth }) => {
+            this.draw(ctx, screenWidth / 375, tempFilePath)
+          }
+        })
       }
     })
   },
   save() {
     const { tempFilePath } = this.data
     if (tempFilePath) {
-      this.savePicture(tempFilePath)
+      return this.savePicture(tempFilePath)
     }
-    wx.canvasToTempFilePath({
-      canvasId: 'export',
-      quality: 1,
-      success: ({ tempFilePath }) => {
-        this.setData({
-          tempFilePath
-        })
-        this.savePicture(tempFilePath)
-      }
+    this.toImg().then(img => {
+      this.savePicture(img)
+    })
+  },
+  toImg() {
+    return new Promise(resolve => {
+      wx.canvasToTempFilePath({
+        canvasId: 'export',
+        quality: 1,
+        success: ({ tempFilePath }) => {
+          this.setData({
+            tempFilePath
+          })
+          resolve(tempFilePath)
+        }
+      })
     })
   },
   savePicture(url) {
@@ -58,23 +73,23 @@ page({
         showToast({
           title: '保存成功！'
         })
+      },
+      fail: () => {
+        this.setData({
+          isRefuse: true
+        })
+        showToast({
+          title: '保存失败！，若要继续操作请先进入设置页授权'
+        })
       }
     })
   },
-  draw(ctx, r) {
+  draw(ctx, r, img) {
     const { nickName, avatarUrl } = this.data.userInfo
-
-    // ctx.setFillStyle('red')
-    // ctx.fillRect(0, 0, 100, 100)
-    // ctx.setFillStyle('green')
-    // ctx.fillRect(100, 100, 200, 200)
-    // ctx.draw()
-    // return
-
-    // ctx.save()
-    // ctx.setFillStyle('#242424')
-    // ctx.fillRect(0, 0, 300 * r, 420 * r)
-    // ctx.restore()
+    ctx.beginPath()
+    ctx.setFillStyle('#242424')
+    ctx.fillRect(0, 0, 300 * r, 420 * r)
+    ctx.closePath()
     ctx.setTextAlign('center')
     ctx.setTextBaseline('top')
     ctx.setFillStyle('#eccb90')
@@ -95,7 +110,7 @@ page({
     ctx.beginPath()
     ctx.arc(x * r + 25 * r, 325 * r, 25 * r, 0, 2 * Math.PI)
     ctx.clip()
-    ctx.drawImage(avatarUrl, x * r, 300 * r, 50 * r, 50 * r)
+    ctx.drawImage(img, x * r, 300 * r, 50 * r, 50 * r)
     ctx.restore()
     ctx.fillText(nickName, (x + 50 + 20 + width / 2) * r, 315 * r, width * r)
 
@@ -103,5 +118,8 @@ page({
     ctx.fillText('第 1 位发现新郎的私房钱', 150 * r, 380 * r)
 
     ctx.draw()
+  },
+  openSetting() {
+    wx.openSetting()
   }
 })

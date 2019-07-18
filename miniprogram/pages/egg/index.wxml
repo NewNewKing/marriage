@@ -6,6 +6,7 @@
       <image src="{{tempFilePath}}" wx:else class="canvas"></image>
       <view class="save-btn border shadow" bindtap="save">保存图片</view>
     </view>
+    <view class="toggle-box border shadow animated infinite heartBeat slow" bindtap="openSetting">打开设置页</view>
   </view>
 
   <include src="/template/system.wxml"/>

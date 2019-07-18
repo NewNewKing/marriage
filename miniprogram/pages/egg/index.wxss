@@ -36,5 +36,6 @@
 }
 .canvas{
   width: 600rpx;
+  display: block;
   height: 820rpx;
 }
