@@ -3,6 +3,24 @@ const { showToast } = require('../../lib/util.js')
 // const { flow, getFlashTime } = require('../../lib/util.js')
 // const Event = require('../../lib/event.js')
 const app = getApp()
+function getImageInfo(src) {
+  return new Promise((resolve, reject) => {
+    wx.getImageInfo({
+      src,
+      success: res => resolve(res),
+      fail: err => reject(err)
+    })
+  })
+}
+
+function getSystemInfo() {
+  return new Promise((resolve, reject) => {
+    wx.getSystemInfo({
+      success: res => resolve(res),
+      fail: err => reject(err)
+    })
+  })
+}
 
 page({
   data: {
@@ -13,17 +31,17 @@ page({
     isRefuse: false
   },
   onLoad() {
-    const { userInfo } = app.globalData
-    // const userInfo = {
-    //   avatarUrl:
-    //     'https://wx.qlogo.cn/mmopen/vi_32/295czzN8HT3MU8rZdAuwn8wU35ArrKz33uFJteicp6BCcgZ755oOaHetczlTjOIRS18x04RZkkLvYmM7picC08Mw/132',
-    //   city: '成都',
-    //   country: '中国',
-    //   gender: 1,
-    //   language: 'zh_CN',
-    //   nickName: '王兴欣',
-    //   province: '四川'
-    // }
+    // const { userInfo } = app.globalData
+    const userInfo = {
+      avatarUrl:
+        'https://wx.qlogo.cn/mmopen/vi_32/295czzN8HT3MU8rZdAuwn8wU35ArrKz33uFJteicp6BCcgZ755oOaHetczlTjOIRS18x04RZkkLvYmM7picC08Mw/132',
+      city: '成都',
+      country: '中国',
+      gender: 1,
+      language: 'zh_CN',
+      nickName: '王兴欣',
+      province: '四川'
+    }
     console.log(userInfo)
     this.setData({
       userInfo
@@ -31,15 +49,12 @@ page({
   },
   onReady() {
     const ctx = wx.createCanvasContext('export')
-    wx.downloadFile({
-      url: this.data.userInfo.avatarUrl,
-      success: ({ tempFilePath }) => {
-        wx.getSystemInfo({
-          success: ({ screenWidth }) => {
-            this.draw(ctx, screenWidth / 375, tempFilePath)
-          }
-        })
-      }
+    Promise.all([
+      getImageInfo(this.data.userInfo.avatarUrl),
+      getSystemInfo()
+    ]).then(res => {
+      const [{ path: avatar }, { screenWidth }] = res
+      this.draw(ctx, screenWidth / 375, avatar)
     })
   },
   save() {
@@ -66,7 +81,6 @@ page({
     })
   },
   savePicture(url) {
-    console.log(url)
     wx.saveImageToPhotosAlbum({
       filePath: url,
       success() {
@@ -84,7 +98,7 @@ page({
       }
     })
   },
-  draw(ctx, r, img) {
+  draw(ctx, r, avatar) {
     const { nickName, avatarUrl } = this.data.userInfo
     ctx.beginPath()
     ctx.setFillStyle('#242424')
@@ -110,7 +124,7 @@ page({
     ctx.beginPath()
     ctx.arc(x * r + 25 * r, 325 * r, 25 * r, 0, 2 * Math.PI)
     ctx.clip()
-    ctx.drawImage(img, x * r, 300 * r, 50 * r, 50 * r)
+    ctx.drawImage(avatar, x * r, 300 * r, 50 * r, 50 * r)
     ctx.restore()
     ctx.fillText(nickName, (x + 50 + 20 + width / 2) * r, 315 * r, width * r)
 
