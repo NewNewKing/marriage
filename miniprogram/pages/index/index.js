@@ -16,7 +16,6 @@ page({
   },
   onLoad() {
     const { $ready } = this.data
-
     if (!$ready) {
       Event.on('infoChange', ({ $ready }) => {
         if (!$ready) return

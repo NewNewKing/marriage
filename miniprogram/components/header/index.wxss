@@ -1,4 +1,21 @@
+.title-box{
+  padding-top: 50rpx;
+}
 .title{
   text-align: center;
   padding: 20rpx;
+  position: relative;
+  line-height: 1;
+  font-size: 40rpx;
+  height: 40rpx;
+}
+.back{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 60rpx;
+  line-height: 80rpx;
+  width: 120rpx;
+  text-align: center;
 }

@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "ui-tap-shape": "/components/tap-shape/index",
-    "ui-loading": "/components/loading/index"
+    "ui-loading": "/components/loading/index",
+    "ui-header": "/components/header/index"
   }
 }

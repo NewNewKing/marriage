@@ -1,8 +1,6 @@
 <view class="container {{$style}}" bindtap="$showHeart">
-  <view class="container" wx:if="{{$ready}}">
+  <view class="container" wx:if="{{$ready && $pageReady}}">
     <scroll-view class="list-wrap" scroll-y style="height:{{height}}px" bindscrolltolower="scrollToLower">
-      <ui-header />
-      <ui-header />
       <view class="item-wrap" wx:for="{{list}}" wx:key="index">
         <view class="list-item border shadow flex-wrap" >
           <ui-background />

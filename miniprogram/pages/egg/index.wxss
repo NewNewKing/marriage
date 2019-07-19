@@ -8,6 +8,7 @@
 }
 .egg-box{
   padding: 0 40rpx 0;
+  margin-top: 80rpx;
 }
 .empty{
   height: 100rpx;

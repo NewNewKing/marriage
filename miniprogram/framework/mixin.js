@@ -4,7 +4,10 @@ const Event = require('../lib/event.js')
 
 const mixin = {
   data: {
+    // 是否已经从服务器获取到配置信息
     $ready: false,
+    // 页面是否已经准备好
+    $pageReady: true,
     $style: 'black-gold'
   },
   onLoad() {

@@ -6,19 +6,20 @@ const lifecycle = ['onLoad', 'onShareAppMessage-1']
 
 const page = function(options) {
   mixinData(options, mixin)
-  mixinMethods(options, mixin)
+  options = mixinMethods(options, mixin)
   mixinLifeCycle(options, mixin)
   Page(options)
 }
 
 function mixinData(options, mixin) {
   const { data = {} } = options
-  Object.assign(data, mixin.data)
+  options.data = Object.assign({}, mixin.data, data)
 }
 
 function mixinMethods(options, mixin) {
   const { methods } = mixin
-  Object.assign(options, methods)
+  options = Object.assign({}, methods, options)
+  return options
 }
 
 function mixinLifeCycle(options, mixin) {
