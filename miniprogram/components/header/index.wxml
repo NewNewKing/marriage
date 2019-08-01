@@ -1,6 +1,9 @@
-<view class="title-box"> 
+<view class="title-box head-fixed"> 
   <view class="title">
     <view class="back" bindtap="back">👈</view>
     <view>{{title}}</view>
   </view>
+</view>
+<view class="title-box">
+  <view class="title"></view>
 </view>

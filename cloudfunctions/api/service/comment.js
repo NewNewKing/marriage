@@ -2,10 +2,12 @@ const dao = require('../dao/comment.js')
 const add = async data => {
   return dao.add(data)
 }
+// 获取列表
 const getList = async data => {
   return dao.getList(data).then(res => res.data)
 }
 
+// 获取所有内容
 const getAllList = async data => {
   const pageSize = 20
   const count = await dao.getCount().then(res => res.total)

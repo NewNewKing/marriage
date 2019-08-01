@@ -2,6 +2,7 @@ const page = require('../../framework/page.js')
 const { showToast } = require('../../lib/util.js')
 // const { flow, getFlashTime } = require('../../lib/util.js')
 // const Event = require('../../lib/event.js')
+const egg = require('../../services/egg.js')
 const app = getApp()
 function getImageInfo(src) {
   return new Promise((resolve, reject) => {
@@ -24,6 +25,7 @@ function getSystemInfo() {
 
 page({
   data: {
+    $pageReady: false,
     userInfo: '',
     tempFilePath: '',
 
@@ -31,32 +33,43 @@ page({
     isRefuse: false
   },
   onLoad() {
-    const { userInfo } = app.globalData
-    // const userInfo = {
-    //   avatarUrl:
-    //     'https://wx.qlogo.cn/mmopen/vi_32/295czzN8HT3MU8rZdAuwn8wU35ArrKz33uFJteicp6BCcgZ755oOaHetczlTjOIRS18x04RZkkLvYmM7picC08Mw/132',
-    //   city: '成都',
-    //   country: '中国',
-    //   gender: 1,
-    //   language: 'zh_CN',
-    //   nickName: '王兴欣',
-    //   province: '四川'
-    // }
-    console.log(userInfo)
+    const userInfo = {
+      avatarUrl:
+        'https://wx.qlogo.cn/mmopen/vi_32/295czzN8HT3MU8rZdAuwn8wU35ArrKz33uFJteicp6BCcgZ755oOaHetczlTjOIRS18x04RZkkLvYmM7picC08Mw/132',
+      city: '成都',
+      country: '中国',
+      gender: 1,
+      language: 'zh_CN',
+      nickName: '王兴欣',
+      province: '四川'
+    }
+    // const { userInfo } = app.globalData
     this.setData({
       userInfo
     })
   },
   onReady() {
-    const ctx = wx.createCanvasContext('export')
     Promise.all([
+      egg.clue(this.data.userInfo),
       getImageInfo(this.data.userInfo.avatarUrl),
       getSystemInfo()
     ]).then(res => {
-      const [{ path: avatar }, { screenWidth }] = res
-      this.draw(ctx, screenWidth / 375, avatar)
+      this.setData({
+        $pageReady: true
+      })
+      const ctx = wx.createCanvasContext('export')
+      const [info, { path: avatar }, { screenWidth }] = res
+      const params = {
+        avatar,
+        nickName: this.data.userInfo.nickName,
+        r: screenWidth / 375,
+        money: info.money / 100,
+        rank: info.rank
+      }
+      this.draw(ctx, params)
     })
   },
+  // 保存图片
   save() {
     const { tempFilePath } = this.data
     if (tempFilePath) {
@@ -66,6 +79,7 @@ page({
       this.savePicture(img)
     })
   },
+  // canvas to img
   toImg() {
     return new Promise(resolve => {
       wx.canvasToTempFilePath({
@@ -80,6 +94,7 @@ page({
       })
     })
   },
+  // 微信保存图片方法
   savePicture(url) {
     wx.saveImageToPhotosAlbum({
       filePath: url,
@@ -98,8 +113,9 @@ page({
       }
     })
   },
-  draw(ctx, r, avatar) {
-    const { nickName, avatarUrl } = this.data.userInfo
+  // 画出页面
+  draw(ctx, info) {
+    const { r, avatar, nickName, rank } = info
     ctx.beginPath()
     ctx.setFillStyle('#242424')
     ctx.fillRect(0, 0, 300 * r, 420 * r)
@@ -129,9 +145,11 @@ page({
     ctx.fillText(nickName, (x + 50 + 20 + width / 2) * r, 315 * r, width * r)
 
     ctx.setFontSize(16 * r)
-    ctx.fillText('第 1 位发现新郎的私房钱', 150 * r, 380 * r)
+    ctx.fillText(`第 ${rank} 位发现新郎的私房钱`, 150 * r, 380 * r)
 
-    ctx.draw()
+    ctx.draw(false, () => {
+      this.toImg()
+    })
   },
   openSetting() {
     wx.openSetting()

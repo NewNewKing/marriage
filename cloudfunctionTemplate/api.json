@@ -2,33 +2,54 @@
   {
     "name": "新增评论",
     "value": {
-      "url": "comment.add",
+      "url": "comment/add",
       "data": {
         "avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/295czzN8HT3MU8rZdAuwn8wU35ArrKz33uFJteicp6BCcgZ755oOaHetczlTjOIRS18x04RZkkLvYmM7picC08Mw/132",
-        "comment": "习近平",
+        "comment": "你好啊",
+        "city": "成都",
+        "country": "中国",
+        "language": "zh_CN",
+        "province": "四川",
+        "gender": 1,
         "name": "王兴欣",
-        "time": "2019.06.14 16:37:42"
+        "time": 1564630152550
       }
     }
   },
   {
     "name": "获取所有评论",
     "value": {
-      "url": "comment.getAllList"
+      "url": "comment/getAllList"
     }
   },
   {
     "name": "获取配置信息",
     "value": {
-      "url": "info.get"
+      "url": "info/get"
     }
   },
   {
     "name": "获取分页评论",
     "value": {
-      "url": "comment.getList",
+      "url": "comment/getList",
       "data": {
         "pageNum": 1
+      }
+    }
+  },
+  {
+    "name": "添加彩蛋线索",
+    "value": {
+      "url": "egg/clue",
+      "data": {
+        "avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/295czzN8HT3MU8rZdAuwn8wU35ArrKz33uFJteicp6BCcgZ755oOaHetczlTjOIRS18x04RZkkLvYmM7picC08Mw/132",
+        "comment": "你好啊",
+        "city": "成都",
+        "country": "中国",
+        "language": "zh_CN",
+        "province": "四川",
+        "gender": 1,
+        "name": "王兴欣"
       }
     }
   }

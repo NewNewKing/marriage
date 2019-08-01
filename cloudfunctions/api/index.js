@@ -11,11 +11,13 @@ const router = require('./router/index.js')
 */
 
 // 云函数入口函数
-exports.main = async (event, context, a) => {
+exports.main = async (event, context) => {
   console.log(event)
+  console.log(context)
   const { url, data } = event
-  const path = url.split('.')
+  const path = url.split('/')
   const result = await router[path[0]][path[1]](data).catch(err => {
+    console.log(err)
     const msg = err.errMsg || '网络错误'
     return {
       code: 1,

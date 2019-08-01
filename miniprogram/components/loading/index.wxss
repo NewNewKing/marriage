@@ -1,5 +1,7 @@
 @import "/app.wxss"
-
+.loading{
+  z-index: 999;
+}
 .loading-icon{
   height: 486rpx;
   width: 484rpx;

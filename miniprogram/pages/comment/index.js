@@ -102,7 +102,7 @@ page({
     this.setData({
       userInfo
     })
-    this.globalData.userInfo = userInfo
+    app.globalData.userInfo = userInfo
     this.showLayer()
   },
   // layer的开关

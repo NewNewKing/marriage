@@ -9,6 +9,13 @@
   font-size: 40rpx;
   height: 40rpx;
 }
+.head-fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
 .back{
   position: absolute;
   left: 0;

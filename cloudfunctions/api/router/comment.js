@@ -1,6 +1,7 @@
-const service = require("../service/comment.js")
-const { check } = require("../blacklist/index.js")
-const robot = require("../robot/index.js")
+const service = require('../service/comment.js')
+const { check } = require('../blacklist/index.js')
+const robot = require('../robot/index.js')
+const cloud = require('wx-server-sdk')
 
 // data: { name: 'XXX', comment: 'xxxx'}
 const add = async data => {
@@ -11,7 +12,9 @@ const add = async data => {
       return { code, msg }
     }
   }
+  const { OPENID } = cloud.getWXContext()
   data.time = Date.now()
+  data._openid = OPENID
   await service.add(data)
   // 对于某些言论 进行回复 （界面以弹窗形式展示）
   const { code, msg } = await robot(data)
@@ -26,7 +29,7 @@ const getList = async data => {
     pageNum
   })
   if (!result.length) {
-    return { data: result, code: 2, msg: "没有更多啦~~😝" }
+    return { data: result, code: 2, msg: '没有更多啦~~😝' }
   }
   return { data: result }
 }

@@ -7,6 +7,9 @@
 .black-gold .bg-color{
   background-color: #242424;
 }
+.black-gold.bg-color{
+  background-color: #242424;
+}
 .black-gold .border{
   border: 2rpx solid #eccb90;
 }
