@@ -4,7 +4,11 @@
     "pages/navigator/index",
     "pages/comment/index",
     "pages/photo/index",
-    "pages/egg/index"
+    "pages/egg/index",
+    "pages/login/index",
+    "pages/setting/index",
+    "pages/setting_info/index",
+    "pages/setting_photo/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#242424",

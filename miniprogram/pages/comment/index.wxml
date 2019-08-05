@@ -21,7 +21,7 @@
     
     <view class="btn-box flex-center-wrap flex-justify-around">
       <view class="btn border shadow" wx:if="{{userInfo}}" bindtap="showLayer">说点啥吧</view>
-      <button open-type="getUserInfo" wx:else hover-class="none" class="btn border shadow" bindgetuserinfo="getUserInfo" withCredentials="{{true}}" lang="zh_CN">说点啥吧</button>
+      <button open-type="getUserInfo" wx:else hover-class="none" class="btn border shadow" bindgetuserinfo="getUserInfo" lang="zh_CN">说点啥吧</button>
       <view class="btn border shadow" bindtap="attend">我要出席</view>
     </view>
     <view class="fixed layer-bg flex-center-wrap flex-justify-around" wx:if="{{isLayerShow}}" bindtap="hideLayer">

@@ -1,5 +1,4 @@
 const app = getApp()
-const { showToast } = require('../../lib/util.js')
 const page = require('../../framework/page.js')
 const Event = require('../../lib/event.js')
 
@@ -61,9 +60,7 @@ page({
   getUserInfo({ detail: { userInfo } }) {
     if (!userInfo) {
       // 没有授权
-      showToast({
-        title: '你发现了新郎的私房钱 赶紧授权领奖励啦！'
-      })
+      this.$hint('你发现了新郎的私房钱 赶紧授权领奖励啦！')
       return
     }
     app.globalData.userInfo = userInfo
@@ -73,9 +70,7 @@ page({
     this.moneyAction()
   },
   moneyAction() {
-    wx.navigateTo({
-      url: '/pages/egg/index'
-    })
+    this.$go('/pages/egg/index')
   },
   eggStart(e) {
     const { touches } = e

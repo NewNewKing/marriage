@@ -27,6 +27,9 @@ page({
   },
   // 开始图片播放
   startStage() {
+    this.setData({
+      isShowCover: true
+    })
     const { $indexFlashTexts } = this.data
     const times = [4, getFlashTime($indexFlashTexts, true)]
     flow(times, this)

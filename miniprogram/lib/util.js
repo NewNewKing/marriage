@@ -59,18 +59,6 @@ function dateFormat(value, format) {
     return match
   })
 }
-
-function showToast(data) {
-  const options = Object.assign(
-    {
-      icon: 'none',
-      duration: 3000
-    },
-    data
-  )
-  wx.showToast(options)
-}
-
 function unique(...arg) {
   const list = arg.reduce((list, current) => {
     return list.concat(current)
@@ -199,7 +187,6 @@ function getFlashTime(list, flag) {
 module.exports = {
   sleep,
   dateFormat,
-  showToast,
   unique,
   flow,
   pick,

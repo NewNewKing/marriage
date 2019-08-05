@@ -1,18 +1,6 @@
-const info = require('./services/info.js')
 const Event = require('./lib/event.js')
-// 获取地图坐标点
-function getMarker({ $lat, $lon }) {
-  return [
-    {
-      id: 1,
-      latitude: $lat,
-      longitude: $lon,
-      iconPath: '/images/nav.png',
-      width: 50,
-      height: 50
-    }
-  ]
-}
+const { getInfo } = require('./lib/global.js')
+
 //app.js
 App({
   onLaunch: function() {
@@ -24,15 +12,18 @@ App({
         traceUser: true
       })
     }
-    // 获取全局配置信息
-    info.get().then(res => {
-      this.globalData = {
-        info: res
+    Event.on('infoChange', info => {
+      if (this.globalData && this.globalData.info) {
+        Object.assign(this.globalData.info, info)
+      } else if (this.globalData) {
+        this.globalData.info = info
+      } else {
+        this.globalData = {
+          info
+        }
       }
-      res.$ready = true
-      res.$markers = getMarker(res)
-      res.$indexBanners = res.$indexImgs.slice(2)
-      Event.emit('infoChange', res)
     })
+    // 获取全局配置信息
+    getInfo(this)
   }
 })

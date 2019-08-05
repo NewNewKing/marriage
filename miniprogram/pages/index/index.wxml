@@ -62,7 +62,7 @@
               
               <view class="info-box">
                 <view class="mar-b8 bold animated delay-4s fadeInUpBig">【 时间 · Time 】</view>
-                <view class="animated zoomIn delay-5s">{{$time}}</view>
+                <view class="animated zoomIn delay-5s">{{$date1 + ' ' + $date2 + ' ' + $time}}</view>
               </view>
 
               <view class="info-box">

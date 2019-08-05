@@ -1,0 +1,10 @@
+.auth-btn{
+  height: 100rpx;
+  border-radius: 100rpx;
+  padding: 0 80rpx;
+}
+.tips{
+  margin-bottom: 80rpx;
+}
+
+

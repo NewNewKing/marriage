@@ -1,7 +1,4 @@
 const page = require('../../framework/page.js')
-const { showToast } = require('../../lib/util.js')
-// const { flow, getFlashTime } = require('../../lib/util.js')
-// const Event = require('../../lib/event.js')
 const egg = require('../../services/egg.js')
 const app = getApp()
 function getImageInfo(src) {
@@ -33,17 +30,17 @@ page({
     isRefuse: false
   },
   onLoad() {
-    const userInfo = {
-      avatarUrl:
-        'https://wx.qlogo.cn/mmopen/vi_32/295czzN8HT3MU8rZdAuwn8wU35ArrKz33uFJteicp6BCcgZ755oOaHetczlTjOIRS18x04RZkkLvYmM7picC08Mw/132',
-      city: '成都',
-      country: '中国',
-      gender: 1,
-      language: 'zh_CN',
-      nickName: '王兴欣',
-      province: '四川'
-    }
-    // const { userInfo } = app.globalData
+    // const userInfo = {
+    //   avatarUrl:
+    //     'https://wx.qlogo.cn/mmopen/vi_32/295czzN8HT3MU8rZdAuwn8wU35ArrKz33uFJteicp6BCcgZ755oOaHetczlTjOIRS18x04RZkkLvYmM7picC08Mw/132',
+    //   city: '成都',
+    //   country: '中国',
+    //   gender: 1,
+    //   language: 'zh_CN',
+    //   nickName: '王兴欣',
+    //   province: '四川'
+    // }
+    const { userInfo } = app.globalData
     this.setData({
       userInfo
     })
@@ -98,18 +95,14 @@ page({
   savePicture(url) {
     wx.saveImageToPhotosAlbum({
       filePath: url,
-      success() {
-        showToast({
-          title: '保存成功！'
-        })
+      success: () => {
+        this.$hint('保存成功！')
       },
       fail: () => {
         this.setData({
           isRefuse: true
         })
-        showToast({
-          title: '保存失败！，若要继续操作请先进入设置页授权'
-        })
+        this.$hint('保存失败！，若要继续操作请先进入设置页授权')
       }
     })
   },

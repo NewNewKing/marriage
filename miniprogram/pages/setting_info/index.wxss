@@ -1,0 +1,28 @@
+.row{
+  padding: 20rpx 40rpx;
+}
+.label{
+  width: 200rpx;
+  text-align: right;
+}
+.input{
+  width: 100%;
+  line-height: 40rpx;
+  height: 40rpx;
+}
+.tips{
+  font-size: 20rpx;
+}
+.choice-btn{
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 60rpx;
+  padding: 0 40rpx;
+}
+.upload{
+  width: 500rpx;
+  line-height: 80rpx;
+  border-radius: 80rpx;
+  text-align: center;
+  margin: 20rpx auto;
+}

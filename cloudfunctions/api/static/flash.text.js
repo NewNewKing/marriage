@@ -76,7 +76,7 @@ const texts = [
     outName: 'growOut',
     fontSize: 80,
     inName: 'puffIn',
-    duration: 0.05
+    duration: 0.1
   },
   {
     text: '诚邀',
@@ -91,6 +91,7 @@ const texts = [
     outName: 'growOut'
   },
   {
+    inName: 'fadeIn',
     text: '携家人'
   },
   {
@@ -103,32 +104,32 @@ const texts = [
   {
     inName: 'puffIn',
     text: '一起见证',
-    duration: 0.1
+    duration: 0.2
   },
   {
     inName: 'zoomIn',
     text: '我们的',
-    duration: 0.1,
+    duration: 0.2,
     outName: 'growOut'
   },
   {
     inName: 'rotateIn',
     outName: 'rotateOut',
     text: '幸福',
-    duration: 0.1
+    duration: 0.2
   },
   {
     text: '幸福',
     fontSize: 80,
     inName: 'zoomIn',
     outName: 'growOut',
-    duration: 0.1
+    duration: 0.2
   }
 ]
 
 function fillFlashOptions(list) {
   const ANIMATETIME = 0.3
-  const DURATIONTIME = 0.3
+  const DURATIONTIME = 0.4
   const FONTSIZE = 60
   const DIRECTION = 'horizontal'
   return list.map(item => {

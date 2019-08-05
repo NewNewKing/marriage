@@ -1,5 +1,6 @@
 const app = getApp()
-const { showHeart, sleep, showToast, getNeedInfo } = require('../lib/util.js')
+const { showHeart, sleep, getNeedInfo } = require('../lib/util.js')
+const { hint } = require('./message.js')
 const Event = require('../lib/event.js')
 
 const mixin = {
@@ -38,6 +39,17 @@ const mixin = {
         })
       }
     },
+    // 弱提示
+    $hint(msg, time) {
+      hint(msg, time)
+    },
+    $go(url, replace) {
+      if (replace) {
+        wx.redirectTo({ url })
+      } else {
+        wx.navigateTo({ url })
+      }
+    },
     // 打电话
     $phoneCall({
       currentTarget: {
@@ -50,10 +62,7 @@ const mixin = {
         })
         return
       }
-
-      showToast({
-        title: `这个人太忙啦，暂时没有录入手机号`
-      })
+      this.$hint(`这个人太忙啦，暂时没有录入手机号`)
     }
   },
   onShareAppMessage() {

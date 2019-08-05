@@ -7,6 +7,8 @@ const obj = {
     '$indexImgs',
     '$indexBanners',
     '$address',
+    '$date1',
+    '$date2',
     '$time',
     '$indexFlashTexts'
   ],
@@ -22,9 +24,17 @@ const obj = {
     '$lon',
     '$lat'
   ],
-  // 评论
-  ['pages/comment/index']: [],
-  ['pages/egg/index']: []
+  // 信息设置
+  ['pages/setting_info/index']: [
+    '$groom',
+    '$bride',
+    '$phone1',
+    '$phone2',
+    '$date1',
+    '$date2',
+    '$time',
+    '$_id'
+  ]
 }
 
 module.exports = obj

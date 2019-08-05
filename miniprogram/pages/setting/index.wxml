@@ -1,0 +1,13 @@
+<view class="container {{$style}}" bindtap="$showHeart">
+  <ui-header title="设置"/>
+  <view class="fixed flex-center-wrap flex-justify-center" wx:if="{{$ready}}">
+    <view>
+      <view class="auth-btn border shadow" bindtap="linkAction" data-index="1">信息设置</view>
+      <view class="auth-btn border shadow" bindtap="linkAction" data-index="2">照片设置</view>
+      <!-- <view class="auth-btn border shadow" bindtap="linkAction" data-index="2">照片设置</view> -->
+      <!-- <view class="auth-btn border shadow" bindtap="upload" data-index="2">照片设置</view> -->
+    </view>
+    
+  </view>
+  <include src="/template/system.wxml"/>
+</view>

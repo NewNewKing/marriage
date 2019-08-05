@@ -1,4 +1,4 @@
-const { dateFormat, showToast } = require('../../lib/util.js')
+const { dateFormat } = require('../../lib/util.js')
 const page = require('../../framework/page.js')
 const comment = require('../../services/comment.js')
 const app = getApp()
@@ -82,9 +82,7 @@ page({
   validate() {
     const { value } = this.data
     if (!value.replace(/\s/g, '')) {
-      showToast({
-        title: '难道你就没有话对我们说吗~'
-      })
+      this.$hint('难道你就没有话对我们说吗~')
       return false
     }
     return true
@@ -93,9 +91,7 @@ page({
   getUserInfo({ detail: { userInfo } }) {
     if (!userInfo) {
       // 没有授权
-      showToast({
-        title: '咋滴，还想匿名发言呐？'
-      })
+      this.$hint('咋滴，还想匿名发言呐？')
       return
     }
     console.log(userInfo)
@@ -117,6 +113,8 @@ page({
     })
   },
   attend() {
+    this.$go('/pages/setting/index')
+    return
     wx.getSetting({
       success(res) {
         console.log(res)

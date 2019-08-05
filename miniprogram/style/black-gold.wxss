@@ -26,6 +26,12 @@
   color: #eccb90;
   background-color: #242424;
 }
+.black-gold .label{
+
+}
+.black-gold .input {
+  
+}
 /*首页*/
 .black-gold .cover{
   background-color: rgba(0,0,0, 0.5)

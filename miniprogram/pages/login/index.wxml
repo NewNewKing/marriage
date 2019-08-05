@@ -1,0 +1,10 @@
+<view class="container {{$style}}" bindtap="$showHeart">
+  <view class="container pad20 flex-center-wrap flex-justify-center" wx:if="{{$ready}}">
+    <ui-header title="管理员登录"/>
+    <view>
+      <button class="auth-btn border shadow" hover-class="none" open-type="getUserInfo"  bindgetuserinfo="getUserInfo" lang="zh_CN">授权用户信息</button>
+    </view>
+    
+  </view>
+  <include src="/template/system.wxml"/>
+</view>

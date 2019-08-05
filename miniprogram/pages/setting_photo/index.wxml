@@ -1,0 +1,9 @@
+<view class="container {{$style}}" bindtap="$showHeart">
+  <view class="container pad20 flex-center-wrap flex-justify-center" wx:if="{{$ready}}">
+    <ui-header title="照片设置"/>
+    <view>
+    </view>
+    
+  </view>
+  <include src="/template/system.wxml"/>
+</view>

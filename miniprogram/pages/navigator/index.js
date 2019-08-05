@@ -1,5 +1,4 @@
 const page = require('../../framework/page.js')
-const { showToast } = require('../../lib/util.js')
 page({
   data: {},
   markertap() {
@@ -15,10 +14,8 @@ page({
     const { $address } = this.data
     wx.setClipboardData({
       data: $address,
-      success() {
-        showToast({
-          title: '详细地址已经复制'
-        })
+      success: () => {
+        this.$hint('详细地址已经复制')
       }
     })
   }

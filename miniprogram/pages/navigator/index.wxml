@@ -19,14 +19,14 @@
       <view class="center location animated fadeIn delay-2s">( 点击分享位置-长按复制地址 )</view>
     </view>
     <view class="flex-center-wrap flex-justify-around phone-container">
-      <view class="phone-call bounceIn delay-2-8s animated slow" bindtap="$phoneCall" data-num="{{$phone1}}">
+      <view class="phone-call bounceIn delay-2-6s animated slow" bindtap="$phoneCall" data-num="{{$phone1}}">
         <image src="/images{{$style ? '/' + $style : ''}}/groom.svg" class="person-icon" ></image>
         <view>呼叫新郎</view>
       </view>
-      <view class="zoomIn delay-4s slow animated"> 
+      <view class="zoomIn delay-2-8s slow animated"> 
         <ui-heart count="3" double="{{true}}"></ui-heart>
       </view>
-      <view class="phone-call bounceIn delay-2-8s animated slow" bindtap="$phoneCall" data-num="{{$phone2}}">
+      <view class="phone-call bounceIn delay-2-6s animated slow" bindtap="$phoneCall" data-num="{{$phone2}}">
         <image src="/images{{$style ? '/' + $style : ''}}/bride.svg" class="person-icon" ></image>
         <view>呼叫新娘</view>
       </view>

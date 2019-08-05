@@ -1,5 +1,5 @@
-const { showToast } = require('../lib/util.js')
 const map = {}
+const { hint } = require('../framework/message.js')
 const api = (url, data = {}) => {
   if (map[url]) {
     wx.showLoading({
@@ -19,9 +19,8 @@ const api = (url, data = {}) => {
     .catch(err => {
       map[url] = false
       wx.hideLoading()
-      showToast({
-        title: (err && err.errorMessage) || '网络错误啦 QoQ!'
-      })
+      const page = getCurrent
+      hint((err && err.errorMessage) || '网络错误啦 QoQ!')
       return Promise.reject(err)
     })
     .then(({ result }) => {
@@ -31,9 +30,7 @@ const api = (url, data = {}) => {
       const { code, data, msg } = result
       // 0、成功 1、失败 2、成功但是要显示msg
       if (code !== 0) {
-        showToast({
-          title: msg
-        })
+        hint(msg)
       }
       if (code === 1) {
         return Promise.reject(msg)

@@ -1,0 +1,14 @@
+.auth-btn{
+  height: 100rpx;
+  border-radius: 100rpx;
+  line-height: 100rpx;
+  width: 600rpx;
+  text-align: center;
+  font-size: 40rpx;
+  margin: 60rpx 0 ;
+}
+.tips{
+  margin-bottom: 80rpx;
+}
+
+

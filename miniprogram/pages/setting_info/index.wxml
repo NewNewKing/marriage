@@ -1,0 +1,64 @@
+<view class="container {{$style}}" bindtap="$showHeart">
+  <view class="container" wx:if="{{$ready}}">
+    <ui-header title="信息设置"/>
+    <view>
+      <view class="flex-center-wrap row">
+        <view class="label">新郎姓名：</view>
+        <view class="flex">
+          <input type="text" class="input" placeholder="请输入新郎姓名" bindinput="setValue" data-name="$groom" value="{{$groom}}"/>
+        </view>
+      </view>
+      <view class="flex-center-wrap row">
+        <view class="label">新娘姓名：</view>
+        <view class="flex">
+          <input type="text" class="input" placeholder="请输入新娘姓名" bindinput="setValue" data-name="$bride" value="{{$bride}}"/>
+        </view>
+      </view>
+      <view class="flex-center-wrap row">
+        <view class="label">新郎电话：</view>
+        <view class="flex">
+          <input type="text" class="input" placeholder="请输入新郎电话" bindinput="setValue" data-name="$phone1" value="{{$phone1}}"/>
+        </view>
+      </view>
+      <view class="flex-center-wrap row">
+        <view class="label">新娘电话：</view>
+        <view class="flex">
+          <input type="text" class="input" placeholder="请输入新娘电话" bindinput="setValue" data-name="$phone2" value="{{$phone2}}"/>
+        </view>
+      </view>
+      <view class="flex-center-wrap row">
+        <view class="label">喜宴日期：</view>
+        <view class="flex">
+          <input type="text" class="input" placeholder="喜宴日期（国历）" bindinput="setValue" data-name="$date1" value="{{$date1}}"/>
+        </view>
+        <view class="tips">如 2018/02/05</view>
+      </view>
+      <view class="flex-center-wrap row">
+        <view class="label">喜宴日期：</view>
+        <view class="flex">
+          <input type="text" class="input" placeholder="喜宴日期（农历）" bindinput="setValue" data-name="$date2" value="{{$date2}}"/>
+        </view>
+        <view class="tips">如 正月初一</view>
+      </view>
+      <view class="flex-center-wrap row">
+        <view class="label">喜宴时间：</view>
+        <view class="flex">
+          <input type="text" class="input" placeholder="午饭时间" bindinput="setValue" data-name="$time" value="{{$time}}"/>
+        </view>
+        <view class="tips">如 12:00</view>
+      </view>
+      <view class="row">
+        <view class="upload border shadow" bindtap="submit">上传信息</view>
+      </view>
+
+      <view class="flex-center-wrap row">
+        <view class="label">背景音乐：</view>
+        <view class="flex">{{music}}</view>
+        <view class="choice-btn border shadow" bindtap="chooseMusic">选择音乐</view>
+      </view>
+
+    </view>
+    
+  </view>
+  <include src="/template/system.wxml"/>
+</view>

@@ -1,7 +1,6 @@
 const cloud = require('wx-server-sdk')
 const db = cloud.database()
 const COMMENT = db.collection('comment')
-console.log(COMMENT)
 const add = async data => {
   return await COMMENT.add({
     data
