@@ -34,7 +34,9 @@ const obj = {
     '$date2',
     '$time',
     '$_id'
-  ]
+  ],
+  // 照片上传
+  ['pages/setting_photo/index']: ['$photos', '$_id']
 }
 
 module.exports = obj

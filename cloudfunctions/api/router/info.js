@@ -14,7 +14,7 @@ const get = async () => {
 
 const setInfo = async data => {
   await service.setInfo(data.id, data.data)
-  return { code: 2, msg: '信息设置成功！' }
+  return { code: 2, msg: '信息修改成功！' }
 }
 module.exports = {
   get,

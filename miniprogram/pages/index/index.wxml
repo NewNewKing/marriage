@@ -1,8 +1,8 @@
 <view class="container {{$style}}" bindtap="$showHeart">
   <view wx:if="{{$ready}}">
     <view wx:if="{{stage === 0}}">
-      <image class="flash-view animated halfFadeInDown" src="{{$indexImgs[0]}}" mode="aspectFill"></image>
-      <image class="flash-view animated slower puffIn slow delay-1s" src="{{$indexImgs[1]}}" mode="aspectFill"></image>
+      <image class="flash-view animated halfFadeInDown" src="{{$indexImgs[0].url}}" mode="aspectFill"></image>
+      <image class="flash-view animated slower puffIn slow delay-1s" src="{{$indexImgs[1].url}}" mode="aspectFill"></image>
     </view>
     <view wx:if="{{stage === 1}}">
       <ui-flash texts="{{$indexFlashTexts}}"></ui-flash>
@@ -19,7 +19,7 @@
         vertical
         autoplay>
         <swiper-item wx:for="{{$indexBanners}}" wx:key="{{item}}">
-          <image src="{{item}}" class="bg-img" mode="aspectFill" bindtap="toggleCover" data-type="swiper"></image>
+          <image src="{{item.url}}" class="bg-img" mode="aspectFill" bindtap="toggleCover" data-type="swiper"></image>
         </swiper-item>
       </swiper>
       <view class="cover-container center" bindtouchstart="start" bindtouchmove="move">

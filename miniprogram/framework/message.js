@@ -6,6 +6,23 @@ const hint = (msg, time) => {
   }
   wx.showToast(options)
 }
+
+const alert = msg => {
+  return new Promise((resolve, reject) => {
+    const options = {
+      content: msg,
+      success({ cancel, confirm }) {
+        if (confirm) {
+          resolve()
+        } else {
+          reject()
+        }
+      }
+    }
+    wx.showModal(options)
+  })
+}
 module.exports = {
-  hint
+  hint,
+  alert
 }

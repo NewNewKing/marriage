@@ -1,6 +1,6 @@
 const app = getApp()
 const { showHeart, sleep, getNeedInfo } = require('../lib/util.js')
-const { hint } = require('./message.js')
+const { hint, alert } = require('./message.js')
 const Event = require('../lib/event.js')
 
 const mixin = {
@@ -42,6 +42,9 @@ const mixin = {
     // 弱提示
     $hint(msg, time) {
       hint(msg, time)
+    },
+    $alert(msg) {
+      return alert(msg)
     },
     $go(url, replace) {
       if (replace) {

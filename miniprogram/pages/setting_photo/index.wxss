@@ -1,10 +1,25 @@
-.auth-btn{
+.upload{
+  width: 500rpx;
+  line-height: 80rpx;
+  border-radius: 80rpx;
+  text-align: center;
+  margin: 50rpx auto;
+}
+.photo-item{
+  width: 100rpx;
   height: 100rpx;
-  border-radius: 100rpx;
-  padding: 0 80rpx;
+  margin: 20rpx;
+  position: relative;
+}
+.photo{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.photo-wrap{
+  padding-top: 40rpx;
 }
 .tips{
-  margin-bottom: 80rpx;
+  text-align: center;
+  font-size: 20rpx;
 }
-
-

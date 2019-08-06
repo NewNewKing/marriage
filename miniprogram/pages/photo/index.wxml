@@ -5,8 +5,8 @@
       circular
       autoplay
       wx:if="{{mode === 'swiper'}}">
-      <swiper-item wx:for="{{$photos}}" wx:key="{{item}}">
-        <image src="{{item}}" class="photo-img" mode="aspectFill"></image>
+      <swiper-item wx:for="{{$photos}}" wx:key="{{item.id}}">
+        <image src="{{item.url}}" class="photo-img" mode="aspectFill"></image>
       </swiper-item>
     </swiper>
     <view wx:if="{{mode === 'scale'}}">
@@ -16,9 +16,9 @@
       </view>
       <scroll-view scroll-y style="height:{{height}}px;padding-top: 40rpx;">
         <view class="photo-wrap flex-center-wrap flex-multi-row flex-justify-between">
-          <view class="photo-item border shadow animated pulse infinite slower {{index === number ? 'egg-box' : ''}}" wx:for="{{$photos}}" wx:key="*this">
+          <view class="photo-item border shadow animated pulse infinite slower {{index === number ? 'egg-box' : ''}}" wx:for="{{$photos}}" wx:key="item.id">
 
-            <image wx:if="{{index !== number}}" class="photo-img animated jackInTheBox" src="{{item}}" mode="aspectFill" bindtap="showPhoto" data-index="{{index}}"></image>
+            <image wx:if="{{index !== number}}" class="photo-img animated jackInTheBox" src="{{item.url}}" mode="aspectFill" bindtap="showPhoto" data-index="{{index}}"></image>
 
             <view class="max" wx:else>
               <button open-type="getUserInfo" hover-class="none" class="max get-info-btn" bindgetuserinfo="getUserInfo" withCredentials="{{true}}" lang="zh_CN">
@@ -26,7 +26,7 @@
               </button>
 
               <!-- <image class="max animated delay-1s fadeIn" src="/images/money.svg" bindtap="moneyAction" wx:else></image> -->
-              <image style="top:{{top}}px;left: {{left}}px" bindtouchstart="eggStart" bindtouchmove="eggMove" class="egg-photo photo-img animated jackInTheBox" src="{{item}}" mode="aspectFill" bindtap="showPhoto" data-index="{{index}}"></image>
+              <image style="top:{{top}}px;left: {{left}}px" bindtouchstart="eggStart" bindtouchmove="eggMove" class="egg-photo photo-img animated jackInTheBox" src="{{item.url}}" mode="aspectFill" bindtap="showPhoto" data-index="{{index}}"></image>
             </view>
           </view>
           <view class="photo-item" wx:for="{{[1,2,3,4,5]}}" wx:key="*this"></view>
