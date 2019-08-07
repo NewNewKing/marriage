@@ -1,6 +1,9 @@
 <view class="container {{$style}}" bindtap="$showHeart">
   <view class="container" wx:if="{{$ready && $pageReady}}">
     <scroll-view class="list-wrap" scroll-y style="height:{{height}}px" bindscrolltolower="scrollToLower">
+      <!-- 如果以padding的形式 会导致box-shadow被挡住 -->
+      <view class="empty"></view>
+      <view class="empty"></view>
       <view class="item-wrap" wx:for="{{list}}" wx:key="index">
         <view class="list-item border shadow flex-wrap" >
           <ui-background />

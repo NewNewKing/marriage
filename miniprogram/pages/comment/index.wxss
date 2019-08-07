@@ -1,6 +1,6 @@
 .list-wrap{
   /*padding:0 40rpx;*/
-  padding-top: 80rpx;
+  /*padding-top: 80rpx;*/
   box-sizing: border-box;
   /*overflow:hidden;*/
 }
