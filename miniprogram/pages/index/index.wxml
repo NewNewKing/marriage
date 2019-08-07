@@ -19,7 +19,7 @@
         vertical
         autoplay>
         <swiper-item wx:for="{{$indexBanners}}" wx:key="{{item}}">
-          <image src="{{item.url}}" class="bg-img" mode="aspectFill" bindtap="toggleCover" data-type="swiper"></image>
+          <image src="{{item.url}}" class="bg-img" mode="aspectFill"></image>
         </swiper-item>
       </swiper>
       <view class="cover-container center" bindtouchstart="start" bindtouchmove="move">

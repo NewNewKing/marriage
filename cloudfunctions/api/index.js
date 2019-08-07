@@ -13,7 +13,6 @@ const router = require('./router/index.js')
 // 云函数入口函数
 exports.main = async (event, context) => {
   console.log(event)
-  console.log(context)
   const { url, data } = event
   const path = url.split('/')
   const result = await router[path[0]][path[1]](data).catch(err => {

@@ -14,6 +14,9 @@ page({
     isMoving: false,
     y: 0
   },
+  a() {
+    console.log(1)
+  },
   onLoad() {
     const { $ready } = this.data
     if (!$ready) {

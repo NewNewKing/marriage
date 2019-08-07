@@ -11,6 +11,7 @@ const alert = msg => {
   return new Promise((resolve, reject) => {
     const options = {
       content: msg,
+      title: '提示',
       success({ cancel, confirm }) {
         if (confirm) {
           resolve()

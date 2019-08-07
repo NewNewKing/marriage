@@ -8,7 +8,8 @@
     "pages/login/index",
     "pages/setting/index",
     "pages/setting_info/index",
-    "pages/setting_photo/index"
+    "pages/setting_photo/index",
+    "pages/setting_comment/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#242424",

@@ -4,8 +4,8 @@ page({
   markertap() {
     const { $lat, $lon, $hotel, $address } = this.data
     wx.openLocation({
-      latitude: $lat,
-      longitude: $lon,
+      latitude: +$lat,
+      longitude: +$lon,
       name: $hotel,
       address: $address
     })

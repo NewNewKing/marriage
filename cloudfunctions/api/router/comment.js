@@ -21,12 +21,14 @@ const add = async data => {
   return { data, code, msg }
 }
 
+// 获取评论列表
 const getList = async data => {
-  const { pageSize = 10, pageNum = 1 } = data
+  const { pageSize = 10, pageNum = 1, isDel = false } = data
 
   const result = await service.getList({
     pageSize,
-    pageNum
+    pageNum,
+    isDel
   })
   if (!result.length) {
     return { data: result, code: 2, msg: '没有更多啦~~😝' }
@@ -38,8 +40,16 @@ const getAllList = async () => {
   return { data: result }
 }
 
+// 更新列表
+const updateList = async params => {
+  const { ids, data } = params
+  const result = await service.updateList(ids, data)
+  return { code: 0 }
+}
+
 module.exports = {
   add,
   getList,
-  getAllList
+  getAllList,
+  updateList
 }

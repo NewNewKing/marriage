@@ -62,6 +62,9 @@ page{
 .mar-b8{
   margin-bottom: 8rpx;
 }
+.mar-b40{
+  margin-bottom: 40rpx;
+}
 .pad20{
   padding: 20rpx;
 }

@@ -9,7 +9,7 @@ const uploadImg = filePaths => {
     resolve = resolve.then(() => {
       const path = filePaths[i]
       const arr = path.split('.').reverse()
-      const cloudPath = `photo/${arr[1]}.${arr[0]}`
+      const cloudPath = `photo/${arr[1].replace(/[\/:]/g, '')}.${arr[0]}`
       // const cloudPath = '/photo'
       if (i === 0) {
         wx.showLoading({
@@ -26,6 +26,7 @@ const uploadImg = filePaths => {
           ids.push(id)
         })
         .catch(err => {
+          console.log(err)
           wx.showLoading({
             title: `正在上传第${i + 2}张图片`,
             mask: true
@@ -47,6 +48,7 @@ const uploadImg = filePaths => {
   page = page[page.length - 1]
   const { $_id, $photos } = page.data
   resolve = resolve.then(res => {
+    if (!res.length) return Promise.reject('上传失败')
     wx.showLoading({
       title: `数据保存中...`,
       mask: true
@@ -68,6 +70,7 @@ const uploadImg = filePaths => {
     })
     .catch(err => {
       wx.hideLoading()
+      hint(err)
       return Promise.reject(err)
     })
   return resolve

@@ -7,9 +7,18 @@ const add = async data => {
   })
 }
 
+const update = async (id, data) => {
+  return await COMMENT.doc(id).update({
+    data
+  })
+}
+
 const getList = async data => {
-  const { pageSize, pageNum } = data
-  return await COMMENT.skip(pageSize * pageNum - pageSize)
+  const { pageSize, pageNum, isDel } = data
+  return await COMMENT.where({
+    isDel
+  })
+    .skip(pageSize * pageNum - pageSize)
     .limit(pageSize)
     .orderBy('time', 'desc')
     .get()
@@ -22,5 +31,6 @@ const getCount = async () => {
 module.exports = {
   add,
   getList,
-  getCount
+  getCount,
+  update
 }

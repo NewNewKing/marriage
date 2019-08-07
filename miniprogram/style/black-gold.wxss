@@ -1,6 +1,12 @@
 .black-gold{
   
 }
+.black-gold .color {
+  color: #eccb90;
+}
+.black-gold .border-color{
+  border-color: #eccb90;
+}
 .black-gold button{
   color: #eccb90;
 }

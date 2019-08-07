@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -88,6 +88,13 @@
 					"id": -1,
 					"name": "照片设置",
 					"pathName": "pages/setting_photo/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "评论管理",
+					"pathName": "pages/setting_comment/index",
 					"scene": null
 				}
 			]

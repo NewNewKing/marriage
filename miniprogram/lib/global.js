@@ -5,8 +5,8 @@ function getMarker({ $lat, $lon }) {
   return [
     {
       id: 1,
-      latitude: $lat,
-      longitude: $lon,
+      latitude: +$lat,
+      longitude: +$lon,
       iconPath: '/images/nav.png',
       width: 50,
       height: 50
@@ -23,5 +23,6 @@ const getInfo = function(app) {
 }
 
 module.exports = {
-  getInfo
+  getInfo,
+  getMarker
 }

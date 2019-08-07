@@ -53,8 +53,8 @@ page({
   }) {
     const { $photos } = this.data
     wx.previewImage({
-      urls: $photos,
-      current: $photos[index]
+      urls: $photos.map(item => item.url),
+      current: $photos[index].url
     })
   },
   getUserInfo({ detail: { userInfo } }) {

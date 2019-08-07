@@ -1,0 +1,40 @@
+.label-box{
+  /*border-radius: 8rpx;*/
+  line-height: 80rpx;
+  color: #fff;
+}
+.label-item{
+  text-align: center;
+  border-bottom: 2rpx solid transparent;
+}
+.list-wrap{
+  box-sizing: border-box;
+}
+.list-item{
+  border-radius: 10rpx;
+  padding: 20rpx;
+  position: relative;
+  overflow: hidden;
+}
+.avatar{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.name{
+  margin-bottom: 10rpx;
+}
+.del-btn{
+  margin-left: 20rpx;
+  width: 120rpx;
+  text-align: center;
+  line-height: 140rpx;
+  border-radius: 10rpx
+}
+.wrap{
+  padding: 0 40rpx;
+}
+.empty{
+  height: 40rpx;
+}

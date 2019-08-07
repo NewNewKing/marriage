@@ -1,5 +1,6 @@
 const dao = require('../dao/comment.js')
 const add = async data => {
+  data.isDel = false
   return dao.add(data)
 }
 // 获取列表
@@ -20,7 +21,8 @@ const getAllList = async data => {
   while (time > 0) {
     const task = dao.getList({
       pageNum: time,
-      pageSize
+      pageSize,
+      isDel: false
     })
     list.push(task)
     --time
@@ -33,8 +35,15 @@ const getAllList = async data => {
   )
 }
 
+const updateList = async (ids, data) => {
+  const list = ids.map(item => dao.update(item, data))
+  const result = await list
+  return result
+}
+
 module.exports = {
   add,
   getList,
-  getAllList
+  getAllList,
+  updateList
 }

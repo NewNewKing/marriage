@@ -19,7 +19,6 @@ const api = (url, data = {}) => {
     .catch(err => {
       map[url] = false
       wx.hideLoading()
-      const page = getCurrent
       hint((err && err.errorMessage) || '网络错误啦 QoQ!')
       return Promise.reject(err)
     })
