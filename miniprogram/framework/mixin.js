@@ -11,10 +11,14 @@ const mixin = {
     $pageReady: true,
     $style: 'black-gold'
   },
-  onLoad() {
+  // 在onReady获取数据 是因为 $ready必须在页面渲染好之后才能设置为ture
+  // 否则会导致页面动画bug
+  onReady() {
     if (app.globalData && app.globalData.info) {
       const { info } = app.globalData
-      this.setData(getNeedInfo(info, this))
+      sleep(100).then(() => {
+        this.setData(getNeedInfo(info, this))
+      })
     }
 
     Event.on('infoChange', info => {
@@ -22,6 +26,21 @@ const mixin = {
     })
   },
   methods: {
+    setValue(event) {
+      const {
+        currentTarget: {
+          offsetLeft,
+          offsetTop,
+          dataset: { name }
+        },
+        detail: { value }
+      } = event
+
+      this.setData({
+        [name]: value
+      })
+      this.$showHeart(offsetLeft, offsetTop)
+    },
     // 全屏点击出现心
     $showHeart(e, y) {
       const component = this.selectComponent('#tap')

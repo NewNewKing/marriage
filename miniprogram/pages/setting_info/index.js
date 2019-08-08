@@ -7,7 +7,6 @@ page({
     music: '',
     musicPath: ''
   },
-  onLoad() {},
   // 上传小程序信息
   submit() {
     const {
@@ -34,16 +33,6 @@ page({
     }
     setInfo(params).then(() => {
       Event.emit('infoChange', params.data)
-    })
-  },
-  setValue({
-    detail: { value },
-    target: {
-      dataset: { name }
-    }
-  }) {
-    this.setData({
-      [name]: value
     })
   },
   chooseMusic() {

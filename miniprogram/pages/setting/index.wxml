@@ -3,8 +3,11 @@
   <view class="fixed flex-center-wrap flex-justify-center" wx:if="{{$ready}}">
     <view>
       <view class="auth-btn border shadow" bindtap="linkAction" data-index="1">信息设置</view>
-      <view class="auth-btn border shadow" bindtap="linkAction" data-index="2">照片设置</view>
-      <view class="auth-btn border shadow" bindtap="linkAction" data-index="3">评论管理</view>
+      <view class="auth-btn border shadow" bindtap="linkAction" data-index="2">酒店设置</view>
+      <view class="auth-btn border shadow" bindtap="linkAction" data-index="3">照片设置</view>
+      <view class="auth-btn border shadow" bindtap="linkAction" data-index="4">评论管理</view>
+      <view class="auth-btn border shadow" bindtap="linkAction" data-index="5">出席人数</view>
+      <view class="auth-btn border shadow" bindtap="linkAction" data-index="6">彩蛋排名</view>
       <!-- <view class="auth-btn border shadow" bindtap="linkAction" data-index="2">照片设置</view> -->
       <!-- <view class="auth-btn border shadow" bindtap="upload" data-index="2">照片设置</view> -->
     </view>

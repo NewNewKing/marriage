@@ -1,0 +1,6 @@
+<view class="container {{$style}}" bindtap="$showHeart">
+  <view class="container" wx:if="{{$ready}}">
+    <ui-header title="评论管理"/>
+  </view>
+  <include src="/template/system.wxml"/>
+</view>

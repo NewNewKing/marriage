@@ -14,7 +14,7 @@ page({
     wx.getSystemInfo({
       success: ({ windowHeight }) => {
         this.setData({
-          height: windowHeight - 160
+          height: windowHeight - 180
         })
       }
     })

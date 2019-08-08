@@ -1,6 +1,8 @@
 <view class="container {{$style}}" bindtap="$showHeart">
+  <view class="ghost" bindtap="ghostAction"></view>
+
   <view class="container" wx:if="{{$ready && $pageReady}}">
-    <scroll-view class="list-wrap" scroll-y style="height:{{height}}px" bindscrolltolower="scrollToLower">
+    <scroll-view class="list-wrap {{(isLayerShow || isAttendShow) ? 'blur' : ''}}" scroll-y style="height:{{height}}px" bindscrolltolower="scrollToLower">
       <!-- 如果以padding的形式 会导致box-shadow被挡住 -->
       <view class="empty"></view>
       <view class="empty"></view>
@@ -22,19 +24,22 @@
       <view class="empty"></view>
     </scroll-view>
     
-    <view class="btn-box flex-center-wrap flex-justify-around">
+    <view class="btn-box flex-center-wrap flex-justify-around {{(isLayerShow || isAttendShow) ? 'blur' : ''}}">
       <view class="btn border shadow" wx:if="{{userInfo}}" bindtap="showLayer">说点啥吧</view>
-      <button open-type="getUserInfo" wx:else hover-class="none" class="btn border shadow" bindgetuserinfo="getUserInfo" lang="zh_CN">说点啥吧</button>
-      <view class="btn border shadow" bindtap="attend">我要出席</view>
+      <button open-type="getUserInfo" wx:else hover-class="none" class="btn border shadow" bindgetuserinfo="getUserInfo" data-type="1" lang="zh_CN">说点啥吧</button>
+      <view class="btn border shadow" wx:if="{{userInfo}}" bindtap="showAttend" >我要出席</view>
+      <button open-type="getUserInfo" wx:else hover-class="none" class="btn border shadow" bindgetuserinfo="getUserInfo" data-type="2" lang="zh_CN">我要出席</button>
     </view>
     <view class="fixed layer-bg flex-center-wrap flex-justify-around" wx:if="{{isLayerShow}}" bindtap="hideLayer">
-      <view class="layer-wrap" catchtap="showHeart">
+      <view class="layer-wrap" catchtap="$showHeart">
         <textarea 
-          class="input border shadow" 
+          class="textarea border shadow" 
           fixed 
           auto-focus 
           value="{{value}}" 
-          bindinput="commentChange"
+          bindinput="setValue"
+          data-name="value"
+          maxlength="100"
           cursor-spacing="{{200}}"></textarea>
           
         <view class="flex-center-wrap flex-justify-around">
@@ -43,6 +48,52 @@
         </view>
       </view>
     </view>
+
+    <view class="fixed layer-bg flex-center-wrap flex-justify-around" wx:if="{{isAttendShow}}" bindtap="hideAttend">
+      <view class="layer-wrap" catchtap="$showHeart">
+        <view class="info-wrap">
+          <view class="row flex-wrap">
+            <view class="label">姓名：</view>
+            <view class="flex">
+              <input type="text" class="input" placeholder="请输入姓名" bindinput="setValue" data-name="name" value="{{name}}"/>
+            </view>
+          </view>
+          <view class="row flex-wrap">
+            <view class="label">手机号码：</view>
+            <view class="flex">
+              <input type="text" class="input" placeholder="请输入手机号码" bindinput="setValue" data-name="mobile" value="{{mobile}}"/>
+            </view>
+          </view>
+          <view class="row flex-wrap">
+            <view class="label">出席人数：</view>
+            <view class="flex">
+              <picker class="picker" range="{{attendArr}}" value="{{index}}" bindchange="numChange">
+                <view class="max">
+                  {{attendArr[index]}}
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class="row flex-wrap">
+            <view class="label">备注：</view>
+            <view class="flex">
+              <textarea 
+                value="{{remark}}" 
+                bindinput="setValue"
+                data-name="remark"
+                maxlength="100"
+                class="remark border shadow"></textarea>
+            </view>
+          </view>
+        </view>
+          
+        <view class="flex-center-wrap flex-justify-around">
+          <view class="small-btn border shadow" bindtap="submitAttend">确认信息</view>
+          <view class="small-btn border shadow" bindtap="hideAttend">取消</view>
+        </view>
+      </view>
+    </view>
+
   </view>
   <include src="/template/system.wxml"/>
 </view>

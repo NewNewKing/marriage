@@ -1,0 +1,29 @@
+<view class="container {{$style}}" bindtap="$showHeart">
+  <view class="container" wx:if="{{$ready}}">
+    <ui-header title="{{title}}"/>
+    <view class="list-wrap">
+      <view class="list-item border shadow flex-wrap" wx:for="{{list}}" wx:key="">
+        <image src="{{item.userInfo.avatarUrl}}" class="avatar"></image>
+        <view class="flex">
+          <view class="row flex-center-wrap">
+            <view class="flex">姓名：{{item.attendInfo.name}}</view>
+            <view class="font24">{{item.time}}</view>
+          </view>
+          <view class="row flex-center-wrap">
+            <view>微信昵称：{{item.userInfo.nickName}}</view>
+          </view>
+          <view class="row flex-center-wrap">
+            <view>所在城市：{{item.userInfo.province}} {{item.userInfo.city}}</view>
+          </view>
+          <view class="row flex-center-wrap">
+            <view>出席人数：{{item.attendInfo.attendNum}}</view>
+          </view>
+          <view class="row flex-center-wrap">
+            <view>留言：{{item.attendInfo.remark}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <include src="/template/system.wxml"/>
+</view>

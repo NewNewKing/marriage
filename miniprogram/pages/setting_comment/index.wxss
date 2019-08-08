@@ -38,3 +38,8 @@
 .empty{
   height: 40rpx;
 }
+.tips{
+  font-size: 24rpx;
+  text-align: center;
+  padding: 0 40rpx;
+}

@@ -1,18 +1,37 @@
-const { dateFormat } = require('../../lib/util.js')
 const page = require('../../framework/page.js')
 const comment = require('../../services/comment.js')
+const attend = require('../../services/attend.js')
 const app = getApp()
+
+function createGetUserInfo(msg, showLayer) {
+  return ({ detail: { userInfo } }) => {}
+}
+let ghostBlood = 5
 
 page({
   data: {
     $pageReady: false,
     height: 0,
+    // 评论的列表
     list: [],
+    // 用户信息
     userInfo: null,
+    // 是否显示评论弹窗
     isLayerShow: false,
+    // 是否显示出席弹窗
+    isAttendShow: false,
+    // 评论
     value: '',
+    // 当前评论页数
+    pageNum: 1,
 
-    pageNum: 1
+    // 出席的信息
+    name: '',
+    mobile: '',
+    remark: '',
+    attendArr: ['一人出席', '两人出席', '三人出席', '三人以上'],
+    index: 0,
+    _id: null
   },
   onLoad() {
     wx.getSystemInfo({
@@ -51,17 +70,6 @@ page({
 
     this.getComment(pageNum + 1)
   },
-  // 输入文字时 产生小星星
-  commentChange(event) {
-    const {
-      currentTarget: { offsetLeft, offsetTop },
-      detail: { value, cursor }
-    } = event
-    this.setData({
-      value
-    })
-    this.$showHeart(offsetLeft, offsetTop)
-  },
   // 提交评论
   submit() {
     const { userInfo, value, list } = this.data
@@ -87,19 +95,106 @@ page({
     }
     return true
   },
+  // 出席人数改变
+  numChange({ detail: { value } }) {
+    this.setData({
+      index: +value
+    })
+  },
   // 获取用户信息
-  getUserInfo({ detail: { userInfo } }) {
+  getUserInfo({
+    detail: { userInfo },
+    target: {
+      dataset: { type }
+    }
+  }) {
+    let msg = '',
+      fn
+    // 1、评论  2、出席
+    switch (+type) {
+      case 1:
+        msg = '咋滴，还想匿名发言呐？'
+        fn = this.showLayer
+        break
+      case 2:
+        msg = '你得让我知道你是谁呀😂'
+        fn = this.showAttend
+        break
+    }
     if (!userInfo) {
       // 没有授权
-      this.$hint('咋滴，还想匿名发言呐？')
+      this.$hint(msg)
       return
     }
-    console.log(userInfo)
     this.setData({
       userInfo
     })
     app.globalData.userInfo = userInfo
-    this.showLayer()
+    fn()
+  },
+  // 提交出席信息
+  submitAttend() {
+    const { name, mobile, index, remark, userInfo, _id } = this.data
+    if (!name) {
+      return this.$hint('请输入姓名')
+    }
+    if (!mobile) {
+      return this.$hint('请输入手机号码')
+    }
+    const attendInfo = {
+      name,
+      mobile,
+      attendNum: index + 1,
+      remark
+    }
+    let service,
+      params = { attendInfo }
+    if (!_id) {
+      service = attend.add
+      params = {
+        userInfo,
+        attendInfo
+      }
+    } else {
+      service = attend.update
+      params = {
+        id: _id,
+        data: attendInfo
+      }
+    }
+    service(params).then(() => {
+      this.hideAttend()
+    })
+  },
+  getAttendInfo() {
+    wx.showLoading({
+      title: '信息加载中...'
+    })
+    attend
+      .get()
+      .then(res => {
+        if (!res) {
+          const { userInfo } = this.data
+          this.setData({
+            name: userInfo.nickName,
+            remark: '新婚快乐'
+          })
+          return
+        }
+        const { attendInfo, _id } = res
+        const { attendNum, mobile, name, remark } = attendInfo
+        console.log(_id)
+        this.setData({
+          index: attendNum - 1,
+          _id,
+          mobile,
+          name,
+          remark
+        })
+      })
+      .finally(() => {
+        wx.hideLoading()
+      })
   },
   // layer的开关
   showLayer() {
@@ -112,13 +207,22 @@ page({
       isLayerShow: false
     })
   },
-  attend() {
-    this.$go('/pages/setting/index')
-    return
-    wx.getSetting({
-      success(res) {
-        console.log(res)
-      }
+  showAttend() {
+    this.getAttendInfo()
+    this.setData({
+      isAttendShow: true
     })
+  },
+  hideAttend() {
+    this.setData({
+      isAttendShow: false
+    })
+  },
+  ghostAction() {
+    console.log(ghostBlood)
+    if (--ghostBlood <= 0) {
+      ghostBlood = 5
+      this.$go('/pages/setting/index')
+    }
   }
 })

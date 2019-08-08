@@ -14,10 +14,7 @@ page({
     isMoving: false,
     y: 0
   },
-  a() {
-    console.log(1)
-  },
-  onLoad() {
+  onReady() {
     const { $ready } = this.data
     if (!$ready) {
       Event.on('infoChange', ({ $ready }) => {
@@ -34,6 +31,7 @@ page({
       isShowCover: true
     })
     const { $indexFlashTexts } = this.data
+    console.log(this.data)
     const times = [4, getFlashTime($indexFlashTexts, true)]
     flow(times, this)
   },

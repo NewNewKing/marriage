@@ -9,7 +9,10 @@
     "pages/setting/index",
     "pages/setting_info/index",
     "pages/setting_photo/index",
-    "pages/setting_comment/index"
+    "pages/setting_comment/index",
+    "pages/setting_hotel/index",
+    "pages/setting_attend/index",
+    "pages/setting_egg/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#242424",

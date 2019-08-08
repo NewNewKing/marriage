@@ -53,6 +53,9 @@ page{
   border-radius:40rpx;
   z-index: 999;
 }
+.blur{
+  filter: blur(3rpx);
+}
 .relative{
   position: relative;
 }

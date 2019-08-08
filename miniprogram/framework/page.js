@@ -2,7 +2,7 @@ const { showHeart } = require('../lib/util.js')
 const mixin = require('./mixin.js')
 
 // 如果钩子后面加-1 表示只执行页面的钩子行为
-const lifecycle = ['onLoad', 'onShareAppMessage-1']
+const lifecycle = ['onLoad', 'onReady', 'onShareAppMessage-1']
 
 const page = function(options) {
   mixinData(options, mixin)

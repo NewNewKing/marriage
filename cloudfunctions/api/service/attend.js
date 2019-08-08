@@ -1,15 +1,23 @@
-const dao = require('../dao/comment.js')
+const dao = require('../dao/attend.js')
+const cloud = require('wx-server-sdk')
+
 const add = async data => {
-  data.isDel = false
+  const { OPENID } = cloud.getWXContext()
+  data.time = Date.now()
+  data._id = OPENID
   return dao.add(data)
 }
-// 获取列表
-const getList = async data => {
-  return dao.getList(data).then(res => res.data)
+
+const get = async () => {
+  const { OPENID } = cloud.getWXContext()
+  const result = await dao.doc(OPENID).catch(() => {
+    return { data: null }
+  })
+  return result.data
 }
 
 // 获取所有内容
-const getAllList = async () => {
+const getAll = async () => {
   const pageSize = 20
   const count = await dao.getCount().then(res => res.total)
   let time = count / pageSize
@@ -21,8 +29,7 @@ const getAllList = async () => {
   while (time > 0) {
     const task = dao.getList({
       pageNum: time,
-      pageSize,
-      isDel: false
+      pageSize
     })
     list.push(task)
     --time
@@ -35,15 +42,14 @@ const getAllList = async () => {
   )
 }
 
-const updateList = async (ids, data) => {
-  const list = ids.map(item => dao.update(item, data))
-  const result = await Promise.all(list)
+const update = async (id, data) => {
+  const result = await dao.update(id, data)
   return result
 }
 
 module.exports = {
   add,
-  getList,
-  getAllList,
-  updateList
+  get,
+  getAll,
+  update
 }

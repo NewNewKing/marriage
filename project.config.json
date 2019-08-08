@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 9,
 			"list": [
 				{
 					"id": -1,
@@ -95,6 +95,13 @@
 					"id": -1,
 					"name": "评论管理",
 					"pathName": "pages/setting_comment/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "出席人数",
+					"pathName": "pages/setting_attend/index",
 					"scene": null
 				}
 			]
