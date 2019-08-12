@@ -21,9 +21,16 @@ const mixin = {
       })
     }
 
-    Event.on('infoChange', info => {
-      this.setData(getNeedInfo(info, this))
-    })
+    Event.on(
+      'infoChange',
+      info => {
+        this.setData(getNeedInfo(info, this))
+      },
+      this.route
+    )
+  },
+  onUnload() {
+    Event.off('infoChange', this.route)
   },
   methods: {
     setValue(event) {

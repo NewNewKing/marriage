@@ -39,7 +39,6 @@ page({
     wx.chooseMessageFile({
       count: 1,
       success: ({ tempFiles }) => {
-        console.log(tempFiles)
         this.setData({
           music: tempFiles[0].name
         })

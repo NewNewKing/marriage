@@ -13,8 +13,17 @@ const doc = async id => {
 const getCount = async () => {
   return await EGG.count()
 }
+
+const getList = async data => {
+  const { pageSize, pageNum } = data
+  return await EGG.skip(pageSize * pageNum - pageSize)
+    .limit(pageSize)
+    .orderBy('rank', 'asc')
+    .get()
+}
 module.exports = {
   add,
   getCount,
-  doc
+  doc,
+  getList
 }

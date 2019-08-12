@@ -17,10 +17,14 @@ page({
   onReady() {
     const { $ready } = this.data
     if (!$ready) {
-      Event.on('infoChange', ({ $ready }) => {
-        if (!$ready) return
-        this.startStage()
-      })
+      Event.on(
+        'infoChange',
+        ({ $ready }) => {
+          if (!$ready) return
+          this.startStage()
+        },
+        this.route
+      )
     } else {
       this.startStage()
     }
@@ -31,7 +35,6 @@ page({
       isShowCover: true
     })
     const { $indexFlashTexts } = this.data
-    console.log(this.data)
     const times = [4, getFlashTime($indexFlashTexts, true)]
     flow(times, this)
   },

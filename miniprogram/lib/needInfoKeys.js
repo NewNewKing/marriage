@@ -1,5 +1,5 @@
 const obj = {
-  common: ['$ready', '$style'],
+  common: ['$ready', '$style', '$_id'],
   // 首页
   ['pages/index/index']: [
     '$groom',
@@ -16,7 +16,6 @@ const obj = {
   ['pages/photo/index']: ['$photos'],
   // 导航
   ['pages/navigator/index']: [
-    '$markers',
     '$address',
     '$phone1',
     '$phone2',
@@ -32,11 +31,12 @@ const obj = {
     '$phone2',
     '$date1',
     '$date2',
-    '$time',
-    '$_id'
+    '$time'
   ],
   // 照片上传
-  ['pages/setting_photo/index']: ['$photos', '$_id']
+  ['pages/setting_photo/index']: ['$photos'],
+  // 酒店设置
+  ['pages/setting_hotel/index']: ['$lat', '$lon', '$hotel', '$address']
 }
 
 module.exports = obj

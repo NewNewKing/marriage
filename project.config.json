@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 11,
 			"list": [
 				{
 					"id": -1,
@@ -102,6 +102,20 @@
 					"id": -1,
 					"name": "出席人数",
 					"pathName": "pages/setting_attend/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "酒店设置",
+					"pathName": "pages/setting_hotel/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "彩蛋排名",
+					"pathName": "pages/setting_egg/index",
 					"scene": null
 				}
 			]

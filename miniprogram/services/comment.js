@@ -2,15 +2,9 @@ const { api } = require('./request.js')
 const { dateFormat } = require('../lib/util.js')
 
 function parseComment(data) {
-  const { time, nickName, comment, avatarUrl, _id } = data
-
-  return {
-    _id,
-    nickName,
-    comment,
-    avatarUrl,
-    time: dateFormat(time, 'yyyy.mm.dd HH:MM:ss')
-  }
+  const { time } = data
+  data.time = dateFormat(time, 'yyyy.mm.dd HH:MM:ss')
+  return data
 }
 
 // 新增评论

@@ -158,10 +158,30 @@ function pick(obj, keys) {
   return data
 }
 
+// 获取地图坐标点
+let id = 0
+function getMarker({ $lat, $lon }) {
+  ++id
+  return [
+    {
+      id,
+      latitude: +$lat,
+      longitude: +$lon,
+      iconPath: '/images/nav.png',
+      width: 50,
+      height: 50
+    }
+  ]
+}
+
 function getNeedInfo(info, page) {
   const { common } = infoKeys
   const list = infoKeys[page.route] || infoKeys.common
-  return pick(info, [...list, ...common])
+  const needInfo = pick(info, [...list, ...common])
+  if (needInfo.$lat && needInfo.$lon) {
+    needInfo.$markers = getMarker(needInfo)
+  }
+  return needInfo
 }
 
 function getFlashTime(list, flag) {

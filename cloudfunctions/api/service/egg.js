@@ -20,6 +20,12 @@ const clue = async (data, OPENID) => {
   return params
 }
 
+const getList = async data => {
+  const { pageSize, pageNum } = data
+  const result = await dao.getList(data)
+  return result
+}
 module.exports = {
-  clue
+  clue,
+  getList
 }

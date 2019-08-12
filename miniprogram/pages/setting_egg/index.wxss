@@ -1,0 +1,22 @@
+.list-wrap{
+  padding: 0 40rpx;
+}
+.list-item {
+  padding: 20rpx;
+  font-size: 24rpx;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+.avatar{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.name{
+  width: 200rpx;
+}
+.rank {
+  width: 100rpx;
+}

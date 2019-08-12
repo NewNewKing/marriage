@@ -26,7 +26,6 @@ const uploadImg = filePaths => {
           ids.push(id)
         })
         .catch(err => {
-          console.log(err)
           wx.showLoading({
             title: `正在上传第${i + 2}张图片`,
             mask: true

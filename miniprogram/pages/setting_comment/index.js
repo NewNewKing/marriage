@@ -18,21 +18,28 @@ page({
         })
       }
     })
-
+    // 获取所有的评论
     getAllList().then(res => {
+      console.log(res)
       this.setData({
         allList: res
       })
     })
   },
+  // 滚动到底
+  scrollToLower() {
+    const { pageNum } = this.data
+    this.getDelList(pageNum + 1)
+  },
   // 获取删除列表
-  getDelList() {
-    const { pageNum, delList } = this.data
+  getDelList(pageNum) {
+    const { delList } = this.data
     getList({
       pageNum,
       isDel: true
     }).then(res => {
       this.setData({
+        pageNum,
         delList: delList.concat(res)
       })
     })
@@ -87,6 +94,7 @@ page({
         })
       })
   },
+  // 切换标签
   toggleLabel({
     currentTarget: {
       dataset: { index }
@@ -100,7 +108,7 @@ page({
         pageNum: 1,
         delList: []
       })
-      this.getDelList()
+      this.getDelList(1)
     }
   }
 })

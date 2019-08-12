@@ -183,7 +183,6 @@ page({
         }
         const { attendInfo, _id } = res
         const { attendNum, mobile, name, remark } = attendInfo
-        console.log(_id)
         this.setData({
           index: attendNum - 1,
           _id,
@@ -208,10 +207,10 @@ page({
     })
   },
   showAttend() {
-    this.getAttendInfo()
     this.setData({
       isAttendShow: true
     })
+    this.getAttendInfo()
   },
   hideAttend() {
     this.setData({
@@ -219,7 +218,6 @@ page({
     })
   },
   ghostAction() {
-    console.log(ghostBlood)
     if (--ghostBlood <= 0) {
       ghostBlood = 5
       this.$go('/pages/setting/index')

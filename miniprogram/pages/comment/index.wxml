@@ -82,6 +82,7 @@
                 bindinput="setValue"
                 data-name="remark"
                 maxlength="100"
+                cursor-spacing="{{200}}"
                 class="remark border shadow"></textarea>
             </view>
           </view>

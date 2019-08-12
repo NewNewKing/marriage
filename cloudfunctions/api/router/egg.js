@@ -10,6 +10,13 @@ const clue = async data => {
   return { code: 0, data: result }
 }
 
+const getList = async data => {
+  const { pageSize = 20, pageNum } = data
+  const result = await service.getList({ pageSize, pageNum })
+  return result
+}
+
 module.exports = {
-  clue
+  clue,
+  getList
 }

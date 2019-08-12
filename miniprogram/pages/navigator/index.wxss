@@ -11,6 +11,7 @@
   width: 390rpx;
   margin: 0 auto;
   padding: 80rpx 0 60rpx 0;
+  text-align: center;
   /*padding:  30rpx 0;*/
 }
 .location{

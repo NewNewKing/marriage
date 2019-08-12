@@ -1,6 +1,38 @@
 <view class="container {{$style}}" bindtap="$showHeart">
   <view class="container" wx:if="{{$ready}}">
-    <ui-header title="评论管理"/>
+    <ui-header title="酒店设置"/>
+    <view>
+      <view class="flex-center-wrap row">
+        <view class="label">酒店名称：</view>
+        <view class="flex">
+          <input type="text" class="input" placeholder="请输入酒店名称" bindinput="setValue" data-name="$hotel" value="{{$hotel}}"/>
+        </view>
+      </view>
+      <view class="flex-center-wrap row">
+        <view class="label">酒店地址：</view>
+        <view class="flex">
+          <textarea type="text" class="textarea" placeholder="请输入酒店地址" bindinput="setValue" data-name="$address" value="{{$address}}"></textarea>
+        </view>
+      </view>
+      <view class="flex-center-wrap row">
+        <view class="label">纬度：</view>
+        <view class="flex">
+          <input type="text" class="input" placeholder="请输入纬度" bindinput="setValue" data-name="$lat" value="{{$lat}}"/>
+        </view>
+        <view class="tips">如 30.792906</view>
+      </view>
+      <view class="flex-center-wrap row">
+        <view class="label">经度：</view>
+        <view class="flex">
+          <input type="text" class="input" placeholder="请输入经度" bindinput="setValue" data-name="$lon" value="{{$lon}}"/>
+        </view>
+        <view class="tips">如 103.902177</view>
+      </view>
+    </view>
+    <view class="submit-btn border shadow" bindtap="submit">保存信息</view>
+    <view class="hint" bindlongpress="longPress">由于内接腾讯地图api需要申请开发者密钥，不方便用户使用。</view>
+    <view class="hint" bindlongpress="longPress">请用户移步到腾讯地图坐标拾取器页面查询相应的信息</view>
+    <view class="hint link" bindlongpress="longPress">{{url}}（长按复制网址）</view>
   </view>
   <include src="/template/system.wxml"/>
 </view>

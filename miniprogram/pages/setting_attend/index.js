@@ -12,7 +12,6 @@ page({
     })
   },
   parseData(res) {
-    console.log(res)
     let num = 0
     const list = res.map(item => {
       const { userInfo, attendInfo, time } = item
@@ -32,7 +31,7 @@ page({
     })
     let title = '出席人数'
     if (num > 0) {
-      title+= `至少${num}人`
+      title += `至少${num}人`
     }
     return {
       list,

@@ -16,16 +16,17 @@
                 <view class="flex bold font28">{{item.nickName}}</view>
                 <view class="font24">{{item.time}}</view>
               </view>
-              <view class="font24">
+              <view class="font24 name">
                 {{item.comment}}
               </view>
+              <view class="font24">城市：{{item.province}} {{item.city}}</view>
             </view>
           </view>
           <view class="del-btn border shadow" bindtap="del" data-item="{{item}}">删除</view>
         </view>
         <view class="empty"></view>
       </scroll-view>
-      <scroll-view class="list-wrap" scroll-y style="height:{{height}}px" wx:else>
+      <scroll-view class="list-wrap" scroll-y style="height:{{height}}px" wx:else bindscrolltolower="scrollToLower">
         <view class="empty"></view>
         <view class="flex-center-wrap mar-b40 wrap" wx:for="{{delList}}" wx:key="_id">
           <view class="list-item border shadow flex-wrap flex">
