@@ -20,12 +20,20 @@ App({
         isMusicPlay: false
       },
       // 全局的信息（婚礼信息等）
-      info: {}
+      info: {},
+      audio: null
     }
+    // 创建背景音乐
+    const audio = wx.createInnerAudioContext()
+    audio.autoplay = true
+    audio.loop = true
+    this.globalData.audio = audio
+
     // 全局状态改变
     Event.on('stateChange', data => {
       Object.assign(this.globalData.state, data)
     })
+
     // 全局信息改变
     Event.on('infoChange', info => {
       Object.assign(this.globalData.info, info)
@@ -33,18 +41,25 @@ App({
       // 背景音乐
       if (info.$music) {
         const music = info.$music
-        wx.playBackgroundAudio({
-          dataUrl: music.url
-        })
-        wx.onBackgroundAudioPlay(() => {
+
+        audio.src = music.url
+        audio.onPlay(() => {
           Event.emit('stateChange', { isMusicPlay: true })
         })
-        wx.onBackgroundAudioPause(() => {
+        audio.onPause(() => {
           Event.emit('stateChange', { isMusicPlay: false })
         })
       }
     })
     // 获取全局配置信息
     getInfo(this)
+  },
+  onHide() {
+    const audio = this.globalData.audio
+    audio.pause()
+  },
+  onShow() {
+    const audio = this.globalData.audio
+    audio.play()
   }
 })

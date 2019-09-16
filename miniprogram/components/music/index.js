@@ -1,6 +1,7 @@
 const behavior = require('../../framework/behavior.js')
 const app = getApp()
 const Event = require('../../lib/event.js')
+const audio = app.globalData.audio
 Component({
   data: {},
   behaviors: [behavior],
@@ -8,10 +9,10 @@ Component({
     toggle() {
       if (this.data.isMusicPlay) {
         // 正在播放
-        wx.pauseBackgroundAudio()
+        audio.pause()
       } else {
         // 暂停中
-        wx.playBackgroundAudio()
+        audio.play()
       }
     }
   },
