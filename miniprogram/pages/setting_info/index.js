@@ -1,6 +1,7 @@
 const page = require('../../framework/page.js')
 const { setInfo } = require('../../services/info.js')
 const Event = require('../../lib/event.js')
+const { uploadMusic } = require('../../services/upload.js')
 const app = getApp()
 page({
   data: {
@@ -39,6 +40,8 @@ page({
     wx.chooseMessageFile({
       count: 1,
       success: ({ tempFiles }) => {
+        console.log(tempFiles)
+        uploadMusic(tempFiles[0].name, tempFiles[0].path)
         this.setData({
           music: tempFiles[0].name
         })

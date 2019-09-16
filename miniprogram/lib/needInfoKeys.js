@@ -1,5 +1,5 @@
 const obj = {
-  common: ['$ready', '$style', '$_id'],
+  common: ['$ready', '$style', '$_id', '$music'],
   // 首页
   ['pages/index/index']: [
     '$groom',

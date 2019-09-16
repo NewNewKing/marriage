@@ -22,6 +22,12 @@ App({
           info
         }
       }
+      if (info.$music) {
+        const music = info.$music
+        const manager = wx.getBackgroundAudioManager()
+        manager.title = music.name
+        manager.src = music.url
+      }
     })
     // 获取全局配置信息
     getInfo(this)

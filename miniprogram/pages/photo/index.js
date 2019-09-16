@@ -16,7 +16,7 @@ page({
 
     userInfo: null
   },
-  onLoad() {
+  onReady() {
     // 判断是否有用户信息
     if (app.globalData && app.globalData.userInfo) {
       this.setData({
@@ -38,13 +38,15 @@ page({
     })
   },
   createNumber() {
-    const { $photos } = this.data
-    if (!$photos) return
+    setTimeout(() => {
+      const { $photos } = this.data
+      if (!$photos) return
 
-    const len = $photos.length
-    this.setData({
-      number: Math.floor(len * Math.random())
-    })
+      const len = $photos.length
+      this.setData({
+        number: Math.floor(len * Math.random())
+      })
+    }, 100)
   },
   showPhoto({
     currentTarget: {
