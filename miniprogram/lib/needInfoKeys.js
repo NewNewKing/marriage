@@ -1,5 +1,5 @@
 const obj = {
-  common: ['$ready', '$style', '$_id', '$music'],
+  common: ['$ready', '$style', '$_id'],
   // 首页
   ['pages/index/index']: [
     '$groom',
@@ -31,7 +31,8 @@ const obj = {
     '$phone2',
     '$date1',
     '$date2',
-    '$time'
+    '$time',
+    '$music'
   ],
   // 照片上传
   ['pages/setting_photo/index']: ['$photos'],

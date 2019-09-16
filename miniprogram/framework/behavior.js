@@ -6,18 +6,17 @@ const options = {
     $style: 'black-gold'
   },
   attached() {
-    if (app.globalData && app.globalData.info) {
-      const { $style } = app.globalData.info
+    const { $style } = app.globalData.info
+    if ($style) {
       this.setData({
         $style
       })
     }
-    // 因为每次
     Event.on(
       'infoChange',
-      info => {
+      ({ $style }) => {
         this.setData({
-          $style: info.$style
+          $style
         })
       },
       this.__wxExparserNodeId__

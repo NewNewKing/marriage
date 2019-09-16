@@ -12,21 +12,36 @@ App({
         traceUser: true
       })
     }
+    // global数据
+    this.globalData = {
+      // 全局的状态
+      state: {
+        // 音乐播放
+        isMusicPlay: false
+      },
+      // 全局的信息（婚礼信息等）
+      info: {}
+    }
+    // 全局状态改变
+    Event.on('stateChange', data => {
+      Object.assign(this.globalData.state, data)
+    })
+    // 全局信息改变
     Event.on('infoChange', info => {
-      if (this.globalData && this.globalData.info) {
-        Object.assign(this.globalData.info, info)
-      } else if (this.globalData) {
-        this.globalData.info = info
-      } else {
-        this.globalData = {
-          info
-        }
-      }
+      Object.assign(this.globalData.info, info)
+
+      // 背景音乐
       if (info.$music) {
         const music = info.$music
-        const manager = wx.getBackgroundAudioManager()
-        manager.title = music.name
-        manager.src = music.url
+        wx.playBackgroundAudio({
+          dataUrl: music.url
+        })
+        wx.onBackgroundAudioPlay(() => {
+          Event.emit('stateChange', { isMusicPlay: true })
+        })
+        wx.onBackgroundAudioPause(() => {
+          Event.emit('stateChange', { isMusicPlay: false })
+        })
       }
     })
     // 获取全局配置信息

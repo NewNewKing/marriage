@@ -56,6 +56,10 @@ const getUrl = ids => {
     })
   })
 }
+const getFileName = name => {
+  const arr = name.split('.').reverse()
+  return `${encodeURIComponent(arr[1])}.${arr[0]}`
+}
 
 const uploadImg = filePaths => {
   const ids = []
@@ -63,9 +67,7 @@ const uploadImg = filePaths => {
   let resolve = Promise.resolve()
   for (let i = 0; i < filePaths.length; i++) {
     resolve = resolve.then(() => {
-      const path = filePaths[i]
-      const arr = path.split('.').reverse()
-      const cloudPath = `photo/${arr[1].replace(/[\/:]/g, '')}.${arr[0]}`
+      const cloudPath = `photo/${getFileName(filePaths[i])}`
       if (i === 0) {
         wx.showLoading({
           title: `正在上传第1张图片`,
@@ -150,8 +152,8 @@ const del = ids => {
 }
 
 const uploadMusic = (name, filePath) => {
-  const arr = name.split('.').reverse()
-  const cloudPath = `music/${arr[1].replace(/[\/:]/g, '')}.${arr[0]}`
+  const fileName = getFileName(name)
+  const cloudPath = `music/${fileName}`
   wx.showLoading({
     title: `上传中...`,
     mask: true

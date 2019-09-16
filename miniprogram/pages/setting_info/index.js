@@ -4,10 +4,6 @@ const Event = require('../../lib/event.js')
 const { uploadMusic } = require('../../services/upload.js')
 const app = getApp()
 page({
-  data: {
-    music: '',
-    musicPath: ''
-  },
   // 上传小程序信息
   submit() {
     const {
@@ -42,9 +38,6 @@ page({
       success: ({ tempFiles }) => {
         console.log(tempFiles)
         uploadMusic(tempFiles[0].name, tempFiles[0].path)
-        this.setData({
-          music: tempFiles[0].name
-        })
       }
     })
   }

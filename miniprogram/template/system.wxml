@@ -2,3 +2,5 @@
 <!-- $ready 表示从服务器拿到配置信息 -->
 <!-- $pageReady 页面是否准备好 默认为true -->
 <ui-loading wx:if="{{!$ready || !$pageReady}}"/>
+
+<ui-music />

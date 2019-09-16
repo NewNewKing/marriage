@@ -53,10 +53,14 @@
 
       <view class="flex-center-wrap row">
         <view class="label">背景音乐：</view>
-        <view class="flex">{{music}}</view>
+        <view class="flex">{{$music.name}}</view>
         <view class="choice-btn border shadow" bindtap="chooseMusic">选择音乐</view>
       </view>
-
+      <view class="row tips center">
+        <view>选择了音乐则会立即更换背景音乐</view>
+        <view>注：由于目前api的限制，所以只能从对话列表中选择音乐，建议下载好音乐后，发送至微信对话当中，然后即可上传该音乐（由于无法控制上传的文件类型，请不要上传非音乐文件）</view>
+      </view>
+      
     </view>
     
   </view>

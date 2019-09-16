@@ -4,7 +4,8 @@
     "ui-heart": "/components/heart/index",
     "ui-tap-shape": "/components/tap-shape/index",
     "ui-loading": "/components/loading/index",
-    "ui-flash": "/components/flash/index"
+    "ui-flash": "/components/flash/index",
+    "ui-music": "/components/music/index"
   },
   "disableScroll": true
 }

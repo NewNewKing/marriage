@@ -1,0 +1,58 @@
+@import "/app.wxss"
+.music-box{
+  position: fixed;
+  z-index: 200;
+  right: 20rpx;
+  top: 150rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items:flex-start;
+}
+.music-icon{
+  width: 60rpx;
+  height: 60rpx;
+}
+.music-play{
+  width: 28rpx;
+  height: 60rpx;
+  margin-left: -10rpx;
+  transform-origin:top;
+  transform:rotate(20deg);
+}
+.play .music-icon {
+  animation: musicRotate 3s linear infinite;
+}
+.play .music-play{
+  transform: rotate(20deg);
+  transition: transform 1s linear;
+  /*animation: musicStart 1s linear forwards;*/
+}
+.pause .music-play{
+  /*animation: musicStop 1s linear forwards;*/
+  transform: rotate(0deg);
+  transition: transform 1s linear;
+}
+@keyframes musicStop {
+  from {
+    transform: rotate(20deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes musicStart {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(20deg);
+  }
+}
+@keyframes musicRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

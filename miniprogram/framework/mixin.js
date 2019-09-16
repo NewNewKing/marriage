@@ -14,10 +14,9 @@ const mixin = {
   // 在onReady获取数据 是因为 $ready必须在页面渲染好之后才能设置为ture
   // 否则会导致页面动画bug
   onReady() {
-    if (app.globalData && app.globalData.info) {
-      const { info } = app.globalData
+    if (app.globalData.info) {
       sleep(100).then(() => {
-        this.setData(getNeedInfo(info, this))
+        this.setData(getNeedInfo(app.globalData.info, this))
       })
     }
 
@@ -33,6 +32,7 @@ const mixin = {
     Event.off('infoChange', this.route)
   },
   methods: {
+    // 用于input 设置value
     setValue(event) {
       const {
         currentTarget: {
@@ -48,7 +48,7 @@ const mixin = {
       })
       this.$showHeart(offsetLeft, offsetTop)
     },
-    // 全屏点击出现心
+    // 点击出现心型
     $showHeart(e, y) {
       const component = this.selectComponent('#tap')
       // 主动调用
@@ -72,6 +72,7 @@ const mixin = {
     $alert(msg) {
       return alert(msg)
     },
+    // 页面跳转
     $go(url, replace) {
       if (replace) {
         wx.redirectTo({ url })

@@ -15,9 +15,10 @@
 }
 .choice-btn{
   text-align: center;
-  line-height: 60rpx;
-  border-radius: 60rpx;
-  padding: 0 40rpx;
+  line-height: 50rpx;
+  border-radius: 50rpx;
+  padding: 0 30rpx;
+  font-size: 24rpx;
 }
 .upload{
   width: 500rpx;
