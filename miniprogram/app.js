@@ -17,7 +17,7 @@ App({
       // 全局的状态
       state: {
         // 音乐播放
-        isMusicPlay: false
+        isMusicPlay: true
       },
       // 全局的信息（婚礼信息等）
       info: {},
@@ -49,6 +49,7 @@ App({
         audio.onPause(() => {
           Event.emit('stateChange', { isMusicPlay: false })
         })
+        audio.pause()
       }
     })
     // 获取全局配置信息

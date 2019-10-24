@@ -10,7 +10,8 @@ const obj = {
     '$date1',
     '$date2',
     '$time',
-    '$indexFlashTexts'
+    '$indexFlashTexts',
+    '$flashImgs'
   ],
   // 相册
   ['pages/photo/index']: ['$photos'],

@@ -1,5 +1,5 @@
 <view class="{{$style}}">
-  <view class="bg-color flash-view flex-center-wrap flex-justify-around">
+  <view class="bg-color flash-view flex-center-wrap flex-justify-around" wx:if="{{texts.length}}">
     <view 
       class="relative"
       wx:for="{{texts}}" 
@@ -7,7 +7,8 @@
       wx:if="{{index === stage}}" >
       <view 
         class="{{$flashStatus === 'out' ? item.outName : item.inName}} animated" 
-        style="animation-duration:{{$flashStatus === 'out' ? item.outTime : item.inTime }}s ">
+        style="animation-duration:{{$flashStatus === 'out' ? item.outTime : item.inTime }}s "
+        bindanimationend="animationend">
         <view 
           class="text {{item.direction === 'vertical' ? 'vertical' : ''}} text-shadow" 
           style="font-size: {{item.fontSize}}px; width: {{item.direction === 'vertical' ? item.fontSize + 'px' : '100%'}};">
@@ -24,9 +25,9 @@
           {{item.text}}
         </view>
       </view>
-
-      
     </view>
-    
+  </view>
+  <view class="bg-color flash-view" wx:if="{{images.length}}">
+    <image wx:for="{{images}}" src="{{item.url}}" bindanimationend="imageFlashEnd"  class="flash-view animated {{item.class}}" wx:key="index" wx:if="{{index <= stage}}" style="animation-duration:{{item.time}}s" mode="aspectFill"></image>
   </view>
 </view>

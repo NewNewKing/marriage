@@ -1,5 +1,5 @@
 const page = require('../../framework/page.js')
-const { flow, getFlashTime } = require('../../lib/util.js')
+const { sleep } = require('../../lib/util.js')
 const Event = require('../../lib/event.js')
 const app = getApp()
 
@@ -34,9 +34,16 @@ page({
     this.setData({
       isShowCover: true
     })
-    const { $indexFlashTexts } = this.data
-    const times = [4, getFlashTime($indexFlashTexts, true)]
-    flow(times, this)
+    this.setData({
+      stage: 0
+    })
+  },
+  // 一个flash播放结束
+  flashEnd() {
+    const { stage } = this.data
+    this.setData({
+      stage: stage + 1
+    })
   },
   // 切换 封面是否显示
   toggleCover({

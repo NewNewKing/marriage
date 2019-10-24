@@ -12,7 +12,7 @@
 	},
 	"appid": "wx07bf93be7d34ec7d",
 	"projectname": "marriage",
-	"libVersion": "2.7.7",
+	"libVersion": "2.9.0",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
