@@ -70,18 +70,6 @@
   padding: 20rpx 0;
   text-align: right;
 }
-.input{
-  padding:20rpx;
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-}
-.picker{
-  padding:20rpx;
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-}
 .remark{
   box-sizing: border-box;
   width: 100%;

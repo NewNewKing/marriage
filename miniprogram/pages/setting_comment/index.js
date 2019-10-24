@@ -20,7 +20,6 @@ page({
     })
     // 获取所有的评论
     getAllList().then(res => {
-      console.log(res)
       this.setData({
         allList: res
       })

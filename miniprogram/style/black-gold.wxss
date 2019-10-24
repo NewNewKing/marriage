@@ -32,11 +32,16 @@
   color: #eccb90;
   background-color: #242424;
 }
+/*输入框*/
 .black-gold .label{
 
 }
 .black-gold .input {
-  
+  border-color: #eccb90;
+}
+.black-gold .placeholder{
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24rpx;
 }
 /*首页*/
 .black-gold .cover{

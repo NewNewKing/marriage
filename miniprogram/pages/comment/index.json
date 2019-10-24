@@ -4,6 +4,5 @@
     "ui-background": "/components/background/index",
     "ui-loading": "/components/loading/index",
     "ui-music": "/components/music/index"
-  },
-  "navigationBarTitleText": "留言评论"
+  }
 }

@@ -1,31 +1,26 @@
 .row{
-  padding: 20rpx 40rpx;
+  padding: 20rpx;
 }
 .label{
   width: 200rpx;
   text-align: right;
 }
-.input{
-  width: 100%;
-  line-height: 40rpx;
-  height: 40rpx;
-}
-.tips{
+.row-tips{
   font-size: 20rpx;
+  margin-left: 20rpx;
 }
 .textarea{
-  width: 100%;
-  line-height: 40rpx;
-  padding: 10rpx;
-  height: 100rpx;
-  box-sizing: border-box;
+  padding: 20rpx;
+  width: 400rpx;
+  height: 150rpx;
+  border-radius: 8rpx;
 }
 .submit-btn{
-  text-align: center;
+  width: 500rpx;
   line-height: 80rpx;
   border-radius: 80rpx;
-  width: 300rpx;
-  margin: 40rpx auto;
+  text-align: center;
+  margin: 60rpx auto;
 }
 .hint{
   text-align: center;

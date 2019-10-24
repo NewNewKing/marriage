@@ -10,6 +10,7 @@ page{
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
+  font-size: 28rpx;
 }
 .container{
   min-width: 100vw;
@@ -46,6 +47,21 @@ page{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.input{
+  box-sizing: border-box;
+  padding: 10rpx 20rpx;
+  border: 1px solid #333;
+  border-radius: 60rpx;
+  font-size: 28rpx;
+  height: auto;
+  width: 340rpx;
+}
+.label{
+  font-size: 28rpx;
+}
+.tips{
+  font-size: 20rpx;
 }
 /*右下角切换按钮*/
 .toggle-box{

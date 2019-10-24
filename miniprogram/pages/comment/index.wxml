@@ -52,27 +52,19 @@
     <view class="fixed layer-bg flex-center-wrap flex-justify-around" wx:if="{{isAttendShow}}" bindtap="hideAttend">
       <view class="layer-wrap" catchtap="$showHeart">
         <view class="info-wrap">
-          <view class="row flex-wrap">
+          <view class="row flex-center-wrap">
             <view class="label">姓名：</view>
-            <view class="flex">
-              <input type="text" class="input" placeholder="请输入姓名" bindinput="setValue" data-name="name" value="{{name}}"/>
-            </view>
+            <input type="text" class="input shadow" placeholder="请输入姓名" placeholder-class="placeholder" bindinput="setValue" data-name="name" value="{{name}}"/>
           </view>
-          <view class="row flex-wrap">
+          <view class="row flex-center-wrap">
             <view class="label">手机号码：</view>
-            <view class="flex">
-              <input type="text" class="input" placeholder="请输入手机号码" bindinput="setValue" data-name="mobile" value="{{mobile}}"/>
-            </view>
+            <input type="text" class="input shadow" placeholder="请输入手机号码" placeholder-class="placeholder" bindinput="setValue" data-name="mobile" value="{{mobile}}"/>
           </view>
-          <view class="row flex-wrap">
+          <view class="row flex-center-wrap">
             <view class="label">出席人数：</view>
-            <view class="flex">
-              <picker class="picker" range="{{attendArr}}" value="{{index}}" bindchange="numChange">
-                <view class="max">
-                  {{attendArr[index]}}
-                </view>
-              </picker>
-            </view>
+            <picker class="input shadow" range="{{attendArr}}" value="{{index}}" bindchange="numChange">
+              {{attendArr[index]}}
+            </picker>
           </view>
           <view class="row flex-wrap">
             <view class="label">备注：</view>

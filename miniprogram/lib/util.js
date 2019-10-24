@@ -177,7 +177,7 @@ function getMarker({ $lat, $lon }) {
 function getNeedInfo(info, page) {
   const { common } = infoKeys
   const list = infoKeys[page.route] || infoKeys.common
-  const needInfo = pick(info, [...list, ...common])
+  let needInfo = pick(info, [...list, ...common])
   if (needInfo.$lat && needInfo.$lon) {
     needInfo.$markers = getMarker(needInfo)
   }

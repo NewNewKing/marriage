@@ -7,17 +7,17 @@ const options = {
   },
   attached() {
     const { $style } = app.globalData.info
-    if ($style) {
+    $style &&
       this.setData({
         $style
       })
-    }
     Event.on(
       'infoChange',
       ({ $style }) => {
-        this.setData({
-          $style
-        })
+        $style &&
+          this.setData({
+            $style
+          })
       },
       this.__wxExparserNodeId__
     )

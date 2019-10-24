@@ -1,17 +1,13 @@
 .row{
-  padding: 20rpx 40rpx;
+  padding: 20rpx;
 }
 .label{
   width: 200rpx;
   text-align: right;
 }
-.input{
-  width: 100%;
-  line-height: 40rpx;
-  height: 40rpx;
-}
-.tips{
+.row-tips{
   font-size: 20rpx;
+  margin-left: 20rpx;
 }
 .choice-btn{
   text-align: center;

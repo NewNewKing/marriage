@@ -1,11 +1,11 @@
-const { sleep } = require("../../lib/util.js")
+const { sleep } = require('../../lib/util.js')
 let id = 0
 class Heart {
   constructor() {
     this.isUsing = true
     this.left = 0
     this.top = 0
-    this.color = "#f00"
+    this.color = '#f00'
     this.getId()
   }
   getId() {
@@ -13,8 +13,6 @@ class Heart {
   }
   getColor() {
     this.color = `hsla(${(360 * Math.random()) | 0},80%,60%,1)`
-    // this.color = `rgb(${(255 * Math.random()) | 0},${(255 * Math.random()) |
-    //   0},${(255 * Math.random()) | 0})`
   }
   getPosition(left, top) {
     this.left = left
@@ -33,12 +31,6 @@ class Heart {
     })
   }
 }
-
-// function createList() {
-//   const count = 10
-//   const list = new Array(count).fill(1)
-//   return list.map(() => new Heart())
-// }
 Component({
   data: {
     list: []
