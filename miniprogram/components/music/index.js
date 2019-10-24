@@ -3,7 +3,9 @@ const app = getApp()
 const Event = require('../../lib/event.js')
 const audio = app.globalData.audio
 Component({
-  data: {},
+  data: {
+    hasMusic: false
+  },
   behaviors: [behavior],
   methods: {
     toggle() {

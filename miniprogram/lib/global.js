@@ -3,15 +3,15 @@ const Event = require('./event.js')
 const getInfo = function(app) {
   info.get().then(res => {
     res.$ready = true
-    res.$indexBanners = res.$indexImgs.slice(2)
+    res.$indexBanners = res.$photos.slice(2, 3)
     res.$flashImgs = [
       {
-        url: res.$indexImgs[0].url,
+        url: res.$photos[0] && res.$photos[0].url,
         class: 'halfFadeInDown',
         time: 1
       },
       {
-        url: res.$indexImgs[1].url,
+        url: res.$photos[1] && res.$photos[1].url,
         time: 3,
         class: 'puffIn'
       }

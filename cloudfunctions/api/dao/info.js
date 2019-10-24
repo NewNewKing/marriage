@@ -11,8 +11,12 @@ const update = async (_id, data) => {
     data
   })
 }
+const add = async data => {
+  return await INFO.add({ data })
+}
 
 module.exports = {
   getInfo,
-  update
+  update,
+  add
 }

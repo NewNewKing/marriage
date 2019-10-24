@@ -68,6 +68,7 @@ const uploadImg = filePaths => {
   for (let i = 0; i < filePaths.length; i++) {
     resolve = resolve.then(() => {
       const cloudPath = `photo/${getFileName(filePaths[i])}`
+      const path = filePaths[i]
       if (i === 0) {
         wx.showLoading({
           title: `正在上传第1张图片`,

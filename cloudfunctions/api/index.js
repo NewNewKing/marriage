@@ -33,6 +33,5 @@ exports.main = async (event, context) => {
   if (!result.data) {
     result.data = null
   }
-  console.log(result)
   return result
 }

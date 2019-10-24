@@ -7,9 +7,9 @@
       <ui-flash texts="{{$indexFlashTexts}}" bindend="flashEnd"></ui-flash>
     </view>
     <view class="container" wx:if="{{stage === 2}}">
-      <view class="toggle-box border shadow animated infinite bounce slow" catchtap="startStage">
+<!--       <view class="toggle-box border shadow animated infinite bounce slow" catchtap="startStage">
         再次播放
-      </view>
+      </view> -->
       <swiper 
         class="swiper"
         current="{{current}}"
