@@ -24,6 +24,7 @@
         </view>
       </view>
     </view>
+    <view class="no-data" wx:if="{{!list.length}}">暂无出席人数数据</view>
   </view>
   <include src="/template/system.wxml"/>
 </view>

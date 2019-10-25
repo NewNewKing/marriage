@@ -63,6 +63,13 @@ page{
 .tips{
   font-size: 20rpx;
 }
+.no-data{
+  font-size: 36rpx;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 40%;
+}
 /*右下角切换按钮*/
 .toggle-box{
   position: fixed;

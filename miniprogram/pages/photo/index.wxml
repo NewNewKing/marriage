@@ -4,12 +4,12 @@
       class="container"
       circular
       autoplay
-      wx:if="{{mode === 'swiper'}}">
+      wx:if="{{mode === 'swiper' && $photos.length}}">
       <swiper-item wx:for="{{$photos}}" wx:key="{{item.id}}">
         <image src="{{item.url}}" class="photo-img" mode="aspectFill"></image>
       </swiper-item>
     </swiper>
-    <view wx:if="{{mode === 'scale'}}">
+    <view wx:if="{{mode === 'scale' && $photos.length}}">
       
       <view class="fixed">
         <ui-background type="{{2}}" mixed />
@@ -33,6 +33,7 @@
         </view>
       </scroll-view>
     </view>
+    <view class="no-data" wx:if="{{!$photos.length}}">暂无相片</view>
     <view class="toggle-box border shadow animated infinite heartBeat slow" bindtap="toggleView">
       查看{{mode === 'swiper' ? '缩略图' : '轮播图'}}
     </view>

@@ -4,8 +4,7 @@ const obj = {
   ['pages/index/index']: [
     '$groom',
     '$bride',
-    '$indexImgs',
-    '$indexBanners',
+    '$photos',
     '$address',
     '$date1',
     '$date2',

@@ -3,7 +3,6 @@ const Event = require('./event.js')
 const getInfo = function(app) {
   info.get().then(res => {
     res.$ready = true
-    res.$indexBanners = res.$photos.slice(2, 3)
     res.$flashImgs = [
       {
         url: res.$photos[0] && res.$photos[0].url,

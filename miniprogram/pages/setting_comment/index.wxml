@@ -45,6 +45,8 @@
         </view>
         <view class="empty"></view>
       </scroll-view>
+      <view class="no-data" wx:if="{{!allList.length && active === 1}}">暂无评论</view>
+      <view class="no-data" wx:if="{{!delList.length && active !== 1}}">暂无已删除评论</view>
       <!-- <view class="tips">在评论管理中 删除与恢复的实际数据可能会存在几秒的延迟</view> -->
       <view class="tips">如果需要查看评论留言中的数据是否有更新 需要在后台关掉微信 再重新进入小程序</view>
     </view>

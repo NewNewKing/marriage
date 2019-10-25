@@ -3,6 +3,7 @@
     <ui-header title="彩蛋排名"/>
     <scroll-view scroll-y style="height:{{height}}px" bindscrolltolower="scrollToLower">
       <view class="empty"></view>
+      <view class="no-data" wx:if="{{!list.length}}">暂无找到彩蛋的人</view>
       <view wx:for="{{list}}" wx:key="{{_id}}" class="list-wrap">
         <view class="list-item border flex-center-wrap">
           <view class="rank">No {{item.rank}}</view>

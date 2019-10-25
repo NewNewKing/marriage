@@ -10,7 +10,8 @@
 <!--       <view class="toggle-box border shadow animated infinite bounce slow" catchtap="startStage">
         再次播放
       </view> -->
-      <swiper 
+      <image src="{{$photos[2] && $photos[2].url}}" class="swiper" mode="aspectFill"></image>
+<!--       <swiper 
         class="swiper"
         current="{{current}}"
         circular
@@ -19,7 +20,7 @@
         <swiper-item wx:for="{{$indexBanners}}" wx:key="{{item}}">
           <image src="{{item.url}}" class="bg-img" mode="aspectFill"></image>
         </swiper-item>
-      </swiper>
+      </swiper> -->
       <view class="cover-container center" bindtouchstart="start" bindtouchmove="move">
         <view  class="letter">
           <view class="letter-box animated rollIn" bindtap="toggleCover">
