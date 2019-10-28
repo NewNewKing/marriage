@@ -9,7 +9,6 @@ page({
     wx.chooseImage({
       count: 9,
       success(res) {
-        console.log(res)
         uploadImg(res.tempFilePaths).then(res => {
           Event.emit('infoChange', {
             $photos: res

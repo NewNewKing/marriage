@@ -58,7 +58,7 @@ const getUrl = ids => {
 }
 const getFileName = name => {
   const arr = name.split('.').reverse()
-  return `${encodeURIComponent(arr[1])}.${arr[0]}`
+  return `${encodeURIComponent(arr[1].replace(/[\/:]/g, ''))}.${arr[0]}`
 }
 
 const uploadImg = filePaths => {
