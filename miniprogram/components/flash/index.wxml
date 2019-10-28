@@ -11,9 +11,7 @@
         bindanimationend="animationend">
         <view 
           class="text {{item.direction === 'vertical' ? 'vertical' : ''}} text-shadow" 
-          style="font-size: {{item.fontSize}}px; width: {{item.direction === 'vertical' ? item.fontSize + 'px' : '100%'}};">
-          {{item.text}}
-        </view>
+          style="font-size: {{item.fontSize}}px; width: {{item.direction === 'vertical' ? item.fontSize + 'px' : '100%'}};">{{item.text}}</view>
       </view>
       <view 
         class="{{$flashStatus !== 'out' ? item.inName : ''}} animated double" 
@@ -21,9 +19,7 @@
         wx:if="{{item.double}}">
         <view 
           class="text {{item.direction === 'vertical' ? 'vertical' : ''}} text-shadow" 
-          style="font-size: {{item.fontSize}}px; width: {{item.direction === 'vertical' ? item.fontSize + 'px' : '100%'}};">
-          {{item.text}}
-        </view>
+          style="font-size: {{item.fontSize}}px; width: {{item.direction === 'vertical' ? item.fontSize + 'px' : '100%'}};">{{item.text}}</view>
       </view>
     </view>
   </view>
