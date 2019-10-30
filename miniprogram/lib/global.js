@@ -1,5 +1,6 @@
 const info = require('../services/info.js')
 const Event = require('./event.js')
+const setTabBar = require('./setTabBar.js')
 const getInfo = function(app) {
   info.get().then(res => {
     res.$ready = true
@@ -15,6 +16,7 @@ const getInfo = function(app) {
         class: 'puffIn'
       }
     ]
+    // res.$style = 'pink'
     Event.emit('infoChange', res)
   })
 }

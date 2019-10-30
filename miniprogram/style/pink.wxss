@@ -1,0 +1,52 @@
+.pink{
+  
+}
+.pink .color {
+  color: #fff;
+}
+.pink .border-color{
+  border-color: rgba(251, 165, 175, 0.8);
+}
+.pink button{
+  color: #fff;
+}
+.pink .bg-color{
+  background-color: rgb(251, 165, 175);
+}
+.pink.bg-color{
+  background-color: rgb(251, 165, 175);
+}
+.pink .border{
+  border: 2rpx solid #fff;
+}
+.pink .shadow100{
+  box-shadow: 0 0rpx 100rpx 0 #fff;
+}
+.pink .shadow{
+  box-shadow: 0 0rpx 20rpx 0 #fff;
+}
+.pink .text-shadow{
+  text-shadow: 0 0rpx 40rpx #fff;
+}
+.pink.container{
+  color: #fff;
+  background-color: rgb(251, 165, 175);
+}
+/*输入框*/
+.pink .label{
+
+}
+.pink .input {
+  border-color: #fff;
+}
+.pink .placeholder{
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24rpx;
+}
+/*首页*/
+.pink .cover{
+  background-color: rgba(0,0,0, 0.5)
+}
+.pink .layer-bg{
+  background-color: rgba(0,0,0, 0.7)
+}

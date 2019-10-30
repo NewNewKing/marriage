@@ -22,9 +22,6 @@
     "backgroundColor": "#242424"
   },
   "tabBar": {
-    "backgroundColor": "#242424",
-    "color": "#fff",
-    "selectedColor": "#eccb90",
     "list": [
       {
         "text": "邀请函",

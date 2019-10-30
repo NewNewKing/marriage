@@ -1,9 +1,11 @@
 const Event = require('./lib/event.js')
 const { getInfo } = require('./lib/global.js')
+const setTabBar = require('./lib/setTabBar.js')
 
 //app.js
 App({
   onLaunch: function() {
+    wx.hideTabBar()
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -36,6 +38,7 @@ App({
 
     // 全局信息改变
     Event.on('infoChange', info => {
+      info.$style && setTabBar(info.$style)
       Object.assign(this.globalData.info, info)
 
       // 背景音乐
