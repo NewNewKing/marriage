@@ -22,22 +22,33 @@
     "backgroundColor": "#242424"
   },
   "tabBar": {
+    "color": "#fff",
+    "selectedColor": "#eccb90",
+    "backgroundColor": "#242424",
     "list": [
       {
         "text": "邀请函",
-        "pagePath": "pages/index/index"
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/black-gold/icon1-1.png",
+        "selectedIconPath": "/images/black-gold/icon1-2.png"
       },
       {
         "text": "相册",
-        "pagePath": "pages/photo/index"
+        "pagePath": "pages/photo/index",
+        "iconPath": "/images/black-gold/icon2-1.png",
+        "selectedIconPath": "/images/black-gold/icon2-2.png"
       },
       {
         "text": "酒店导航",
-        "pagePath": "pages/navigator/index"
+        "pagePath": "pages/navigator/index",
+        "iconPath": "/images/black-gold/icon3-1.png",
+        "selectedIconPath": "/images/black-gold/icon3-2.png"
       },
       {
         "text": "留言评论",
-        "pagePath": "pages/comment/index"
+        "pagePath": "pages/comment/index",
+        "iconPath": "/images/black-gold/icon4-1.png",
+        "selectedIconPath": "/images/black-gold/icon4-2.png"
       }
     ]
   },

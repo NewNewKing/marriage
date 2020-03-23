@@ -2,42 +2,42 @@
   
 }
 .pink .color {
-  color: #fff;
+  color: #fefdca;
 }
 .pink .border-color{
-  border-color: rgba(251, 165, 175, 0.8);
+  border-color: #a5dee5;
 }
 .pink button{
-  color: #fff;
+  color: #fefdca;
 }
 .pink .bg-color{
-  background-color: rgb(251, 165, 175);
+  background-color: #ffcfdf;
 }
 .pink.bg-color{
-  background-color: rgb(251, 165, 175);
+  background-color: #ffcfdf;
 }
 .pink .border{
-  border: 2rpx solid #fff;
+  border: 2rpx solid #a5dee5;
 }
 .pink .shadow100{
-  box-shadow: 0 0rpx 100rpx 0 #fff;
+  box-shadow: 0 0rpx 100rpx 0 #a5dee5;
 }
 .pink .shadow{
-  box-shadow: 0 0rpx 20rpx 0 #fff;
+  box-shadow: 0 0rpx 20rpx 0 #a5dee5;
 }
 .pink .text-shadow{
-  text-shadow: 0 0rpx 40rpx #fff;
+  text-shadow: 0 0rpx 40rpx #a5dee5;
 }
 .pink.container{
-  color: #fff;
-  background-color: rgb(251, 165, 175);
+  color: #fefdca;
+  background-color: #ffcfdf;
 }
 /*输入框*/
 .pink .label{
 
 }
 .pink .input {
-  border-color: #fff;
+  border-color: #fcbad3;
 }
 .pink .placeholder{
   color: rgba(255, 255, 255, 0.8);

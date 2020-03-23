@@ -24,20 +24,23 @@ const color = {
   }
 }
 function setTabBar(style) {
-  wx.hideTabBar()
   style = style.replace('$', '')
+  if (!color[style]) return
+
   wx.setTabBarStyle(color[style])
+  wx.hideTabBar()
   map.map((item, index) => {
     const bar = Object.assign(
       {
         index,
-        iconPath: `/images/${style}/icon${index + 1}-1.svg`,
-        selectedIconPath: `/images/${style}/icon${index + 1}-2.svg`
+        iconPath: `/images/${style}/icon${index + 1}-1.png`,
+        selectedIconPath: `/images/${style}/icon${index + 1}-2.png`
       },
       item
     )
     wx.setTabBarItem(bar)
   })
+
   wx.showTabBar()
 }
 

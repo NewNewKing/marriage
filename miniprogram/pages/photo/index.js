@@ -2,6 +2,15 @@ const app = getApp()
 const page = require('../../framework/page.js')
 const Event = require('../../lib/event.js')
 
+let timer
+function setData(data, page) {
+  if (timer) return
+  timer = setTimeout(() => {
+    page.setData(data)
+    clearTimeout(timer)
+    timer = null
+  }, 50)
+}
 page({
   data: {
     // 展现模式
@@ -86,10 +95,13 @@ page({
     const { touches } = e
     const { startX, startY } = this.data
     const { clientX, clientY } = touches[0]
-    this.setData({
-      left: clientX - startX,
-      top: clientY - startY
-    })
+    setData(
+      {
+        left: clientX - startX,
+        top: clientY - startY
+      },
+      this
+    )
   },
   toggleView() {
     const { mode } = this.data

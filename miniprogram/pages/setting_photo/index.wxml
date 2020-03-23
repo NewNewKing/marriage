@@ -3,7 +3,7 @@
     <ui-header title="照片设置"/>
     <view>
       <view class="photo-wrap flex-multi-row flex-justify-between">
-        <view wx:for="{{$photos}}" class="photo-item border shadow" wx:key="{{item.id}}" bindtap="del" data-item="{{item}}">
+        <view wx:for="{{$photos}}" class="photo-item border shadow" wx:key="id" bindtap="del" data-item="{{item}}">
           <image class="photo" src="{{item.url}}" mode="aspectFill"></image>
         </view>
         <view class="photo-item" wx:for="{{[1,2,3,4,5]}}" wx:key="*this"></view>

@@ -28,7 +28,8 @@ Component({
       'stateChange',
       ({ isMusicPlay }) => {
         this.setData({
-          isMusicPlay
+          isMusicPlay,
+          hasMusic: true
         })
       },
       this.__wxExparserNodeId__

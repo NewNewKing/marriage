@@ -16,7 +16,6 @@ const getInfo = function(app) {
         class: 'puffIn'
       }
     ]
-    // res.$style = 'pink'
     Event.emit('infoChange', res)
   })
 }

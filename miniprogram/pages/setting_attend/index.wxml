@@ -2,7 +2,7 @@
   <view class="container" wx:if="{{$ready}}">
     <ui-header title="{{title}}"/>
     <view class="list-wrap">
-      <view class="list-item border shadow flex-wrap" wx:for="{{list}}" wx:key="">
+      <view class="list-item border shadow flex-wrap" wx:for="{{list}}" wx:key="_id">
         <image src="{{item.userInfo.avatarUrl}}" class="avatar"></image>
         <view class="flex">
           <view class="row flex-center-wrap">
