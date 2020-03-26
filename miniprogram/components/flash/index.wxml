@@ -1,29 +1,37 @@
 <view class="{{$style}}">
-  <view class="bg-color flash-view flex-center-wrap flex-justify-around" wx:if="{{texts.length}}">
+  <view class="bg-color" wx:if="{{texts.length}}">
     <view 
-      class="relative"
+      class="flash-view flex-center-wrap flex-justify-around"
       wx:for="{{texts}}" 
       wx:key="index" 
-      wx:if="{{index === stage}}" >
-      <view 
-        class="{{$flashStatus === 'out' ? item.outName : item.inName}} animated" 
-        style="animation-duration:{{$flashStatus === 'out' ? item.outTime : item.inTime }}s "
-        bindanimationend="animationend">
+      wx:if="{{index === stage || (index < stage && index + item.live >= stage) }}" >
+      <!-- 文字内容 -->
+      <view class="relative" wx:if="{{item.text}}">
         <view 
-          class="text {{item.direction === 'vertical' ? 'vertical' : ''}} text-shadow" 
-          style="font-size: {{item.fontSize}}px; width: {{item.direction === 'vertical' ? item.fontSize + 'px' : '100%'}};">{{item.text}}</view>
-      </view>
-      <view 
-        class="{{$flashStatus !== 'out' ? item.inName : ''}} animated double" 
-        style="animation-duration:{{$flashStatus !== 'out' ? item.inTime : ''}}s "
-        wx:if="{{item.double}}">
+          class="{{$flashStatus === 'out' ? item.outName : item.inName}} animated" 
+          style="animation-duration:{{$flashStatus === 'out' ? item.outTime : item.inTime }}s "
+          bindanimationend="animationend">
+          <text 
+            class="text {{item.direction === 'vertical' ? 'vertical' : ''}} text-shadow" 
+            style="font-size: {{item.fontSize}}px; width: {{item.direction === 'vertical' ? item.fontSize + 'px' : '100%'}};">{{item.text}}</text>
+        </view>
+        <!-- double内容  -->
         <view 
-          class="text {{item.direction === 'vertical' ? 'vertical' : ''}} text-shadow" 
-          style="font-size: {{item.fontSize}}px; width: {{item.direction === 'vertical' ? item.fontSize + 'px' : '100%'}};">{{item.text}}</view>
+          class="{{$flashStatus !== 'out' ? item.inName : ''}} animated double" 
+          style="animation-duration:{{$flashStatus !== 'out' ? item.inTime : ''}}s "
+          wx:if="{{item.double}}">
+          <text 
+            class="text {{item.direction === 'vertical' ? 'vertical' : ''}} text-shadow" 
+            style="font-size: {{item.fontSize}}px; width: {{item.direction === 'vertical' ? item.fontSize + 'px' : '100%'}};">{{item.text}}</text>
+        </view>
       </view>
+      <!-- 图片内容 -->
+      <block wx:if="{{item.url || item.url === 0}}">
+        <image src="{{photos[item.url].url}}" 
+          class="flash-image animated {{item.inName}}" 
+          style="animation-duration:{{item.inTime}}s" mode="aspectFill" 
+          bindanimationend="animationend"/>
+      </block>
     </view>
-  </view>
-  <view class="bg-color flash-view" wx:if="{{images.length}}">
-    <image wx:for="{{images}}" src="{{item.url}}" bindanimationend="imageFlashEnd"  class="flash-view animated {{item.class}}" wx:key="index" wx:if="{{index <= stage}}" style="animation-duration:{{item.time}}s" mode="aspectFill"></image>
   </view>
 </view>

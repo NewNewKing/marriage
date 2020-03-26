@@ -4,12 +4,12 @@
       class="container"
       circular
       autoplay
-      wx:if="{{mode === 'swiper' && $photos.length}}">
+      hidden="{{mode !== 'swiper' || !$photos.length}}">
       <swiper-item wx:for="{{$photos}}" wx:key="id">
         <image src="{{item.url}}" class="photo-img" mode="aspectFill"></image>
       </swiper-item>
     </swiper>
-    <view wx:if="{{mode === 'scale' && $photos.length}}">
+    <view hidden="{{mode !== 'scale' || !$photos.length}}">
       
       <view class="fixed">
         <ui-background type="{{2}}" mixed />

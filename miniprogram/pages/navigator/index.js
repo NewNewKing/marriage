@@ -1,10 +1,3 @@
-/*
- * @Description: 
- * @Autor: 王兴欣
- * @Date: 2019-05-27 14:46:00
- * @LastEditors: 王兴欣
- * @LastEditTime: 2020-03-26 11:37:57
- */
 const page = require('../../framework/page.js')
 page({
   data: {},

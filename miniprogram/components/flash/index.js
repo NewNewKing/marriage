@@ -7,7 +7,7 @@ Component({
       type: Array,
       value: []
     },
-    images: {
+    photos: {
       type: Array,
       value: []
     }
@@ -19,6 +19,7 @@ Component({
   },
   methods: {
     animationend() {
+      // return
       const { texts, stage, $flashStatus } = this.data
       const item = texts[stage]
       if (!item) {
@@ -50,23 +51,9 @@ Component({
           }
         )
       }
-    },
-    imageFlashEnd() {
-      const { images, stage } = this.data
-      this.setData(
-        {
-          stage: stage + 1
-        },
-        () => {
-          const item = images[stage + 1]
-          if (!item) {
-            this.triggerEvent('end', true)
-            return
-          }
-        }
-      )
     }
   },
-  attached() {},
+  attached() {
+  },
   ready() {}
 })

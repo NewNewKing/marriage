@@ -4,7 +4,8 @@
 * 动画名 只支持animate.css 里面的动画名
 * 总共持续时间 = duration + inTime + outTime
 * {
-*   text: '大家好',
+*   url:   0                 数字为在相册中的位置 从0开始 与text互斥
+*   text: '大家好',           与url互斥  url优先级高
 *   direction: 'horizontal', horizontal(水平)|vertical(竖直)
 *   fontSize: 60,            字体大小
 *   duration: 0.25,          字存在时间 默认0.25
@@ -13,10 +14,22 @@
 *   outNmae: '',             退出动画名
 *   outTime: ''              退出时间 默认 0.3
 *   double: false            是否双重影像 只在out时间有效
-*   
+*   live:  1                 存活时间
 * }
 */
 const texts = [
+  {
+    url: 0,
+    inName: 'halfFadeInDown',
+    inTime: 1,
+    live: 1,
+    duration: 0
+  },
+  {
+    url: 1,
+    inName: 'puffIn',
+    inTime: 3
+  },
   {
     text: '各位',
     inName: 'zoomIn',
@@ -31,99 +44,99 @@ const texts = [
     text: '小哥哥'
   },
   {
-    text: '小姐姐'
+    text: '小姐姐',
+    outName: 'fadeOut'
   },
   {
-    text: '告诉你们'
+    text: '!',
+    fontSize: 200,
+    inName: 'bounce',
+    duration: 0.6,
+    outName: 'fadeOut'
   },
   {
-    text: '一个'
+    text: '我们',
+    direction: 'vertical',
+    fontSize: 100,
+    inName: 'rotateIn',
+    inTime: 0.2,
+    outName: "growOut"
   },
   {
-    inTime: 0.5,
-    inName: 'jackInTheBox',
-    text: '好消息',
-    duration: 0.1,
-    fontSize: 80
+    url: 2,
+    inName: 'fadeInRight',
+    inTime: 3,
+    duration: 0,
+    live: 1
   },
   {
-    text: '我们'
+    url: 3,
+    inName: 'zoomIn2',
+    inTime: 3,
+    duration: 2
   },
   {
-    text: '要结婚啦',
+    text: '我们',
+    fontSize: 40,
+    inName: 'flipInX'
+  },
+  {
+    text: '要',
     fontSize: 40
   },
   {
-    text: '要结婚啦',
+    text: '要',
     fontSize: 60
   },
   {
-    text: '要结婚啦',
+    text: '要',
     fontSize: 80
   },
   {
-    text: '要结婚啦',
-    direction: 'vertical',
-    fontSize: 80
+    text: '要',
+    fontSize: 100
   },
   {
-    text: '要结婚啦',
-    fontSize: 80
+    text: '结婚',
+    fontSize: 60
   },
   {
-    text: '要结婚啦',
-    double: true,
-    outName: 'growOut',
+    text: '啦',
+    fontSize: 60
+  },
+  {
+    text: '结婚啦',
     fontSize: 80,
-    inName: 'puffIn',
-    duration: 0.1
+    inName: 'tada',
+    inTime: 0.6
   },
   {
-    text: '诚邀',
-    inName: 'flash'
-  },
-  {
-    text: '诚邀您'
-  },
-  {
-    text: '您',
+    text: '结婚啦',
     fontSize: 80,
-    outName: 'growOut'
+    inName: 'tada',
+    inTime: 0.6
   },
   {
-    inName: 'fadeIn',
-    text: '携家人'
-  },
-  {
-    text: '出席'
-  },
-  {
-    text: '我们的婚礼',
-    outName: 'growOut'
-  },
-  {
-    inName: 'puffIn',
-    text: '一起见证',
-    duration: 0.2
-  },
-  {
-    inName: 'zoomIn',
-    text: '我们的',
-    duration: 0.2,
-    outName: 'growOut'
-  },
-  {
-    inName: 'rotateIn',
-    outName: 'rotateOut',
-    text: '幸福',
-    duration: 0.2
-  },
-  {
-    text: '幸福',
+    text: '结婚啦',
     fontSize: 80,
-    inName: 'zoomIn',
-    outName: 'growOut',
-    duration: 0.2
+    inName: 'tada',
+    inTime: 0.6
+  },
+  {
+    text: '很希望\n您参加',
+    inName: 'pulse',
+    inTime: 0.5
+  },
+  {
+    text: '很希望\n您参加',
+    inName: 'pulse',
+    inTime: 0.5
+  },
+  {
+    text: '很希望\n您参加',
+    inName: 'pulse',
+    inTime: 0.5,
+    outName: "fadeOut"
   }
 ]
 
@@ -134,6 +147,8 @@ function fillFlashOptions(list) {
   const DIRECTION = 'horizontal'
   return list.map(item => {
     let {
+      live,
+      url,
       text,
       direction,
       fontSize,
@@ -145,6 +160,9 @@ function fillFlashOptions(list) {
       outTime,
       double
     } = item
+    if (!live) {
+      live = 0
+    }
     if (!inName && !outName) {
       inTime = 0
       outTime = 0
@@ -169,7 +187,9 @@ function fillFlashOptions(list) {
       inTime: inTime,
       outTime: outTime,
       duration: duration || DURATIONTIME,
-      double: !!double
+      double: !!double,
+      live,
+      url
     }
   })
 }

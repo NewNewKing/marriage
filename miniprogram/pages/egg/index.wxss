@@ -32,7 +32,7 @@
 .save-btn{
   width: 400rpx;
   line-height: 80rpx;
-  margin: 100rpx auto;
+  margin: 60rpx auto;
   border-radius: 80rpx;
 }
 .canvas{
@@ -41,5 +41,5 @@
   height: 820rpx;
 }
 .tips{
-  
+  color:#ddd;
 }

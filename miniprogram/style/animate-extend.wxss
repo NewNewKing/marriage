@@ -139,6 +139,21 @@
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
   }
 }
+@keyframes zoomIn2 {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  /* 60% {
+    opacity: 0.4;
+  } */
+  100% {
+    opacity: 1;
+  }
+}
+.zoomIn2 {
+  animation-name: zoomIn2;
+}
 
 .animated.delay-0-1s {
   animation-delay: 0.1s;

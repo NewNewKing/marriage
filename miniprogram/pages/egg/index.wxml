@@ -4,7 +4,9 @@
     <view class="center egg-box">
       <canvas canvas-id="export" class="canvas auto" wx:if="{{!tempFilePath}}"></canvas>
       <image src="{{tempFilePath}}" wx:else class="canvas auto"></image>
-      <view class="tips"></view>
+      <view class="tips">
+        <text>赶紧保存图片去向新娘告发\n或者去敲诈新郎吧🤣🤣🤣</text>
+        </view>
       <view class="save-btn border shadow" bindtap="save">保存图片</view>
     </view>
     <view class="toggle-box border shadow animated infinite heartBeat slow" bindtap="openSetting" wx:if="{{isRefuse}}">打开设置页</view>

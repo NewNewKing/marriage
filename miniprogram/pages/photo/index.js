@@ -105,6 +105,12 @@ page({
   },
   toggleView() {
     const { mode } = this.data
+    if (mode === 'swiper') {
+      wx.showToast({
+        title: '听说新郎喜欢藏私房钱\n🤔🤔🤔',
+        icon: 'none'
+      })
+    }
     this.setData({
       mode: mode === 'swiper' ? 'scale' : 'swiper'
     })
