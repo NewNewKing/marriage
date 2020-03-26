@@ -90,5 +90,12 @@ page({
         isMoving: false
       })
     }
+  },
+  onShareAppMessage() {
+    const { info } = app.globalData
+    return {
+      title: `邀请您于${info.$date1} ${info.$date2}参加${info.$groom}与${info.$bride}的结婚典礼。`,
+      path: '/' + this.route
+    }
   }
 })

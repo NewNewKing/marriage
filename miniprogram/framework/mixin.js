@@ -94,12 +94,6 @@ const mixin = {
       }
       this.$hint(`这个人太忙啦，暂时没有录入手机号`)
     }
-  },
-  onShareAppMessage() {
-    const { $groom, $bride } = app.globalData.info
-    return {
-      title: `快来参加${$groom}和${$bride}的婚礼吧！`
-    }
   }
 }
 
