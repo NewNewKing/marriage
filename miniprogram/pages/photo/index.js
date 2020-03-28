@@ -3,6 +3,7 @@ const page = require('../../framework/page.js')
 const Event = require('../../lib/event.js')
 
 let timer
+let ghostBlood = 5
 function setData(data, page) {
   if (timer) return
   timer = setTimeout(() => {
@@ -46,12 +47,25 @@ page({
       this.createNumber()
     })
   },
+  showNumber({
+    currentTarget: {
+      dataset: { index }
+    }
+  }) {
+    if (index == 4 && --ghostBlood <= 0) {
+      ghostBlood = 5
+      this.$hint(this.data.number)
+    }
+  },
   createNumber() {
     setTimeout(() => {
       const { $photos } = this.data
-      if (!$photos) return
-
-      const len = $photos.length
+      let len
+      if (!$photos || !$photos.length) {
+        len = 20
+      }else {
+        len = $photos.length
+      }
       this.setData({
         number: Math.floor(len * Math.random())
       })
