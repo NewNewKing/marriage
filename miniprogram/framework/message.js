@@ -23,7 +23,14 @@ const alert = msg => {
     wx.showModal(options)
   })
 }
+const loading = msg => {
+  const options = {
+    title: String(msg)
+  }
+  wx.showLoading(options)
+}
 module.exports = {
   hint,
-  alert
+  alert,
+  loading
 }

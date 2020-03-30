@@ -6,7 +6,8 @@ const app = getApp()
 function createGetUserInfo(msg, showLayer) {
   return ({ detail: { userInfo } }) => {}
 }
-let ghostBlood = 5
+let ghostBlood = 5,
+  isFirstShow = true
 
 page({
   data: {
@@ -34,6 +35,7 @@ page({
     _id: null
   },
   onLoad() {
+    console.log('load')
     wx.getSystemInfo({
       success: ({ windowHeight }) => {
         this.setData({
@@ -49,9 +51,22 @@ page({
       })
     })
   },
+  onShow() {
+    if (isFirstShow) {
+      isFirstShow = false
+      return
+    }
+    this.$showLoading('获取评论中...')
+    this.getComment(1).then(() => {
+      this.$hideLoading()
+    })
+  },
   // 获取评论信息
   getComment(pageNum) {
-    const { list } = this.data
+    let { list } = this.data
+    if (pageNum === 1) {
+      list = []
+    }
     return comment.getList({ pageNum }).then(res => {
       if (res.length) {
         this.setData({

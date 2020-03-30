@@ -1,6 +1,6 @@
 const app = getApp()
 const { showHeart, sleep, getNeedInfo } = require('../lib/util.js')
-const { hint, alert } = require('./message.js')
+const { hint, alert, loading } = require('./message.js')
 const Event = require('../lib/event.js')
 
 const mixin = {
@@ -71,6 +71,12 @@ const mixin = {
     },
     $alert(msg) {
       return alert(msg)
+    },
+    $showLoading(msg) {
+      loading(msg)
+    },
+    $hideLoading() {
+      wx.hideLoading()
     },
     // 页面跳转
     $go(url, replace) {
