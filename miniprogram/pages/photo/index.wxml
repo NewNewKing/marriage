@@ -25,7 +25,7 @@
                 <image class="max animated delay-1s fadeIn" src="/images/money.svg" bindtap="moneyAction"></image>
               </button>
 
-              <image style="top:{{top}}px;left: {{left}}px" catchtouchstart="eggStart" catchtouchmove="eggMove" class="egg-photo photo-img animated jackInTheBox" src="{{item.url}}" mode="aspectFill" bindtap="showPhoto" data-index="{{index}}"></image>
+              <image style="top:{{top}}px;left: {{left}}px" bindtouchstart="eggStart" catchtouchmove="eggMove" class="egg-photo photo-img animated jackInTheBox" src="{{item.url}}" mode="aspectFill" bindtap="showPhoto" data-index="{{index}}"></image>
             </view>
           </view>
           <view class="photo-item" wx:for="{{[1,2,3,4,5]}}" bindtap="showNumber" data-index="{{index}}" wx:key="*this"></view>

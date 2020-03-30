@@ -23,7 +23,13 @@ App({
       },
       // 全局的信息（婚礼信息等）
       info: {},
-      audio: null
+      audio: null,
+      /**
+       *  是否为用户的动作 
+       *  wx.xx 等一些API会触发小程序的APP onShow onHide 回调
+       *  比如wx.previewImage, wx.chooseImage，实际业务屏蔽这种回调
+       */
+      isUserAction: false
     }
     // 创建背景音乐
     const audio = wx.createInnerAudioContext()
@@ -61,11 +67,16 @@ App({
     getInfo(this)
   },
   onHide() {
-    const audio = this.globalData.audio
-    audio.pause()
+    const { isUserAction, audio } = this.globalData
+    if (!isUserAction) {
+      audio.pause()
+    }
   },
   onShow() {
-    const audio = this.globalData.audio
-    audio.play()
+    const { isUserAction, audio } = this.globalData
+    if (!isUserAction) {
+      audio.play()
+    }
+    this.globalData.isUserAction = false
   }
 })
