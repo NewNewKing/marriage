@@ -47,6 +47,22 @@ Component({
       this.setData({
         list
       })
+    },
+    getTime() {
+      return Math.floor(Math.random() * 2000) + 500
+    },
+    setTimer() {
+      const time = this.getTime()
+      this.timer = setTimeout(() => {
+        this.setTimer()
+        this.showHeart(Math.random() * 280 + 50, Math.random() * 580 + 50)
+      }, time)
     }
+  },
+  attached() {
+    this.setTimer()
+  },
+  detached() {
+    clearInterval(this.timer)
   }
 })
