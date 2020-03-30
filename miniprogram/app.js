@@ -19,7 +19,7 @@ App({
       // 全局的状态
       state: {
         // 音乐播放
-        isMusicPlay: true
+        isMusicPlay: false
       },
       // 全局的信息（婚礼信息等）
       info: {},
@@ -34,6 +34,11 @@ App({
     // 全局状态改变
     Event.on('stateChange', data => {
       Object.assign(this.globalData.state, data)
+      if (data.isMusicPlay) {
+        audio.play()
+      }else {
+        audio.pause()
+      }
     })
 
     // 全局信息改变
@@ -44,15 +49,12 @@ App({
       // 背景音乐
       if (info.$music) {
         const music = info.$music
-
         audio.src = music.url
-        audio.onPlay(() => {
+        audio.play()
+        // 延迟100ms 让动画效果出现
+        setTimeout(() => {
           Event.emit('stateChange', { isMusicPlay: true })
-        })
-        audio.onPause(() => {
-          Event.emit('stateChange', { isMusicPlay: false })
-        })
-        audio.pause()
+        }, 100)
       }
     })
     // 获取全局配置信息

@@ -1,7 +1,7 @@
+
 const behavior = require('../../framework/behavior.js')
 const app = getApp()
 const Event = require('../../lib/event.js')
-const audio = app.globalData.audio
 Component({
   data: {
     hasMusic: false
@@ -9,27 +9,30 @@ Component({
   behaviors: [behavior],
   methods: {
     toggle() {
-      if (this.data.isMusicPlay) {
-        // 正在播放
-        audio.pause()
-      } else {
-        // 暂停中
-        audio.play()
-      }
+      Event.emit('stateChange', {
+        isMusicPlay: !this.data.isMusicPlay
+      })
     }
   },
   attached() {
     const { isMusicPlay } = app.globalData.state
+    const { $music } = app.globalData.info
     this.setData({
-      isMusicPlay
+      isMusicPlay,
+      hasMusic: !!$music
     })
-
+    Event.on('infoChange', ({ $music }) => {
+      if ($music) {
+        this.setData({
+          hasMusic: true
+        })
+      }
+    }, this.__wxExparserNodeId__)
     Event.on(
       'stateChange',
       ({ isMusicPlay }) => {
         this.setData({
-          isMusicPlay,
-          hasMusic: true
+          isMusicPlay
         })
       },
       this.__wxExparserNodeId__

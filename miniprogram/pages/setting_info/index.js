@@ -36,8 +36,11 @@ page({
     wx.chooseMessageFile({
       count: 1,
       success: ({ tempFiles }) => {
-        console.log(tempFiles)
-        uploadMusic(tempFiles[0].name, tempFiles[0].path)
+        uploadMusic(tempFiles[0].name, tempFiles[0].path).then(res => {
+          Event.emit('infoChange', {
+            $music: res.music
+          })
+        })
       }
     })
   }

@@ -57,6 +57,7 @@ const getUrl = ids => {
   })
 }
 const getFileName = name => {
+  name = name.replace(/^\s+|\s+$/, '').replace(/\s+/g, '_')
   const arr = name.split('.').reverse()
   return `${encodeURIComponent(arr[1].replace(/[\/:]/g, ''))}.${arr[0]}`
 }
@@ -159,7 +160,7 @@ const uploadMusic = (name, filePath) => {
     title: `上传中...`,
     mask: true
   })
-  uploadFile(cloudPath, filePath)
+  return uploadFile(cloudPath, filePath)
     .then(id => {
       // 获取链接地址
       return getUrl([id])

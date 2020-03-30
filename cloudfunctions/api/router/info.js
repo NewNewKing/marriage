@@ -9,8 +9,8 @@ const get = async () => {
 }
 
 const setInfo = async data => {
-  await service.setInfo(data.id, data.data)
-  return { code: 2, msg: '信息修改成功！' }
+  const info = await service.setInfo(data.id, data.data)
+  return { code: 2, msg: '信息修改成功！', data: data.data }
 }
 module.exports = {
   get,
