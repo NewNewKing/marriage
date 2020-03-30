@@ -53,7 +53,6 @@ Component({
       }
     }
   },
-  attached() {
-  },
+  attached() {},
   ready() {}
 })

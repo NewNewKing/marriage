@@ -168,6 +168,7 @@ function getMarker({ $lat, $lon }) {
       latitude: +$lat,
       longitude: +$lon,
       iconPath: '/images/nav.png',
+      label: { content: ' 去这里 ', fontSize: 10, color: '#fff',textAlign: 'center', borderRadius: 10, anchorX: -20, borderColor:'#eccb90', borderWidth: 1, bgColor: '#666', padding: 2 },
       width: 50,
       height: 50
     }

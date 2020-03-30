@@ -56,11 +56,12 @@ const texts = [
   },
   {
     text: '我们',
-    direction: 'vertical',
+    // direction: 'vertical',
     fontSize: 100,
-    inName: 'rotateIn',
-    inTime: 0.2,
-    outName: "growOut"
+    inName: 'lightSpeedIn',
+    inTime: 0.8,
+    outName: "lightSpeedOut",
+    outTime: 0.8
   },
   {
     url: 2,
@@ -78,7 +79,8 @@ const texts = [
   {
     text: '我们',
     fontSize: 40,
-    inName: 'flipInX'
+    inName: 'lightSpeedIn',
+    inTime: 0.8
   },
   {
     text: '要',
@@ -120,24 +122,75 @@ const texts = [
     text: '结婚啦',
     fontSize: 80,
     inName: 'tada',
-    inTime: 0.6
+    inTime: 0.6,
+    outName: 'flipOutY',
+    outTime: 1.2
   },
   {
-    text: '很希望\n您参加',
-    inName: 'pulse',
-    inTime: 0.5
+    inName: 'flipInY',
+    inTime: 1,
+    text: '最美的',
+    duration: 0.5,
+    outName: 'flipOutY',
+    outTime: 1
   },
   {
-    text: '很希望\n您参加',
-    inName: 'pulse',
-    inTime: 0.5
+    inName: 'flipInY',
+    inTime: 1,
+    text: '时光',
+    duration: 0.5,
+    outName: 'flipOutY',
+    outTime: 1
   },
   {
-    text: '很希望\n您参加',
-    inName: 'pulse',
-    inTime: 0.5,
-    outName: "fadeOut"
+    text: '愿',
+    inName: 'flipInY',
+    inTime: 1,
+    fontSize: 100,
+    duration: 0.5,
+    outName: 'flipOutY',
+    outTime: 1
+  },
+  {
+    inName: 'flipInY',
+    inTime: 1,
+    outName: 'flipOutY',
+    duration: 0.5,
+    outTime: 1,
+    text: '有你们的'
+  },
+  {
+    inName: 'zoomIn',
+    inTime: 1,
+    duration: 0.8,
+    outName: 'growOut',
+    fontSize: 140,
+    outTime: 1.8,
+    text: '祝福',
+    direction: 'vertical'
   }
+  // {
+  //   text: '很期待'
+  // },
+  // {
+  //   text: '您的'
+  // },
+  // {
+  //   text: '很希望\n您参加',
+  //   inName: 'pulse',
+  //   inTime: 0.5
+  // },
+  // {
+  //   text: '很希望\n您参加',
+  //   inName: 'pulse',
+  //   inTime: 0.5
+  // },
+  // {
+  //   text: '很希望\n您参加',
+  //   inName: 'pulse',
+  //   inTime: 0.5,
+  //   outName: "fadeOut"
+  // }
 ]
 
 function fillFlashOptions(list) {
