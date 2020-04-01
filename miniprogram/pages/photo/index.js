@@ -77,7 +77,6 @@ page({
     }
   }) {
     const { $photos } = this.data
-    app.globalData.isUserAction = true
     wx.previewImage({
       urls: $photos.map(item => item.url),
       current: $photos[index].url

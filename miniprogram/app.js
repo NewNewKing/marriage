@@ -5,7 +5,6 @@ const setTabBar = require('./lib/setTabBar.js')
 //app.js
 App({
   onLaunch: function() {
-    wx.hideTabBar()
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -28,6 +27,7 @@ App({
        *  是否为用户的动作 
        *  wx.xx 等一些API会触发小程序的APP onShow onHide 回调
        *  比如wx.previewImage, wx.chooseImage，实际业务屏蔽这种回调
+       *  玛德  真机对createInnerAudioContext无效
        */
       isUserAction: false
     }
@@ -49,7 +49,7 @@ App({
 
     // 全局信息改变
     Event.on('infoChange', info => {
-      info.$style && setTabBar(info.$style)
+      // info.$style && setTabBar(info.$style)
       Object.assign(this.globalData.info, info)
 
       // 背景音乐
