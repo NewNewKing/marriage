@@ -1,8 +1,9 @@
 @import "/style/default.wxss";
-@import "/style/black-gold.wxss"
-@import "/style/pink.wxss"
-@import "/style/animate.wxss"
-@import "/style/animate-extend.wxss"
+@import "/style/black-gold.wxss";
+@import "/style/pink.wxss";
+@import "/style/animate.wxss";
+@import "/style/animate-extend.wxss";
+@import '/style/delay.wxss';
 
 page{
   width: 100vw;

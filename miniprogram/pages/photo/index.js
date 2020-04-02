@@ -23,6 +23,7 @@ page({
     startY: 0,
     left: 0,
     top: 0,
+    photos: [],
 
     userInfo: null
   },
@@ -42,9 +43,27 @@ page({
       }
     })
     // 设置彩蛋
-    this.createNumber()
+    this.$showLoading('获取图片中...')
+    setTimeout(() => {
+      this.createNumber()
+      this.setPhotos()
+    }, 100)
     Event.on('infoChange', () => {
       this.createNumber()
+      this.setPhotos()
+    })
+  },
+  setPhotos() {
+    const { $photos } = this.data
+    if (!$photos || !$photos.length) return
+    this.setData({
+      photos: $photos.map((item, index) => {
+        item.delay = `delay-${Math.floor(index / 10)}-${index % 10}s`
+        item.eggDelay = `delay-${Math.floor(index / 10) + 1}-${index % 10}s`
+        return item
+      })
+    }, () => {
+      this.$hideLoading()
     })
   },
   showNumber({

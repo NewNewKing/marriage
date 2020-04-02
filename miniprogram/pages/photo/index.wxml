@@ -4,35 +4,35 @@
       class="container"
       circular
       autoplay
-      hidden="{{mode !== 'swiper' || !$photos.length}}">
-      <swiper-item wx:for="{{$photos}}" wx:key="id">
+      hidden="{{mode !== 'swiper' || !photos.length}}">
+      <swiper-item wx:for="{{photos}}" wx:key="id">
         <image src="{{item.url}}" class="photo-img" mode="aspectFill"></image>
       </swiper-item>
     </swiper>
-    <view hidden="{{mode !== 'scale' || !$photos.length}}">
+    <view hidden="{{mode !== 'scale' || !photos.length}}">
       
       <view class="fixed">
         <ui-background type="{{2}}" mixed />
       </view>
       <scroll-view scroll-y style="height:{{height}}px;padding-top: 40rpx;">
         <view class="photo-wrap flex-center-wrap flex-multi-row flex-justify-between">
-          <view class="photo-item border shadow animated pulse infinite slower {{index === number ? 'egg-box' : ''}}" wx:for="{{$photos}}" wx:key="id">
+          <view class="photo-item border shadow animated pulse infinite slower {{index === number ? 'egg-box' : ''}}" wx:for="{{photos}}" wx:key="id">
 
-            <image wx:if="{{index !== number}}" class="photo-img animated jackInTheBox" src="{{item.url}}" mode="aspectFill" bindtap="showPhoto" data-index="{{index}}"></image>
+            <image wx:if="{{index !== number}}" class="photo-img {{item.delay}} animated jackInTheBox" src="{{item.url}}" mode="aspectFill" bindtap="showPhoto" data-index="{{index}}"></image>
 
             <view class="max" wx:else>
               <button open-type="getUserInfo" hover-class="none" class="max get-info-btn" bindgetuserinfo="getUserInfo" withCredentials="{{true}}" lang="zh_CN">
-                <image class="max animated delay-1s fadeIn" src="/images/money.svg" bindtap="moneyAction"></image>
+                <image class="max animated {{item.eggDelay}} fadeIn" src="/images/money.svg" bindtap="moneyAction"></image>
               </button>
 
-              <image style="top:{{top}}px;left: {{left}}px" bindtouchstart="eggStart" catchtouchmove="eggMove" class="egg-photo photo-img animated jackInTheBox" src="{{item.url}}" mode="aspectFill" bindtap="showPhoto" data-index="{{index}}"></image>
+              <image style="top:{{top}}px;left: {{left}}px" bindtouchstart="eggStart" catchtouchmove="eggMove" class="{{item.delay}} egg-photo photo-img animated jackInTheBox" src="{{item.url}}" mode="aspectFill" bindtap="showPhoto" data-index="{{index}}"></image>
             </view>
           </view>
           <view class="photo-item" wx:for="{{[1,2,3,4,5]}}" bindtap="showNumber" data-index="{{index}}" wx:key="*this"></view>
         </view>
       </scroll-view>
     </view>
-    <view class="no-data" wx:if="{{!$photos.length}}">暂无相片</view>
+    <view class="no-data" wx:if="{{!photos.length}}">暂无相片</view>
     <view class="toggle-box border shadow animated infinite heartBeat slow" bindtap="toggleView">
       查看{{mode === 'swiper' ? '缩略图' : '轮播图'}}
     </view>

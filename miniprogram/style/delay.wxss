@@ -1,0 +1,330 @@
+.animated.delay-0-0s {
+  animation-delay: 0s;
+}
+.animated.delay-0s {
+  animation-delay: 0s;
+}
+.animated.delay-0-1s {
+  animation-delay: 0.1s;
+}
+.animated.delay-0-2s {
+  animation-delay: 0.2s;
+}
+.animated.delay-0-3s {
+  animation-delay: 0.3s;
+}
+.animated.delay-0-4s {
+  animation-delay: 0.4s;
+}
+.animated.delay-0-5s {
+  animation-delay: 0.5s;
+}
+.animated.delay-0-6s {
+  animation-delay: 0.6s;
+}
+.animated.delay-0-7s {
+  animation-delay: 0.7s;
+}
+.animated.delay-0-8s {
+  animation-delay: 0.8s;
+}
+.animated.delay-0-9s {
+  animation-delay: 0.9s;
+}
+.animated.delay-1-0s {
+  animation-delay: 1s;
+}
+.animated.delay-1s {
+  animation-delay: 1s;
+}
+.animated.delay-1-1s {
+  animation-delay: 1.1s;
+}
+.animated.delay-1-2s {
+  animation-delay: 1.2s;
+}
+.animated.delay-1-3s {
+  animation-delay: 1.3s;
+}
+.animated.delay-1-4s {
+  animation-delay: 1.4s;
+}
+.animated.delay-1-5s {
+  animation-delay: 1.5s;
+}
+.animated.delay-1-6s {
+  animation-delay: 1.6s;
+}
+.animated.delay-1-7s {
+  animation-delay: 1.7s;
+}
+.animated.delay-1-8s {
+  animation-delay: 1.8s;
+}
+.animated.delay-1-9s {
+  animation-delay: 1.9s;
+}
+.animated.delay-2-0s {
+  animation-delay: 2s;
+}
+.animated.delay-2s {
+  animation-delay: 2s;
+}
+.animated.delay-2-1s {
+  animation-delay: 2.1s;
+}
+.animated.delay-2-2s {
+  animation-delay: 2.2s;
+}
+.animated.delay-2-3s {
+  animation-delay: 2.3s;
+}
+.animated.delay-2-4s {
+  animation-delay: 2.4s;
+}
+.animated.delay-2-5s {
+  animation-delay: 2.5s;
+}
+.animated.delay-2-6s {
+  animation-delay: 2.6s;
+}
+.animated.delay-2-7s {
+  animation-delay: 2.7s;
+}
+.animated.delay-2-8s {
+  animation-delay: 2.8s;
+}
+.animated.delay-2-9s {
+  animation-delay: 2.9s;
+}
+.animated.delay-3-0s {
+  animation-delay: 3s;
+}
+.animated.delay-3s {
+  animation-delay: 3s;
+}
+.animated.delay-3-1s {
+  animation-delay: 3.1s;
+}
+.animated.delay-3-2s {
+  animation-delay: 3.2s;
+}
+.animated.delay-3-3s {
+  animation-delay: 3.3s;
+}
+.animated.delay-3-4s {
+  animation-delay: 3.4s;
+}
+.animated.delay-3-5s {
+  animation-delay: 3.5s;
+}
+.animated.delay-3-6s {
+  animation-delay: 3.6s;
+}
+.animated.delay-3-7s {
+  animation-delay: 3.7s;
+}
+.animated.delay-3-8s {
+  animation-delay: 3.8s;
+}
+.animated.delay-3-9s {
+  animation-delay: 3.9s;
+}
+.animated.delay-4-0s {
+  animation-delay: 4s;
+}
+.animated.delay-4s {
+  animation-delay: 4s;
+}
+.animated.delay-4-1s {
+  animation-delay: 4.1s;
+}
+.animated.delay-4-2s {
+  animation-delay: 4.2s;
+}
+.animated.delay-4-3s {
+  animation-delay: 4.3s;
+}
+.animated.delay-4-4s {
+  animation-delay: 4.4s;
+}
+.animated.delay-4-5s {
+  animation-delay: 4.5s;
+}
+.animated.delay-4-6s {
+  animation-delay: 4.6s;
+}
+.animated.delay-4-7s {
+  animation-delay: 4.7s;
+}
+.animated.delay-4-8s {
+  animation-delay: 4.8s;
+}
+.animated.delay-4-9s {
+  animation-delay: 4.9s;
+}
+.animated.delay-5-0s {
+  animation-delay: 5s;
+}
+.animated.delay-5s {
+  animation-delay: 5s;
+}
+.animated.delay-5-1s {
+  animation-delay: 5.1s;
+}
+.animated.delay-5-2s {
+  animation-delay: 5.2s;
+}
+.animated.delay-5-3s {
+  animation-delay: 5.3s;
+}
+.animated.delay-5-4s {
+  animation-delay: 5.4s;
+}
+.animated.delay-5-5s {
+  animation-delay: 5.5s;
+}
+.animated.delay-5-6s {
+  animation-delay: 5.6s;
+}
+.animated.delay-5-7s {
+  animation-delay: 5.7s;
+}
+.animated.delay-5-8s {
+  animation-delay: 5.8s;
+}
+.animated.delay-5-9s {
+  animation-delay: 5.9s;
+}
+.animated.delay-6-0s {
+  animation-delay: 6s;
+}
+.animated.delay-6s {
+  animation-delay: 6s;
+}
+.animated.delay-6-1s {
+  animation-delay: 6.1s;
+}
+.animated.delay-6-2s {
+  animation-delay: 6.2s;
+}
+.animated.delay-6-3s {
+  animation-delay: 6.3s;
+}
+.animated.delay-6-4s {
+  animation-delay: 6.4s;
+}
+.animated.delay-6-5s {
+  animation-delay: 6.5s;
+}
+.animated.delay-6-6s {
+  animation-delay: 6.6s;
+}
+.animated.delay-6-7s {
+  animation-delay: 6.7s;
+}
+.animated.delay-6-8s {
+  animation-delay: 6.8s;
+}
+.animated.delay-6-9s {
+  animation-delay: 6.9s;
+}
+.animated.delay-7-0s {
+  animation-delay: 7s;
+}
+.animated.delay-7s {
+  animation-delay: 7s;
+}
+.animated.delay-7-1s {
+  animation-delay: 7.1s;
+}
+.animated.delay-7-2s {
+  animation-delay: 7.2s;
+}
+.animated.delay-7-3s {
+  animation-delay: 7.3s;
+}
+.animated.delay-7-4s {
+  animation-delay: 7.4s;
+}
+.animated.delay-7-5s {
+  animation-delay: 7.5s;
+}
+.animated.delay-7-6s {
+  animation-delay: 7.6s;
+}
+.animated.delay-7-7s {
+  animation-delay: 7.7s;
+}
+.animated.delay-7-8s {
+  animation-delay: 7.8s;
+}
+.animated.delay-7-9s {
+  animation-delay: 7.9s;
+}
+.animated.delay-8-0s {
+  animation-delay: 8s;
+}
+.animated.delay-8s {
+  animation-delay: 8s;
+}
+.animated.delay-8-1s {
+  animation-delay: 8.1s;
+}
+.animated.delay-8-2s {
+  animation-delay: 8.2s;
+}
+.animated.delay-8-3s {
+  animation-delay: 8.3s;
+}
+.animated.delay-8-4s {
+  animation-delay: 8.4s;
+}
+.animated.delay-8-5s {
+  animation-delay: 8.5s;
+}
+.animated.delay-8-6s {
+  animation-delay: 8.6s;
+}
+.animated.delay-8-7s {
+  animation-delay: 8.7s;
+}
+.animated.delay-8-8s {
+  animation-delay: 8.8s;
+}
+.animated.delay-8-9s {
+  animation-delay: 8.9s;
+}
+.animated.delay-9-0s {
+  animation-delay: 9s;
+}
+.animated.delay-9s {
+  animation-delay: 9s;
+}
+.animated.delay-9-1s {
+  animation-delay: 9.1s;
+}
+.animated.delay-9-2s {
+  animation-delay: 9.2s;
+}
+.animated.delay-9-3s {
+  animation-delay: 9.3s;
+}
+.animated.delay-9-4s {
+  animation-delay: 9.4s;
+}
+.animated.delay-9-5s {
+  animation-delay: 9.5s;
+}
+.animated.delay-9-6s {
+  animation-delay: 9.6s;
+}
+.animated.delay-9-7s {
+  animation-delay: 9.7s;
+}
+.animated.delay-9-8s {
+  animation-delay: 9.8s;
+}
+.animated.delay-9-9s {
+  animation-delay: 9.9s;
+}
