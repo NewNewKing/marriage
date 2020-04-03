@@ -58,6 +58,7 @@ page({
     if (!$photos || !$photos.length) return
     this.setData({
       photos: $photos.map((item, index) => {
+        index = index * 3
         item.delay = `delay-${Math.floor(index / 10)}-${index % 10}s`
         item.eggDelay = `delay-${Math.floor(index / 10) + 1}-${index % 10}s`
         return item
