@@ -47,7 +47,7 @@ page({
     setTimeout(() => {
       this.createNumber()
       this.setPhotos()
-    }, 100)
+    }, 300)
     Event.on('infoChange', () => {
       this.createNumber()
       this.setPhotos()
@@ -58,9 +58,10 @@ page({
     if (!$photos || !$photos.length) return
     this.setData({
       photos: $photos.map((item, index) => {
+        // 0.3秒一张图片
         index = index * 3
         item.delay = `delay-${Math.floor(index / 10)}-${index % 10}s`
-        item.eggDelay = `delay-${Math.floor(index / 10) + 1}-${index % 10}s`
+        item.eggDelay = `delay-${Math.floor(index / 10) + 3}-${index % 10}s`
         return item
       })
     }, () => {
