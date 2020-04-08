@@ -1,4 +1,3 @@
-const axios = require('axios')
 const { rules, msgBox } = require("./rules.js")
 
 const check = async data => {
