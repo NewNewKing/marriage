@@ -1,11 +1,23 @@
 const service = require('../service/comment.js')
-const { check } = require('../blacklist/index.js')
+const { check, checkFromApi } = require('../blacklist/index.js')
 const robot = require('../robot/index.js')
 const cloud = require('wx-server-sdk')
+const { getToken } = require('../lib/token')
 
 // data: { name: 'XXX', comment: 'xxxx'}
 const add = async data => {
   // 检查评论是否符合要求
+  try{
+    // 腾讯api检测
+    const token = await getToken()
+    const { code, msg } = await checkFromApi(token, data.comment)
+    if (code !== 0) {
+      return { code, msg }
+    }
+  }catch(err) {
+    console.log(err)
+  }
+  // 自己low逼检测
   {
     const { code, msg } = await check(data)
     if (code !== 0) {

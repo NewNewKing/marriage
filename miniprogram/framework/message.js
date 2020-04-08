@@ -1,7 +1,8 @@
 const hint = (msg, time) => {
+  msg = String(msg)
   const options = {
     icon: 'none',
-    title: String(msg),
+    title: msg,
     duration: time || 3000
   }
   wx.showToast(options)
