@@ -1,5 +1,8 @@
 const cloud = require('wx-server-sdk')
-cloud.init()
+cloud.init({
+  env: 'production-8wqzu',
+  traceUser: true
+})
 
 const router = require('./router/index.js')
 /*

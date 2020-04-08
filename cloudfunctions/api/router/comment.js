@@ -1,21 +1,23 @@
 const service = require('../service/comment.js')
-const { check, checkFromApi } = require('../blacklist/index.js')
+const { check } = require('../blacklist/index.js')
 const robot = require('../robot/index.js')
 const cloud = require('wx-server-sdk')
-const { getToken } = require('../lib/token')
 
 // data: { name: 'XXX', comment: 'xxxx'}
 const add = async data => {
   // 检查评论是否符合要求
-  try{
-    // 腾讯api检测
-    const token = await getToken()
-    const { code, msg } = await checkFromApi(token, data.comment)
-    if (code !== 0) {
+  
+  // 腾讯api检测
+  {
+    const { code, msg } = await cloud.openapi.security.msgSecCheck({
+      content: data.comment
+    }).catch(err => {
+      return { code:1 , msg: '大喜日子不要搞这些😡😡😡！！！\n内容包含敏感信息！！！'}
+    })
+
+    if (code === 1) {
       return { code, msg }
     }
-  }catch(err) {
-    console.log(err)
   }
   // 自己low逼检测
   {
