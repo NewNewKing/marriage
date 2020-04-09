@@ -19,6 +19,9 @@
             <view>出席人数：{{item.attendInfo.attendNum}}</view>
           </view>
           <view class="row flex-center-wrap">
+            <view>手机：{{item.attendInfo.mobile}}</view>
+          </view>
+          <view class="row flex-center-wrap">
             <view>留言：{{item.attendInfo.remark}}</view>
           </view>
         </view>

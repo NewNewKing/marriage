@@ -16,6 +16,7 @@ page({
     const list = res.map(item => {
       const { userInfo, attendInfo, time } = item
       const { attendNum } = attendInfo
+      console.log(attendInfo)
       if (attendNum > 3) {
         num += 3
         attendInfo.attendNum = '3人以上'

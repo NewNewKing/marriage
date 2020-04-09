@@ -30,17 +30,7 @@ page({
     isRefuse: false
   },
   onLoad() {
-    const userInfo = {
-      avatarUrl:
-        'https://wx.qlogo.cn/mmopen/vi_32/295czzN8HT3MU8rZdAuwn8wU35ArrKz33uFJteicp6BCcgZ755oOaHetczlTjOIRS18x04RZkkLvYmM7picC08Mw/132',
-      city: '成都',
-      country: '中国',
-      gender: 1,
-      language: 'zh_CN',
-      nickName: '王兴欣',
-      province: '四川'
-    }
-    // const { userInfo } = app.globalData
+    const { userInfo } = app.globalData
     this.setData({
       userInfo
     })
