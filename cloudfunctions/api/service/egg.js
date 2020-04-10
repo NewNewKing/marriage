@@ -1,4 +1,5 @@
 const dao = require('../dao/egg.js')
+const { money } = require('../static/config')
 
 const clue = async (data, OPENID) => {
   // 先查找是否有这条记录
@@ -12,7 +13,7 @@ const clue = async (data, OPENID) => {
       rank: count + 1,
       del: false,
       time: Date.now(),
-      money: 100
+      money: money()
     },
     data
   )

@@ -4,8 +4,9 @@
  * @Autor: 王兴欣
  * @Date: 2020-03-27 20:58:11
  * @LastEditors: 王兴欣
- * @LastEditTime: 2020-04-06 21:03:20
+ * @LastEditTime: 2020-04-10 09:59:20
  */
+const { keyword, probability } = require('../static/config')
 const lexicon = [
   {
     reg: /婚姻是爱情的坟墓/g,
@@ -21,13 +22,7 @@ const lexicon = [
   },
   {
     reg: /私房钱/g,
-    reply(){
-      const num = Math.ceil(Math.random() * 100)
-      if (num <= 2) {
-        return '小道消息：据说相册里有一张照片可以拖拽🤔🤔🤔'
-      }
-      return '嘘🤫🤫🤫 哪里有什么私房钱！🤥'
-    }
+    reply: '嘘🤫🤫🤫 哪里有什么私房钱！🤥'
   },
   {
     reg: /搓衣板/g,
@@ -51,4 +46,15 @@ const lexicon = [
   }
 ]
 
+if (keyword) {
+  lexicon.unshift({
+    reg: keyword,
+    reply(){
+      const num = Math.ceil(Math.random() * 100)
+      if (num <= probability()) {
+        return '小道消息：据说相册里有一张照片可以拖拽🤔🤔🤔'
+      }
+    }
+  })
+}
 module.exports = lexicon
