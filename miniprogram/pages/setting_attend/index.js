@@ -4,7 +4,8 @@ const { dateFormat } = require('../../lib/util.js')
 page({
   data: {
     title: '出席人数',
-    list: []
+    list: [],
+    $pageReady: false
   },
   onLoad() {
     getAll().then(res => {
@@ -35,7 +36,8 @@ page({
     }
     return {
       list,
-      title
+      title,
+      $pageReady: true
     }
   }
 })

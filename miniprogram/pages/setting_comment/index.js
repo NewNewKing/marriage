@@ -8,20 +8,22 @@ page({
     allList: [],
     // 被删除的评论
     delList: [],
-    pageNum: 1
+    pageNum: 1,
+    $pageReady: false
   },
   onLoad() {
     wx.getSystemInfo({
       success: ({ windowHeight }) => {
         this.setData({
-          height: windowHeight - 180
+          height: windowHeight - 160
         })
       }
     })
     // 获取所有的评论
     getAllList().then(res => {
       this.setData({
-        allList: res
+        allList: res,
+        $pageReady: true
       })
     })
   },

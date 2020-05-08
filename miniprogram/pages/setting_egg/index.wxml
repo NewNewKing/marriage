@@ -9,7 +9,7 @@
           <view class="rank">No {{item.rank}}</view>
           <image class="avatar" src="{{item.avatarUrl}}"></image>
           <view class="name show-dots">{{item.nickName}}</view>
-          <view class="flex show-dots">{{item.province}} {{item.city}}</view>
+          <view class="flex show-dots">{{item.time}}</view>
           <view class="money">￥{{item.money / 100}}</view>
         </view>
       </view>

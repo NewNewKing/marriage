@@ -10,7 +10,7 @@
       </view>
       <view class="btn border shadow upload" bindtap="upload">上传照片</view>
       <view class="tips">每次上传图片张数越少越好 以免上传失败</view>
-      <view class="tips">点击单张图片可以进行删除</view>
+      <view class="tips mar-b40">点击单张图片可以进行删除</view>
     </view>
     
   </view>

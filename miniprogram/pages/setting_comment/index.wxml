@@ -13,7 +13,7 @@
             <image src="{{item.avatarUrl}}" class="avatar"></image>
             <view class="flex">
               <view class="flex-center-wrap name">
-                <view class="flex bold font28">{{item.nickName}}</view>
+                <view class="flex bold font28 show-dots">{{item.nickName}}</view>
                 <view class="font24">{{item.time}}</view>
               </view>
               <view class="font24 name">
@@ -48,7 +48,7 @@
       <view class="no-data" wx:if="{{!allList.length && active === 1}}">暂无评论</view>
       <view class="no-data" wx:if="{{!delList.length && active !== 1}}">暂无已删除评论</view>
       <!-- <view class="tips">在评论管理中 删除与恢复的实际数据可能会存在几秒的延迟</view> -->
-      <view class="tips">如果需要查看评论留言中的数据是否有更新 需要在后台关掉微信 再重新进入小程序</view>
+      <!-- <view class="tips">如果需要查看评论留言中的数据是否有更新 需要在后台关掉微信 再重新进入小程序</view> -->
     </view>
   </view>
   <include src="/template/system.wxml"/>

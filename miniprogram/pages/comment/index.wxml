@@ -12,7 +12,7 @@
           <image src="{{item.avatarUrl}}" class="avatar"></image>
           <view class="flex">
             <view class="flex-center-wrap name">
-              <view class="flex bold font28">{{item.nickName}}</view>
+              <view class="flex bold show-dots font28">{{item.nickName}}</view>
               <view class="font24">{{item.time}}</view>
             </view>
             <view class="font24">
