@@ -39,7 +39,7 @@
 
       <view class="flex-center-wrap row">
         <view class="label">背景音乐：</view>
-        <view class="flex">{{$music.name}}</view>
+        <view class="flex show-dots">{{$music.name}}</view>
         <view class="choice-btn border shadow" bindtap="chooseMusic">选择音乐</view>
       </view>
       <view class="row tips center">
