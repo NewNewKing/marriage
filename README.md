@@ -62,9 +62,9 @@
 
 进入留言评论 缓慢点击左上角几次后可进入信息设置页
 
-<img src="./doc/img/info-1.png" alt="信息设置" style="zoom:50%;" />
+<img src="./doc/img/info-1.png" alt="信息设置" />
 
-<img src="./doc/img/info-2.png" alt="信息设置" style="zoom:50%;" />
+<img src="./doc/img/info-2.png" alt="信息设置"/>
 
 
 
@@ -82,9 +82,13 @@
 
 
 
+如果你使用了此项目  并且想让您的朋友可能找到彩蛋的话  需要在微信公众平台的 **开发-开发设置-服务器域名-downloadFile合法域名**中添加` https://thirdwx.qlogo.cn`（这个路径是微信存放用户头像的域名）
+
+
+
 ---
 
 如果觉得此项目还不错的话 可以留下您的打赏哟
 
-<img src="./doc/img/reward.jpg" alt="打赏码" style="zoom:50%;" />
+<img src="./doc/img/reward.jpg" alt="打赏码"/>
 
