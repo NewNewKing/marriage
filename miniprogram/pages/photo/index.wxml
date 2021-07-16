@@ -21,7 +21,7 @@
             <image wx:if="{{index !== number}}" class="photo-img {{item.delay}} animated jackInTheBox" src="{{item.url}}" mode="aspectFill" bindtap="showPhoto" data-index="{{index}}"></image>
 
             <view class="max" wx:else>
-              <button open-type="getUserInfo" hover-class="none" class="max get-info-btn" bindgetuserinfo="getUserInfo" withCredentials="{{true}}" lang="zh_CN">
+              <button hover-class="none" class="max get-info-btn" bindtap="getUserInfo">
                 <image class="max animated {{item.eggDelay}} fadeIn" src="/images/money.svg" bindtap="moneyAction"></image>
               </button>
 

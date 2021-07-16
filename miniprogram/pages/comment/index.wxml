@@ -25,10 +25,10 @@
     </scroll-view>
     <view class="no-data" wx:if="{{!list.length}}">暂无评论</view>
     <view class="btn-box flex-center-wrap flex-justify-around {{(isLayerShow || isAttendShow) ? 'blur' : ''}}">
-      <view class="btn border shadow" wx:if="{{userInfo}}" bindtap="showLayer">说点啥吧</view>
-      <button open-type="getUserInfo" wx:else hover-class="none" class="btn border shadow" bindgetuserinfo="getUserInfo" data-type="1" lang="zh_CN">说点啥吧</button>
-      <view class="btn border shadow" wx:if="{{userInfo}}" bindtap="showAttend" >我要出席</view>
-      <button open-type="getUserInfo" wx:else hover-class="none" class="btn border shadow" bindgetuserinfo="getUserInfo" data-type="2" lang="zh_CN">我要出席</button>
+      <!-- <view class="btn border shadow" wx:if="{{userInfo}}" bindtap="showLayer">说点啥吧</view> -->
+      <button hover-class="none" class="btn border shadow" bindtap="getUserInfo" data-type="1">说点啥吧</button>
+      <!-- <view class="btn border shadow" wx:if="{{userInfo}}" bindtap="showAttend" >我要出席</view> -->
+      <button hover-class="none" class="btn border shadow" bindtap="getUserInfo" data-type="2">我要出席</button>
     </view>
     <view class="fixed layer-bg flex-center-wrap flex-justify-around" wx:if="{{isLayerShow}}" bindtap="hideLayer">
       <view class="layer-wrap" catchtap="$showHeart">

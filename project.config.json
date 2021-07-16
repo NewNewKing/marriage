@@ -1,142 +1,146 @@
 {
-	"miniprogramRoot": "miniprogram/",
-	"cloudfunctionRoot": "cloudfunctions/",
-	"setting": {
-		"urlCheck": false,
-		"es6": true,
-		"enhance": false,
-		"postcss": true,
-		"preloadBackgroundData": false,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"nodeModules": false,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"uglifyFileName": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": false,
-		"uploadWithSourceMap": false,
-		"compileHotReLoad": false,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"useIsolateContext": true,
-		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false
-	},
-	"appid": "wx07bf93be7d34ec7d",
-	"projectname": "marriage",
-	"libVersion": "2.10.4",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"list": []
-		},
-		"miniprogram": {
-			"current": 11,
-			"list": [
-				{
-					"id": -1,
-					"name": "酒店导航",
-					"pathName": "pages/navigator/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "留言评论",
-					"pathName": "pages/comment/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "相册",
-					"pathName": "pages/photo/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "彩蛋页",
-					"pathName": "pages/egg/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "登录页",
-					"pathName": "pages/login/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "设置页",
-					"pathName": "pages/setting/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "信息设置",
-					"pathName": "pages/setting_info/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "照片设置",
-					"pathName": "pages/setting_photo/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "评论管理",
-					"pathName": "pages/setting_comment/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "出席人数",
-					"pathName": "pages/setting_attend/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "酒店设置",
-					"pathName": "pages/setting_hotel/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "彩蛋排名",
-					"pathName": "pages/setting_egg/index",
-					"scene": null
-				}
-			]
-		}
-	}
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": false,
+    "uploadWithSourceMap": false,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "bundle": false,
+    "useApiHook": true,
+    "useApiHostProcess": true
+  },
+  "appid": "wx07bf93be7d34ec7d",
+  "projectname": "marriage",
+  "libVersion": "2.10.4",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "酒店导航",
+          "pathName": "pages/navigator/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "留言评论",
+          "pathName": "pages/comment/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "相册",
+          "pathName": "pages/photo/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "彩蛋页",
+          "pathName": "pages/egg/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "登录页",
+          "pathName": "pages/login/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "设置页",
+          "pathName": "pages/setting/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "信息设置",
+          "pathName": "pages/setting_info/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "照片设置",
+          "pathName": "pages/setting_photo/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "评论管理",
+          "pathName": "pages/setting_comment/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "出席人数",
+          "pathName": "pages/setting_attend/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "酒店设置",
+          "pathName": "pages/setting_hotel/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "彩蛋排名",
+          "pathName": "pages/setting_egg/index",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

@@ -103,17 +103,27 @@ page({
       current: $photos[index].url
     })
   },
-  getUserInfo({ detail: { userInfo } }) {
-    if (!userInfo) {
-      // 没有授权
-      this.$hint('你发现了新郎的私房钱 赶紧授权领奖励啦！')
-      return
-    }
-    app.globalData.userInfo = userInfo
-    this.setData({
-      userInfo
-    })
-    this.moneyAction()
+  getUserInfo() {
+    if(app.globalData.userInfo) {
+      this.moneyAction()
+    }else {
+      const self = this
+      wx.getUserProfile({
+        lang: 'zh_CN',
+        desc: '获取信息用于',
+        success({userInfo}){
+          self.setData({
+            userInfo
+          })
+          app.globalData.userInfo = userInfo
+          self.moneyAction()
+        },
+        fail(){
+          // 没有授权
+          self.$hint('你发现了新郎的私房钱 赶紧授权领奖励啦！')
+        }
+      })
+    }    
   },
   moneyAction() {
     this.$go('/pages/egg/index')

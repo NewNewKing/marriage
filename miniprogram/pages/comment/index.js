@@ -118,13 +118,13 @@ page({
   },
   // 获取用户信息
   getUserInfo({
-    detail: { userInfo },
+    // detail: { userInfo },
     target: {
       dataset: { type }
     }
   }) {
-    let msg = '',
-      fn
+    let msg = '',fn
+    const self = this
     // 1、评论  2、出席
     switch (+type) {
       case 1:
@@ -136,16 +136,30 @@ page({
         fn = this.showAttend
         break
     }
-    if (!userInfo) {
-      // 没有授权
-      this.$hint(msg)
-      return
+    if(app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo
+      })
+      fn()
+      return 
     }
-    this.setData({
-      userInfo
+    
+    
+    wx.getUserProfile({
+      lang: 'zh_CN',
+      desc: '获取信息用于',
+      success({userInfo}){
+        self.setData({
+          userInfo
+        })
+        app.globalData.userInfo = userInfo
+        fn()
+      },
+      fail(){
+        // 没有授权
+        self.$hint(msg)
+      }
     })
-    app.globalData.userInfo = userInfo
-    fn()
   },
   // 提交出席信息
   submitAttend() {

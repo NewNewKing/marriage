@@ -20,6 +20,8 @@ App({
         // 音乐播放
         isMusicPlay: false
       },
+      // 用户授权的信息（昵称、头像）
+      userInfo: null, 
       // 全局的信息（婚礼信息等）
       info: {},
       audio: null,
