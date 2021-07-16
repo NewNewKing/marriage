@@ -110,7 +110,7 @@ page({
       const self = this
       wx.getUserProfile({
         lang: 'zh_CN',
-        desc: '获取信息用于',
+        desc: '获取头像昵称，让我知道是谁找到我藏的',
         success({userInfo}){
           self.setData({
             userInfo

@@ -147,7 +147,7 @@ page({
     
     wx.getUserProfile({
       lang: 'zh_CN',
-      desc: '获取信息用于',
+      desc: '获取头像昵称',
       success({userInfo}){
         self.setData({
           userInfo
